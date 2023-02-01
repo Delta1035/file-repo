@@ -28,3 +28,11 @@ onpush策略仅会在一下情况为组件子树运行变更检测:
 - 包括onpush组件的子onpush组件和默认变更检测组件
 
 ![Change detection propagation from non-OnPush component](https://angular.cn/generated/images/guide/change-detection/event-trigger.svg)
+
+### 事件由具有 OnPush 的组件处理
+
+事件发生在onpush组件上
+
+- 子组件是
+
+![Change detection propagation from OnPush component](https://angular.cn/generated/images/guide/change-detection/on-push-trigger.svg)
