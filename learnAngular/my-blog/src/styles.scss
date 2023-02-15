@@ -1,0 +1,25 @@
+
+
+// @primary-color: #1890ff;
+@import "./assets/styles/index.scss";
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  min-width: 750px;
+}
+// 1920 / 100 = 19.2px  => 1vw相当于10.8 px
+// 100 / 19.2 = 5.21 => 5.21vw 相当于100px 也就是说 1rem 相当于 100px  便于计算
+html {
+  font-size: 5.21vw; // 屏幕放大1.5 所以 5.21 * 1.5 = 7.81
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+

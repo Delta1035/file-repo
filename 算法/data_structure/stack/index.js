@@ -1,0 +1,14 @@
+const Stack = require('./myStack');
+const myStack = new Stack();
+myStack.push(1);
+myStack.push(2);
+myStack.push(3);
+myStack.push(4);
+myStack.push(5);
+const value1 = myStack.pop();
+const value2 = myStack.pop();
+const value3 = myStack.pop();
+const value4 = myStack.pop();
+console.log(myStack,value1,value2,value3,value4);
+myStack.clear();
+console.log(myStack);
