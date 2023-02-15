@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "ES2015",
+		"types": ["reflect-metadata", "node"],
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"sourceMap": true,
+		"outDir": "./dist"
+	  },
+	  "include": [
+		"src/**/*"
+	  ]
+}

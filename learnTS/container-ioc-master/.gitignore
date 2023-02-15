@@ -1,0 +1,7 @@
+node_modules
+.idea
+src/**/*.js*
+*.d.ts
+dist
+usage.js
+CURRENT-CHANGELOG.txt
