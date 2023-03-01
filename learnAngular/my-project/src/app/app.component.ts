@@ -1,6 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+/*
+ * @Author: delta 528491526@qq.com
+ * @Date: 2023-01-30 22:18:25
+ * @LastEditors: delta 528491526@qq.com
+ * @LastEditTime: 2023-02-17 17:49:57
+ * @FilePath: \my-project\src\app\app.component.ts
+ * @Description:
+ *
+ */
 import { Component } from '@angular/core';
-import { tap } from 'rxjs';
+import { routeConfig } from './route-config';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +16,6 @@ import { tap } from 'rxjs';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  constructor(private http: HttpClient) {}
-  title = 'my-project';
-  userName = '';
-  password = '';
-  submit() {
-    this.http
-      .post('http://127.0.0.1/login', {
-        userName: this.userName,
-        password: this.password,
-      })
-      .subscribe((observer)=>{
-        console.log(observer);
-      });
-  }
+  isCollapsed = false;
+  routeConfig = routeConfig;
 }

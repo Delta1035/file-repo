@@ -1,0 +1,58 @@
+<!--
+ * @Author: delta 528491526@qq.com
+ * @Date: 2023-02-17 14:47:49
+ * @LastEditors: delta 528491526@qq.com
+ * @LastEditTime: 2023-02-23 11:03:29
+ * @FilePath: \my-project\src\app\pages\article\article.component.html
+ * @Description: 
+ * 
+-->
+<!-- 设置fixed容器宽度为4000px,共八个td单元格,每个500px -->
+<label for="width">
+  width:
+  <input id="width" type="text" [(ngModel)]="width" />
+</label>
+<label for="height">
+  height:
+  <input id="height" type="text" [(ngModel)]="height" />
+</label>
+<button (click)="toggleCellScroll()">toggle</button>
+<a href="www.baidu.com" target="_top">baidu</a>
+
+<button (click)="handleWidth()">handleWidth</button>
+<div class="wrapper">
+  <nz-table
+    appAutoWidthColumn
+    [ngClass]="{ cellScroll: isCellScroll }"
+    #basicTable
+    [nzData]="listOfData"
+    [nzScroll]="{ x: width + 'px' }"
+  >
+    <thead>
+      <tr>
+        <ng-container *ngFor="let item of listOfThead">
+          <th [nzWidth]="item.width + 'px'">{{ item.text }}</th>
+        </ng-container>
+      </tr>
+    </thead>
+    <tbody>
+      <tr (load)="handleLoad()" #trs *ngFor="let data of basicTable.data">
+        <td>
+          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+          {{ data.name }}
+        </td>
+        <td>{{ data.age }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{ data.name1 }}</td>
+        <td>{{ data.name12 }}</td>
+        <td>{{ data.name123 }}</td>
+        <td>{{ data.name1234 }}</td>
+        <td>
+          <a>Action 一 {{ data.name }}</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
