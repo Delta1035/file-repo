@@ -1,0 +1,7 @@
+<p>content works!</p>
+下面是one投影:
+<div>
+  <ng-content select="[one]"></ng-content>
+</div>
+其他投影结束
+<ng-container  *ngTemplateOutlet="menu; context: {$implicit:'这是来自组件内部的值$implicit',value:'这是来自组件内部的值value'}"></ng-container>

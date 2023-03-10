@@ -1,0 +1,20 @@
+<!--
+ * @Author: delta 528491526@qq.com
+ * @Date: 2023-03-02 23:16:49
+ * @LastEditors: delta 528491526@qq.com
+ * @LastEditTime: 2023-03-03 00:27:08
+ * @FilePath: \ng_demo\src\app\components\static\static.component.html
+ * @Description: 
+ * 
+-->
+<div>
+  <p>static works! {{ age }}</p>
+  <p>on push static {{_on_push_age}}</p>
+  <button (click)="add()">add</button>
+  <button (click)="fromApp()">change fromApp {{stat}}</button>
+</div>
+<p>测试变更检测时的</p>
+<p>name:{{person.name}}</p>
+<p>age:{{person.age}}</p>
+<hr>
+<app-static-son (emitEvent)="emitEventHandle($event)"></app-static-son>

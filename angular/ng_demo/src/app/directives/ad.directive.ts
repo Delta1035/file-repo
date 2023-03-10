@@ -7,4 +7,5 @@ export class AdDirective {
 
   constructor(public viewContainerRef:ViewContainerRef) { }
 
+ 
 }

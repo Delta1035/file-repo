@@ -1,8 +1,8 @@
 /*
  * @Author: Delta_Zheng Delta_Zheng@wistronits.com
  * @Date: 2023-02-01 17:46:43
- * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
- * @LastEditTime: 2023-02-01 17:53:28
+ * @LastEditors: delta 528491526@qq.com
+ * @LastEditTime: 2023-03-02 23:14:13
  * @FilePath: \ng_demo\src\app\pages\dynamic-component\ad-banner\ad-banner.component.ts
  * @Description:
  *
@@ -46,9 +46,5 @@ export class AdBannerComponent {
     componentRef.instance.data = adItem.data;
   }
 
-  getAds() {
-    this.interval = setInterval(() => {
-      this.loadComponent();
-    }, 3000);
-  }
+  getAds() {}
 }

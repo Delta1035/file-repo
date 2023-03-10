@@ -1,0 +1,38 @@
+<div>
+  <h2>form</h2>
+  <h3>reactive form</h3>
+  <!-- <label for="name">
+    {{ name }}:
+    <input type="text" id="name" [(ngModel)]="name" />
+  </label> -->
+  <p>
+    <label for="name"
+      >name:
+      <input type="text" id="name" [formControl]="name" />
+    </label>
+  </p>
+  <p>
+    <label for="password">
+      password:
+      <input type="password" id="password" [formControl]="password" />
+    </label>
+  </p>
+  <hr />
+  <p>formgroup</p>
+  <form [formGroup]="loginForm">
+    <p>
+      <label for="name"
+        >name:
+        <input type="text" id="name" [formControl]="name" />
+      </label>
+    </p>
+    <p>
+      <label for="password">
+        password:
+        <input type="password" id="password" [formControl]="password" />
+      </label>
+    </p>
+    <app-custom-form-control [formControl]="custom"></app-custom-form-control>
+  </form>
+  <button (click)="log()">log</button>
+</div>
