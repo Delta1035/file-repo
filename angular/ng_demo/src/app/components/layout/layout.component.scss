@@ -1,0 +1,15 @@
+:host {
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    .aside {
+      width: 300px;
+      border-right: 1px solid gray;
+    }
+    .content {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+}

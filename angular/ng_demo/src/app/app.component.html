@@ -1,61 +1,18 @@
-<header></header>
-<div class="container">
-  <nav>
-    <a
-      [routerLink]="['/dynamic-component']"
-      routerLinkActive="router-link-active"
-      >dynamic-component</a
-    >
-  </nav>
-  <aside>
+<app-layout>
+  <div class="aside">
+    <ul>
+      <li>
+        <a routerLink="rxjs-demo">rxjs-demo</a>
+      </li>
+      <li>
+        <a routerLink="directive-demo">directive-demo</a>
+      </li>
+      <li>
+        <a routerLink="dynamic-component-demo"> dynamic-component-demo </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
     <router-outlet></router-outlet>
-    <hr />
-    <div style="border:1px solid red;">
-      <app-default [person]="person"></app-default>
-      <app-push [person]="person"></app-push>
-      <button (click)="addPersonAge()">add app age</button>
-    </div>
-    <app-static [person]="person" [(stat)]="fromApp"></app-static>
-
-    <hr />
-    <p>app age {{ age }}</p>
-    <button (click)="add()">add app age</button>
-    <hr />
-    <p>双向数据绑定 {{ fromApp }}</p>
-    <br />
-    <p>投影:</p>
-    <ng-template #temp let-value let-data="value">
-      <p>这是template --- {{ value }}</p>
-      <p>这是template --- {{ data }}</p>
-    </ng-template>
-    <app-content [menu]="temp">
-      <div ngProjectAs="[one]">
-        这是one投影外面的内容
-        <p one>这是app传给one的投影</p>
-      </div>
-    </app-content>
-    这是@Inject注入的值: {{ config.baseUrl }}
-    <hr />
-    <p>动态组件:</p>
-
-    <hr />
-    指令:
-    <button appUpload>上传</button>
-
-    <hr />
-    <p appHover>鼠标移上去变色</p>
-
-    结构型指令:
-    <!-- 这里注意 结构性指令 必须用* 否则会报错找不到templateRef -->
-    <p *appUnless="unless">测试结构型指令</p>
-    <button (click)="toggle()">切换</button>
-
-    动态组件:
-    <div>
-      <ng-template adHost></ng-template>
-    </div>
-    <app-form></app-form>
-  </aside>
-</div>
-
-<footer></footer>
+  </div>
+</app-layout>

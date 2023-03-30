@@ -4,8 +4,8 @@
  * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
  * @LastEditTime: 2023-02-01 17:34:27
  * @FilePath: \ng_demo\src\app\app-routing.module.ts
- * @Description: 
- * 
+ * @Description:
+ *
  */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,13 +13,32 @@ import { DynamicComponentComponent } from './pages/dynamic-component/dynamic-com
 
 const routes: Routes = [
   {
-    path:'dynamic-component',
-    component:DynamicComponentComponent
-  }
+    path: '',
+    pathMatch: 'full',
+    redirectTo:'rxjs-demo'
+  },
+  {
+    path: 'dynamic-component-demo',
+    component: DynamicComponentComponent,
+  },
+  {
+    path: 'rxjs-demo',
+    loadChildren: () =>
+      import('./pages/rxjs-demo/rxjs-demo.module').then(
+        (m) => m.RxjsDemoModule
+      ),
+  },
+  {
+    path: 'directive-demo',
+    loadChildren: () =>
+      import('./pages/directive-demo/directive-demo.module').then(
+        (m) => m.DirectiveDemoModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

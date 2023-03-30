@@ -19,40 +19,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormControlComponent } from './components/custom-form-control/custom-form-control.component';
 import { DefaultComponent } from './components/default/default.component';
 import { PushComponent } from './components/push/push.component';
+import { CoreModule } from './core/core.module';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DynamicComponentComponent,
-    AdDirective,
-    AdBannerComponent,
-    StaticComponent,
-    StaticSonComponent,
-    ContentComponent,
-    UploadDirective,
-    HoverDirective,
-    UnlessDirective,
-    AdItemComponent,
-    FormComponent,
-    CustomFormControlComponent,
-    DefaultComponent,
-    PushComponent
-  ],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+  
   ],
   providers: [
     {
-      provide:APP_CONFIG,
-      useValue:{
-        baseUrl:'http://127.0.0.1'
-      }
-    }
+      provide: APP_CONFIG,
+      useValue: {
+        baseUrl: 'http://127.0.0.1',
+      },
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
