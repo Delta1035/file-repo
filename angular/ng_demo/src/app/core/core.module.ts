@@ -17,7 +17,7 @@ import { DynamicComponentComponent } from '../pages/dynamic-component/dynamic-co
 import { LayoutComponent } from '../components/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CounterComponent } from '../components/counter/counter.component';
+import { NumberTrackerComponent } from '../components/counter/number-tracker.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { CounterComponent } from '../components/counter/counter.component';
     CustomFormControlComponent,
     DefaultComponent,
     PushComponent,
-    CounterComponent,
+    NumberTrackerComponent
   ],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -53,7 +53,7 @@ import { CounterComponent } from '../components/counter/counter.component';
     CustomFormControlComponent,
     DefaultComponent,
     PushComponent,
-    CounterComponent
+    NumberTrackerComponent
   ],
 })
-export class CoreModule {}
+export class SharedModule {}

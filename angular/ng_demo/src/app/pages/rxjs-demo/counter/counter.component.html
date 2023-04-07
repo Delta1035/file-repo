@@ -1,0 +1,10 @@
+<p>
+    <input type="number"
+      (keyup.enter)="counterNumber = vanillaInput.value"
+      #vanillaInput>
+    <button
+      (click)="counterNumber = vanillaInput.value">
+      Update number
+    </button>
+  </p>
+  <!-- <number-tracker [end]="counterNumber"></number-tracker> -->

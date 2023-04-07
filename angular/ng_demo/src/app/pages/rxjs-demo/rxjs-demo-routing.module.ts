@@ -8,9 +8,9 @@ const routes: Routes = [
     component: RxjsDemoComponent,
     children: [
       {
-        path:'',
-        redirectTo:'snake',
-        pathMatch:'full'
+        path: '',
+        redirectTo: 'counter',
+        pathMatch: 'full',
       },
       {
         path: 'snake',
@@ -26,6 +26,11 @@ const routes: Routes = [
         path: 'loop',
         loadChildren: () =>
           import('./loop/loop.module').then((m) => m.LoopModule),
+      },
+      {
+        path: 'counter',
+        loadChildren: () =>
+          import('./counter/counter.module').then((m) => m.CounterModule),
       },
     ],
   },
