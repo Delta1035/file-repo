@@ -32,6 +32,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./counter/counter.module').then((m) => m.CounterModule),
       },
+      {
+        path: 'replay-subject',
+        loadChildren: () =>
+          import('./relay-subject/relay-subject.module').then(
+            (m) => m.RelaySubjectModule
+          ),
+      },
     ],
   },
 ];

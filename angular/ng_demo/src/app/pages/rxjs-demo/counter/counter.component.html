@@ -1,10 +1,9 @@
 <p>
     <input type="number"
-      (keyup.enter)="counterNumber = vanillaInput.value"
       #vanillaInput>
     <button
-      (click)="counterNumber = vanillaInput.value">
+      (click)="handleClick(vanillaInput)">
       Update number
     </button>
   </p>
-  <!-- <number-tracker [end]="counterNumber"></number-tracker> -->
+  <number-tracker [end]="counterNumber"></number-tracker>

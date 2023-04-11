@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-  counterNumber = '20'
+  counterNumber = 20;
+
+  handleClick(vanillaInput:HTMLInputElement){
+    this.counterNumber = Number(vanillaInput.value);
+  }
 }

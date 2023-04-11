@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { CounterRoutingModule } from './counter-routing.module';
 import { CounterComponent } from './counter.component';
-import { SharedModule } from 'src/app/core/core.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    CounterComponent
+    CounterComponent,
   ],
   imports: [
     CommonModule,

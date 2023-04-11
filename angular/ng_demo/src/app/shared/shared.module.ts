@@ -18,6 +18,7 @@ import { LayoutComponent } from '../components/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NumberTrackerComponent } from '../components/counter/number-tracker.component';
+import { NumberPipe } from './pipes/number.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NumberTrackerComponent } from '../components/counter/number-tracker.com
     CustomFormControlComponent,
     DefaultComponent,
     PushComponent,
-    NumberTrackerComponent
+    NumberTrackerComponent,
+    NumberPipe
   ],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -53,7 +55,8 @@ import { NumberTrackerComponent } from '../components/counter/number-tracker.com
     CustomFormControlComponent,
     DefaultComponent,
     PushComponent,
-    NumberTrackerComponent
+    NumberTrackerComponent,
+    NumberPipe
   ],
 })
 export class SharedModule {}

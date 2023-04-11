@@ -19,8 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormControlComponent } from './components/custom-form-control/custom-form-control.component';
 import { DefaultComponent } from './components/default/default.component';
 import { PushComponent } from './components/push/push.component';
-import { SharedModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
+import { NumberPipe } from './shared/pipes/number.pipe';
 
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
