@@ -1,6 +1,6 @@
-import { range } from "rxjs";
+import { timer } from "rxjs";
 
-range(0,100).subscribe(
+timer(1,100).subscribe(
     {
         next:data=>{
             console.log(data)
