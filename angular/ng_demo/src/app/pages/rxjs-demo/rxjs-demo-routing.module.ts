@@ -39,6 +39,13 @@ const routes: Routes = [
             (m) => m.RelaySubjectModule
           ),
       },
+      {
+        path: 'click-count',
+        loadChildren: () =>
+          import('./click-count/click-count.module').then(
+            (m) => m.ClickCountModule
+          ),
+      },
     ],
   },
 ];

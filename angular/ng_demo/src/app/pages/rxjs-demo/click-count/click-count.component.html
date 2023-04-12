@@ -1,0 +1,18 @@
+<p>click-count works!</p>
+<p>
+  跟踪某 HTML Element 的 click 事件，当停止单击超过 1
+  秒时，控制台输出上次停止单击超过 1 秒之后，单击了多少次，以及累计单击
+  了多少次。
+</p>
+<button #btn>click me!</button>
+<hr />
+<p>
+  输入框中断断续续输入数据，每连续输入 500 毫秒， 控制台显示当前输入框的数据。
+</p>
+<div>
+  <p>输入的值：{{ inputText$ | async }}</p>
+  <input  type="text" #input [(ngModel)]="InputTextbinding" />
+  <button #btn2>click me</button>
+</div>
+<hr />
+<p appCustom>appCustom</p>

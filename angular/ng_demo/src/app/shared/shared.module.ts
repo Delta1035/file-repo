@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NumberTrackerComponent } from '../components/counter/number-tracker.component';
 import { NumberPipe } from './pipes/number.pipe';
+import { CustomDirective } from '../directives/custom.directive';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NumberPipe } from './pipes/number.pipe';
     DefaultComponent,
     PushComponent,
     NumberTrackerComponent,
-    NumberPipe
+    NumberPipe,
+    CustomDirective
   ],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -56,7 +58,9 @@ import { NumberPipe } from './pipes/number.pipe';
     DefaultComponent,
     PushComponent,
     NumberTrackerComponent,
-    NumberPipe
+    NumberPipe,
+    CustomDirective
+
   ],
 })
 export class SharedModule {}
