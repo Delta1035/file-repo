@@ -46,6 +46,13 @@ const routes: Routes = [
             (m) => m.ClickCountModule
           ),
       },
+      {
+        path: 'compare-demo',
+        loadChildren: () =>
+          import('./compare-demo/compare-demo.module').then(
+            (m) => m.CompareDemoModule
+          ),
+      },
     ],
   },
 ];
