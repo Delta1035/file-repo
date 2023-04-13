@@ -1,25 +1,21 @@
 import {
   Directive,
   ElementRef,
+  HostBinding,
   HostListener,
   OnInit,
   Renderer2,
 } from '@angular/core';
-import {
-  debounceTime,
-  defer,
-  filter,
-  fromEvent,
-  map,
-  pairwise,
-  scan,
-  timer,
-} from 'rxjs';
+import { debounceTime, filter, fromEvent, map, pairwise } from 'rxjs';
 
 @Directive({
   selector: '[appCustom]',
 })
 export class CustomDirective implements OnInit {
+  @HostBinding('class.red')
+  red() {
+    return true;
+  }
   e = this.ele.nativeElement;
   constructor(private render: Renderer2, private ele: ElementRef) {}
   ngOnInit(): void {

@@ -16,6 +16,7 @@ import { StaticComponent } from './components/static/static.component';
 import { AdDirective } from './directives/ad.directive';
 import { CustomDirective } from './directives/custom.directive';
 import { HoverDirective } from './directives/hover.directive';
+import { NgModelStatusDirective } from './directives/ng-model-status.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { UploadDirective } from './directives/upload.directive';
 import { NumberPipe } from './pipes/number.pipe';
@@ -39,6 +40,7 @@ import { NumberPipe } from './pipes/number.pipe';
     NumberTrackerComponent,
     NumberPipe,
     CustomDirective,
+    NgModelStatusDirective,
   ],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -59,6 +61,7 @@ import { NumberPipe } from './pipes/number.pipe';
     NumberTrackerComponent,
     NumberPipe,
     CustomDirective,
+    NgModelStatusDirective,
   ],
 })
 export class SharedModule {}
