@@ -8,7 +8,7 @@
  *
  */
 import { Component, Input, ViewChild } from '@angular/core';
-import { AdDirective } from 'src/app/directives/ad.directive';
+import { AdDirective } from 'src/app/shared/directives/ad.directive';
 import { AdComponent } from '../ad-component';
 
 @Component({

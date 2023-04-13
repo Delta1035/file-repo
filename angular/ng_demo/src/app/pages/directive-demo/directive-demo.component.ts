@@ -5,9 +5,9 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { AdItemComponent } from 'src/app/components/ad-item/ad-item.component';
-import { AdDirective } from 'src/app/directives/ad.directive';
-import { AppConfig, APP_CONFIG } from 'src/app/token';
+import { AdItemComponent } from 'src/app/shared/components/ad-item/ad-item.component';
+import { AdDirective } from 'src/app/shared/directives/ad.directive';
+import { APP_CONFIG, AppConfig } from 'src/app/token';
 
 @Component({
   selector: 'app-directive-demo',
