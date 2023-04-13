@@ -21,7 +21,7 @@ export class DirectiveDemoComponent implements OnInit {
   config: AppConfig;
   title = 'ng_demo';
   age = 0;
-  fromApp: any = 1;
+  fromApp = 1;
   unless = false;
   person = {
     name: 'app name',

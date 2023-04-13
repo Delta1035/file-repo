@@ -26,6 +26,13 @@ const routes: Routes = [
         (m) => m.DirectiveDemoModule
       ),
   },
+  {
+    path: 'life-cycle',
+    loadChildren: () =>
+      import('./pages/life-cycle/life-cycle.module').then(
+        (m) => m.LifeCycleModule
+      ),
+  },
 ];
 
 @NgModule({
