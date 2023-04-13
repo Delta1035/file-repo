@@ -16,6 +16,7 @@ import {
   repeat,
   scan,
   takeUntil,
+  throttleTime,
   zip,
 } from 'rxjs';
 
@@ -25,7 +26,7 @@ import {
   styleUrls: ['./click-count.component.scss'],
 })
 export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
-  private destroyed$ = new Subject();
+  private destroyed$: Subject<unknown> = new Subject();
   inputText$!: Observable<string>;
   InputTextbinding!: string;
   @ViewChild('btn')
@@ -33,7 +34,6 @@ export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
 
   @ViewChild('input')
   input!: ElementRef<HTMLInputElement>;
-  constructor() {}
   ngOnDestroy(): void {
     this.destroyed$.next(null);
     this.destroyed$.complete();
@@ -44,12 +44,12 @@ export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
     this.initInputHandle();
   }
 
-  initClickHandle() {
+  initClickHandle(): void {
     const btn = this.btn.nativeElement;
     const click$ = fromEvent(btn, 'click').pipe(takeUntil(this.destroyed$));
     const summary$ = click$.pipe(
-      map((v) => 1),
-      scan((pre, current, index) => pre + current, 0),
+      map((): number => 1),
+      scan((pre, current): number => pre + current, 0),
       debounceTime(1000)
     );
     const count$ = click$.pipe(
@@ -67,8 +67,8 @@ export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
   initInputHandle() {
     const input$ = fromEvent(this.input.nativeElement, 'input');
     this.inputText$ = input$.pipe(
-      map((v) => this.InputTextbinding),
-      debounceTime(500)
+      map(() => this.InputTextbinding),
+      throttleTime(500)
     );
   }
 }

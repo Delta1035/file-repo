@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { AppConfig, APP_CONFIG } from './token';
+import { APP_CONFIG, AppConfig } from './token';
 
 @Component({
   selector: 'app-root',
