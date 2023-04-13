@@ -9,12 +9,12 @@
 -->
 <div>
   <p>static works! {{ age }}</p>
-  <p>on push static {{_on_push_age}}</p>
+  <p>on push static {{ _on_push_age }}</p>
   <button (click)="add()">add</button>
-  <button (click)="fromApp()">change fromApp {{stat}}</button>
+  <button (click)="fromApp()">change fromApp {{ stat }}</button>
 </div>
 <p>测试变更检测时的</p>
-<p>name:{{person.name}}</p>
-<p>age:{{person.age}}</p>
-<hr>
+<p>name:{{ person.name }}</p>
+<p>age:{{ person.age }}</p>
+<hr />
 <app-static-son (emitEvent)="emitEventHandle($event)"></app-static-son>

@@ -9,21 +9,13 @@ import {
 import {
   Observable,
   Subject,
-  combineAll,
-  combineLatestAll,
   count,
   debounceTime,
-  forkJoin,
   fromEvent,
   map,
-  mapTo,
-  of,
-  reduce,
   repeat,
   scan,
   takeUntil,
-  tap,
-  throttleTime,
   zip,
 } from 'rxjs';
 
@@ -34,13 +26,13 @@ import {
 })
 export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
   private destroyed$ = new Subject();
-  inputText$!:Observable<string>;
-  InputTextbinding!:string;
+  inputText$!: Observable<string>;
+  InputTextbinding!: string;
   @ViewChild('btn')
   btn!: ElementRef<HTMLButtonElement>;
 
   @ViewChild('input')
-  input!:ElementRef<HTMLInputElement>;
+  input!: ElementRef<HTMLInputElement>;
   constructor() {}
   ngOnDestroy(): void {
     this.destroyed$.next(null);
@@ -72,11 +64,11 @@ export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
     });
   }
 
-  initInputHandle(){
-    const input$ = fromEvent(this.input.nativeElement,'input');
+  initInputHandle() {
+    const input$ = fromEvent(this.input.nativeElement, 'input');
     this.inputText$ = input$.pipe(
-      map(v=>this.InputTextbinding),
+      map((v) => this.InputTextbinding),
       debounceTime(500)
-    )
+    );
   }
 }

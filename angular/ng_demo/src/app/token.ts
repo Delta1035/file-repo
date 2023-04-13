@@ -1,4 +1,4 @@
-import { InjectionToken } from "@angular/core";
+import { InjectionToken } from '@angular/core';
 
 /*
  * @Author: delta 528491526@qq.com
@@ -6,10 +6,10 @@ import { InjectionToken } from "@angular/core";
  * @LastEditors: delta 528491526@qq.com
  * @LastEditTime: 2023-03-03 09:02:42
  * @FilePath: \ng_demo\src\app\token.ts
- * @Description: 
- * 
+ * @Description:
+ *
  */
 export interface AppConfig {
-    baseUrl:string
+  baseUrl: string;
 }
 export const APP_CONFIG = new InjectionToken<AppConfig>('app.config');

@@ -1,11 +1,11 @@
 div button {
-// div[_ngcontent-pfv-c18] button[_ngcontent-pfv-c18]
+  // div[_ngcontent-pfv-c18] button[_ngcontent-pfv-c18]
   border-color: red;
 }
 // 在当前宿主元素上生成一个随机属性值,然后下列选择器中的:host会被这个随机属性值替代
 // 从而可以达到将css样式控制到当前宿主元素之内的功能
 :host {
-    // ::ng-deep会将每个选择器上的随机属性选择器去除掉从而变成全局属性
+  // ::ng-deep会将每个选择器上的随机属性选择器去除掉从而变成全局属性
   ::ng-deep div p {
     color: red;
   }

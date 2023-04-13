@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo:'rxjs-demo'
+    redirectTo: 'rxjs-demo',
   },
   {
     path: 'dynamic-component-demo',

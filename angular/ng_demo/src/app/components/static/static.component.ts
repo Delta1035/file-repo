@@ -30,10 +30,10 @@ export class StaticComponent implements OnInit {
   statChange = new EventEmitter();
 
   @Input()
-  person:{name:string,age:number} = {
-    name:'static name',
-    age:19
-  }
+  person: { name: string; age: number } = {
+    name: 'static name',
+    age: 19,
+  };
   add() {
     this._on_push_age++;
   }

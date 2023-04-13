@@ -7,7 +7,6 @@ import {
   Input,
   OnInit,
   Renderer2,
-  TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
 
@@ -24,7 +23,7 @@ export class UploadDirective implements OnInit, AfterViewInit {
     private viewContainer: ViewContainerRef,
     private el: ElementRef,
     private render: Renderer2,
-    private http:HttpClient
+    private http: HttpClient
   ) {}
   ngAfterViewInit(): void {
     this.uploadButton = document.createElement('input');
@@ -32,11 +31,15 @@ export class UploadDirective implements OnInit, AfterViewInit {
     this.uploadButton.style.display = 'none';
     const el = this.el.nativeElement;
     this.render.appendChild(el, this.uploadButton);
-    const that = this;
-    this.uploadButton.addEventListener('change', function (ev: any) {
-      console.log('event', ev.target.files[0]);
-      that.previewFile(ev.target.files[0]);
-      that.uploadImage(ev.target.files[0]);
+    this.render.listen(this.uploadButton, 'change', (ev: InputEvent) => {
+      if (ev.target instanceof HTMLInputElement) {
+        const ele = ev.target;
+        const file = ele.files?.[0];
+        if (file) {
+          this.previewFile(file);
+          this.uploadImage(file);
+        }
+      }
     });
   }
   ngOnInit(): void {}
@@ -53,20 +56,19 @@ export class UploadDirective implements OnInit, AfterViewInit {
       const img = document.createElement('img');
       img.src = reader.result as string;
       console.log(reader.result);
-      
-      this.render.appendChild(this.el.nativeElement,img);
 
+      this.render.appendChild(this.el.nativeElement, img);
     };
     reader.onerror = () => {
       console.log('读取失败');
     };
   }
 
-  uploadImage(file:File){
+  uploadImage(file: File) {
     const fd = new FormData();
-    fd.append('imageName',file);
-    this.http.post('http://www.baidu.com',fd).subscribe(observer=>{
-      console.log('http://www.baidu.com',observer);
-    })
+    fd.append('imageName', file);
+    this.http.post('http://www.baidu.com', fd).subscribe((observer) => {
+      console.log('http://www.baidu.com', observer);
+    });
   }
 }

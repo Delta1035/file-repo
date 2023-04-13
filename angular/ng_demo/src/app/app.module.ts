@@ -25,11 +25,7 @@ import { NumberPipe } from './shared/pipes/number.pipe';
 
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [
     {
       provide: APP_CONFIG,

@@ -8,9 +8,8 @@ describe('LoopComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoopComponent ]
-    })
-    .compileComponents();
+      declarations: [LoopComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LoopComponent);
     component = fixture.componentInstance;

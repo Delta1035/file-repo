@@ -1,3 +1,3 @@
 export interface AdComponent {
-    data: any;
-  }
+  data: any;
+}

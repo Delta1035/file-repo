@@ -6,16 +6,8 @@ import { ClickCountComponent } from './click-count.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
-  declarations: [
-    ClickCountComponent
-  ],
-  imports: [
-    CommonModule,
-    ClickCountRoutingModule,
-    FormsModule,
-    SharedModule
-  ]
+  declarations: [ClickCountComponent],
+  imports: [CommonModule, ClickCountRoutingModule, FormsModule, SharedModule],
 })
-export class ClickCountModule { }
+export class ClickCountModule {}

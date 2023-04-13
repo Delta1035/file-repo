@@ -4,14 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SnakeRoutingModule } from './snake-routing.module';
 import { SnakeComponent } from './snake.component';
 
-
 @NgModule({
-  declarations: [
-    SnakeComponent
-  ],
-  imports: [
-    CommonModule,
-    SnakeRoutingModule
-  ]
+  declarations: [SnakeComponent],
+  imports: [CommonModule, SnakeRoutingModule],
 })
-export class SnakeModule { }
+export class SnakeModule {}

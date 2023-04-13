@@ -8,9 +8,8 @@ describe('RelaySubjectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RelaySubjectComponent ]
-    })
-    .compileComponents();
+      declarations: [RelaySubjectComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RelaySubjectComponent);
     component = fixture.componentInstance;

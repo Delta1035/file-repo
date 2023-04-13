@@ -6,6 +6,6 @@ const routes: Routes = [{ path: '', component: RelaySubjectComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RelaySubjectRoutingModule { }
+export class RelaySubjectRoutingModule {}

@@ -1,4 +1,10 @@
-import { Component, Inject, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnInit,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { AdItemComponent } from 'src/app/components/ad-item/ad-item.component';
 import { AdDirective } from 'src/app/directives/ad.directive';
 import { AppConfig, APP_CONFIG } from 'src/app/token';
@@ -6,7 +12,7 @@ import { AppConfig, APP_CONFIG } from 'src/app/token';
 @Component({
   selector: 'app-directive-demo',
   templateUrl: './directive-demo.component.html',
-  styleUrls: ['./directive-demo.component.scss']
+  styleUrls: ['./directive-demo.component.scss'],
 })
 export class DirectiveDemoComponent implements OnInit {
   addPersonAge() {

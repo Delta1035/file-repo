@@ -14,7 +14,6 @@ import { UnlessDirective } from '../directives/unless.directive';
 import { UploadDirective } from '../directives/upload.directive';
 import { AdBannerComponent } from '../pages/dynamic-component/ad-banner/ad-banner.component';
 import { DynamicComponentComponent } from '../pages/dynamic-component/dynamic-component.component';
-import { LayoutComponent } from '../components/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NumberTrackerComponent } from '../components/counter/number-tracker.component';
@@ -39,7 +38,7 @@ import { CustomDirective } from '../directives/custom.directive';
     PushComponent,
     NumberTrackerComponent,
     NumberPipe,
-    CustomDirective
+    CustomDirective,
   ],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -59,8 +58,7 @@ import { CustomDirective } from '../directives/custom.directive';
     PushComponent,
     NumberTrackerComponent,
     NumberPipe,
-    CustomDirective
-
+    CustomDirective,
   ],
 })
 export class SharedModule {}

@@ -34,7 +34,6 @@
 //     bufferCount(2),
 //   );
 
-
 // // Now we combine those two. The gate will emit once we have
 // // either waited enough to be sure its a single click or
 // // two clicks have passed throug

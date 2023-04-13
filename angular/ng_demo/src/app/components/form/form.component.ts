@@ -9,12 +9,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class FormComponent {
   name = new FormControl('zhangsan');
   password = new FormControl('123456');
-  custom =  new FormControl(1)
+  custom = new FormControl(1);
 
   loginForm = new FormGroup({
     name: this.name,
     password: this.password,
-    custom: this.custom
+    custom: this.custom,
   });
   log() {
     console.log(this.name.value);

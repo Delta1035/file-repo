@@ -5,7 +5,16 @@ import {
   OnInit,
   Renderer2,
 } from '@angular/core';
-import { debounceTime, defer, filter, fromEvent, map, pairwise, scan, timer } from 'rxjs';
+import {
+  debounceTime,
+  defer,
+  filter,
+  fromEvent,
+  map,
+  pairwise,
+  scan,
+  timer,
+} from 'rxjs';
 
 @Directive({
   selector: '[appCustom]',
@@ -34,7 +43,8 @@ export class CustomDirective implements OnInit {
 
   @HostListener('click', ['$event'])
   handleClick(e: MouseEvent) {
-    console.log('鼠标单击了', e.target?.tagName);
+    if (e.target instanceof HTMLElement)
+      console.log('鼠标单击了', e.target.tagName);
   }
 
   initDoubleClick() {
@@ -43,14 +53,14 @@ export class CustomDirective implements OnInit {
       map((v) => Date.now()),
       pairwise(),
       filter((x) => {
-        return (x[1] - x[0]) < 500;
+        return x[1] - x[0] < 500;
       }),
       debounceTime(500)
     );
 
     r$.subscribe({
       next: (data) => {
-        console.log('鼠标双击了：',(data[1] - data[0]));
+        console.log('鼠标双击了：', data[1] - data[0]);
       },
     });
   }

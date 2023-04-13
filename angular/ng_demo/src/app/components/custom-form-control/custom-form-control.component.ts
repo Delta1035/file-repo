@@ -23,7 +23,7 @@ export class CustomFormControlComponent implements ControlValueAccessor {
 
   set count(value) {
     this._count = value;
-    console.log('set count',value);
+    console.log('set count', value);
     this.onChange(this._count);
   }
 
@@ -36,8 +36,8 @@ export class CustomFormControlComponent implements ControlValueAccessor {
      * 并将新值作为参数传入。其作用是设置原生表单控件的值。
      * 数据流向则是从 Angular form ➡️ Native form。
      */
-    console.log('write :>>',obj);
-    
+    console.log('write :>>', obj);
+
     if (obj) {
       this.count = obj;
     }

@@ -8,9 +8,8 @@ describe('ClickCountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClickCountComponent ]
-    })
-    .compileComponents();
+      declarations: [ClickCountComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ClickCountComponent);
     component = fixture.componentInstance;

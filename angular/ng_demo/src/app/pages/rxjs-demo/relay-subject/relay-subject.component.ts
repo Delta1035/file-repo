@@ -5,31 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import {
-  Observable,
-  ReplaySubject,
-  buffer,
-  bufferCount,
-  bufferTime,
-  bufferWhen,
-  count,
-  debounceTime,
-  filter,
-  first,
-  fromEvent,
-  interval,
-  map,
-  mapTo,
-  race,
-  repeat,
-  scan,
-  switchMap,
-  takeUntil,
-  tap,
-  throttle,
-  timer,
-} from 'rxjs';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+import { Observable, count, fromEvent, map, scan, tap } from 'rxjs';
 
 @Component({
   selector: 'app-relay-subject',
@@ -43,7 +19,7 @@ export class RelaySubjectComponent implements OnInit, AfterViewInit {
   btn2!: ElementRef<HTMLButtonElement>;
 
   btn1$!: Observable<Event>;
-  btn2$!: Observable<any>;
+  btn2$!: Observable<Event>;
   count = 0;
   doubleClickDuration = 300;
   debounce$!: Observable<Event>;
@@ -120,14 +96,14 @@ export class RelaySubjectComponent implements OnInit, AfterViewInit {
     this.btn2$ = fromEvent(this.btn2.nativeElement, 'click');
     const s = this.btn2$
       .pipe(
-        map(v=>1),
+        map(() => 1),
         scan((pre, current) => pre + current, 0),
         tap(console.log),
         // debounceTime(500),
         count()
       )
       .subscribe({
-        next: (data) => console.log('count',data),
+        next: (data) => console.log('count', data),
       });
   }
 }

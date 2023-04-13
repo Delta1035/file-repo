@@ -8,9 +8,8 @@ describe('RxjsDemoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxjsDemoComponent ]
-    })
-    .compileComponents();
+      declarations: [RxjsDemoComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RxjsDemoComponent);
     component = fixture.componentInstance;

@@ -1,9 +1,5 @@
 <p>
-    <input type="number"
-      #vanillaInput>
-    <button
-      (click)="handleClick(vanillaInput)">
-      Update number
-    </button>
-  </p>
-  <number-tracker [end]="counterNumber"></number-tracker>
+  <input type="number" #vanillaInput />
+  <button (click)="handleClick(vanillaInput)">Update number</button>
+</p>
+<number-tracker [end]="counterNumber"></number-tracker>

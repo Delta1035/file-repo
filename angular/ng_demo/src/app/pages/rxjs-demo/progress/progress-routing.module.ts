@@ -6,6 +6,6 @@ const routes: Routes = [{ path: '', component: ProgressComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ProgressRoutingModule { }
+export class ProgressRoutingModule {}
