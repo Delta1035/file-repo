@@ -9,7 +9,7 @@
  */
 import { Component, Input, ViewChild } from '@angular/core';
 import { AdDirective } from 'src/app/shared/directives/ad.directive';
-import { AdComponent } from '../ad-component';
+// import { AdComponent } from '../ad-component';
 
 @Component({
   selector: 'app-ad-banner',
@@ -40,10 +40,10 @@ export class AdBannerComponent {
     const viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();
 
-    const componentRef = viewContainerRef.createComponent<AdComponent>(
-      adItem.component
-    );
-    componentRef.instance.data = adItem.data;
+    // const componentRef = viewContainerRef.createComponent<AdComponent>(
+    //   adItem.component
+    // );
+    // componentRef.instance.data = adItem.data;
   }
 
   getAds() {}

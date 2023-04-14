@@ -16,3 +16,16 @@
 </div>
 <hr />
 <p appCustom>appCustom</p>
+<p>
+  实现一个输入框，当输入超过 2 个字符，输入停顿超过 500ms
+  之后，页面显示从预定义的数据中获取以输入数据开头的前 10 个数据。
+</p>
+<p>从预定义获取的数据： {{ data }}</p>
+<input #input2 type="text" />
+<hr />
+<p>
+  创建两个 Observable 源 source1、source2，source1 按照固
+  定间隔产生数据，source2 随机产生数据，输出：source2 发出数据时， source1
+  累计产生数据的总次数
+</p>
+<button #btn3>click me!</button>

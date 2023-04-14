@@ -1,1 +1,47 @@
 <p>life-cycle works!</p>
+<form [formGroup]="formGroup" (submit)="handleSubmit()">
+  <p>
+    <label for="">companyName:</label>
+    <input type="text" formControlName="companyName" />
+  </p>
+
+  <p>
+    <label for="">companyType:</label>
+    <!-- <input type="text" formControlName="companyType" /> -->
+    <select name="" id="" formControlName="companyType">
+      <option value="0">SOLO</option>
+      <option value="1">CORP</option>
+      <option value="2">SHARE_HOLD</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="">setupDate:</label>
+    <input type="date" formControlName="setupDate" />
+  </p>
+
+  <p>
+    <label for="">actived:</label>
+    <select name="" id="" formControlName="actived">
+      <option [value]="true">true</option>
+      <option [value]="false">false</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="">shares:</label>
+    <input type="text" formControlName="shares" />
+  </p>
+  <ng-container formGroupName="businessAddress">
+    <p>
+      <label for="">address:</label>
+      <input type="text" formControlName="address" />
+    </p>
+
+    <p>
+      <label for="">phone:</label>
+      <input type="text" formControlName="phone" />
+    </p>
+  </ng-container>
+  <button>submit</button>
+</form>

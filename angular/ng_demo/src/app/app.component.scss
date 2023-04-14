@@ -6,3 +6,15 @@
     }
   }
 }
+$color: "black";
+$backColor: "white";
+
+@mixin frontAndBackColor($front: $color, $back: $backColor) {
+  color: $front;
+  background-color: $back;
+}
+
+.test {
+  border: 1px solid red;
+  @include frontAndBackColor(red, green);
+}
