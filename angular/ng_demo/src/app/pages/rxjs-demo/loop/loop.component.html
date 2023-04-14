@@ -1,1 +1,14 @@
 <p>loop works!</p>
+
+<div class="wrapper">
+  <ul styleDirective #ulTag="clickedTag">
+    zheshi ul
+    <li></li>
+    <li></li>
+  </ul>
+  <div styleDirective #divTag="clickedTag">这是一个div</div>
+  <button styleDirective #buttonTag="clickedTag">click</button>
+</div>
+<div>1{{ ulTag.clickedTagName }}</div>
+<div>2{{ divTag.clickedTagName }}</div>
+<div>3{{ buttonTag.clickedTagName }}</div>

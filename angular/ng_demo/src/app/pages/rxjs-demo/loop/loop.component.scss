@@ -1,0 +1,17 @@
+:host {
+  .wrapper {
+    border: 1px solid red;
+    // display: flex;
+    // flex-basis: 300px;
+    overflow: hidden;
+    padding: 20px;
+    ul,
+    div,
+    button {
+      float: left;
+      width: 300px;
+      height: 100px;
+      margin-right: 50px;
+    }
+  }
+}
