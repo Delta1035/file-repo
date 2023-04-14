@@ -121,7 +121,6 @@ export class ClickCountComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   initInput2handle() {
-    const data$ = of(this.data.split(''));
     const input2$ = fromEvent(this.input2.nativeElement, 'input');
     input2$
       .pipe(
