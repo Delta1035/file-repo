@@ -41,11 +41,9 @@ import { StyleDirectiveDirective } from './style-directive.directive';
     NumberTrackerComponent,
     NumberPipe,
     CustomDirective,
-<<<<<<< HEAD
-    NgModelStatusDirective,
-=======
     StyleDirectiveDirective,
->>>>>>> a0caa4a (1)
+    NgModelStatusDirective,
+    StyleDirectiveDirective,
   ],
   imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -66,11 +64,9 @@ import { StyleDirectiveDirective } from './style-directive.directive';
     NumberTrackerComponent,
     NumberPipe,
     CustomDirective,
-<<<<<<< HEAD
     NgModelStatusDirective,
-=======
     StyleDirectiveDirective,
->>>>>>> a0caa4a (1)
+    StyleDirectiveDirective,
   ],
 })
 export class SharedModule {}
