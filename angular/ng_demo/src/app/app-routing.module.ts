@@ -33,6 +33,13 @@ const routes: Routes = [
         (m) => m.LifeCycleModule
       ),
   },
+  {
+    path: 'three-demo',
+    loadChildren: () =>
+      import('./pages/three-demo/three-demo.module').then(
+        (m) => m.ThreeDemoModule
+      ),
+  },
 ];
 
 @NgModule({
