@@ -10,7 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 // class CompanyInfo {
-//   companyName: string; // 全部英文字母，最少 8 个字母，最多 32 个字母
+//   companyName: string; // 全部英文字母,最少 8 个字母,最多 32 个字母
 //   companyType: CompanyType;
 //   setupDate: Date;
 //   //不能晚于当天
@@ -20,9 +20,9 @@ import {
 //   businessAddress: Address;
 // }
 // class Address {
-//   address: string; // 全部英文字符，最多 128 字符
+//   address: string; // 全部英文字符,最多 128 字符
 //   phone: string;
-//   // 全部英文字符，最多 15 字符
+//   // 全部英文字符,最多 15 字符
 // }
 // enum CompanyType {
 //   SOLO,
@@ -48,6 +48,7 @@ export function mustBoolean(): ValidatorFn {
     return !isBooelan ? { isBoolean: { value: control.value } } : null;
   };
 }
+
 @Component({
   selector: 'app-life-cycle',
   templateUrl: './life-cycle.component.html',
