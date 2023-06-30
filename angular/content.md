@@ -23,15 +23,18 @@ export class ContentComponent {
 
 contextObject = {
 
-​	$implicit:'这是默认的属性',
+​ $implicit:'这是默认的属性',
 
-​	keyName:'这是需要let声明后才可以使用的属性'
+​ keyName:'这是需要let声明后才可以使用的属性'
 
 }
 
-```html
+P```html
 <ng-template #templateRefName let-default let-value='keyName'>
 </ng-template>
+
 ```
 
 上面的default接收的是$implicit的值,value接收的是context对象的keyName的值;
+
+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
