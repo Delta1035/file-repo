@@ -12,3 +12,13 @@
 仓库
 
 ![](https://raw.githubusercontent.com/Delta1035/tuchuang/main/ubuntu/202307162038053.png)
+
+![](https://raw.githubusercontent.com/Delta1035/tuchuang/main/ubuntu/202307170122073.png)
+
+
+
+123
+
+![image-20230717012331613](https://raw.githubusercontent.com/Delta1035/tuchuang/main/ubuntu/image-20230717012331613.png)
+
+![image-20230717012432159](https://raw.githubusercontent.com/Delta1035/tuchuang/main/ubuntu/image-20230717012432159.png)

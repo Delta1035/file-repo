@@ -1,0 +1,32 @@
+<p>about works!</p>
+
+<div class="flex justify-center gap-10">
+  <a [routerLink]="[
+      '/about',
+      { outlets: { left: 'introduce', right: 'history' } }
+    ]">left</a>
+  <!-- <a [routerLink]="[ '/histroy', {outlets:{right:'history'}} ]">right</a> -->
+  <a [routerLink]="[
+      '/about',
+      {
+        outlets: {
+          left: ['introduce'],
+          right: ['history']
+        }
+      }
+    ]">关于我们
+  </a>
+</div>
+<div class="h-96 flex flex-row justify-between border-2 border-cyan-300">
+  <div class="left w-1/2 bg-slate-300">
+    <p>left</p>
+    <router-outlet name="left"></router-outlet>
+  </div>
+  <div class="right w-1/2 bg-orange-400">
+    <p>right</p>
+    <router-outlet name="right"></router-outlet>
+  </div>
+</div>
+<a routerLink="/about/resolve">加载完数据之后再进来</a>
+
+<router-outlet></router-outlet>
