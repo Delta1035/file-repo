@@ -12,7 +12,7 @@
     <hr />
     <div style="border: 1px solid red">
       <app-default [person]="person"></app-default>
-      <app-push [person]="person"></app-push>
+      <app-push #push [person]="person"></app-push>
       <button (click)="addPersonAge()">add app age</button>
     </div>
     <app-static [person]="person" [(stat)]="fromApp"></app-static>
