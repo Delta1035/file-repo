@@ -1,2 +1,7 @@
-<h1>home</h1>
+<h1 class="border-2 border-orange-300">home</h1>
+<ul class="mt-2 mb-2 border-2 border-orange-300">
+  <li *ngFor="let route of routes">
+    <a [routerLink]="route.path" routerLinkActive="active">{{route.path}}</a>
+  </li>
+</ul>
 <router-outlet></router-outlet>

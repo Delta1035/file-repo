@@ -1,0 +1,9 @@
+<p *ngIf="status;then one else two;"></p>
+<ng-template #one>template-one</ng-template>
+<ng-template #two>template-two</ng-template>
+
+<button (click)="onClickToToggle()">toggle</button>
+
+hiddern
+<p [hidden]="status">one</p>
+<p [hidden]="!status">two</p>

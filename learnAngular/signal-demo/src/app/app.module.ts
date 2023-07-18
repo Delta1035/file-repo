@@ -7,7 +7,9 @@ import { IntroduceComponent } from './about/introduce/introduce.component';
 import { HistoryComponent } from './about/history/history.component';
 import { ResolveComponent } from './about/resolve/resolve.component';
 import { preloadResolver } from './preload.resolver';
-const routes: Route[] = [
+import { NgifComponent } from './ngif/ngif.component';
+import { NgforComponent } from './ngfor/ngfor.component';
+export const routes: Route[] = [
   {
     path: 'about',
     component: AboutComponent,
@@ -32,6 +34,14 @@ const routes: Route[] = [
     ],
   },
   {
+    path: 'ngif',
+    component: NgifComponent,
+  },
+  {
+    path: 'ngfor',
+    component: NgforComponent,
+  },
+  {
     path: '',
     redirectTo: '/about',
     pathMatch: 'full',
@@ -45,6 +55,8 @@ const routes: Route[] = [
     IntroduceComponent,
     HistoryComponent,
     ResolveComponent,
+    NgifComponent,
+    NgforComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],

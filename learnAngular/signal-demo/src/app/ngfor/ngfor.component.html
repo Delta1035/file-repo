@@ -1,0 +1,17 @@
+<p>ngfor works!</p>
+<ul>
+  <li *ngFor="
+      let item of list;
+      let i = index;
+      let isEven = even;
+      let isOdd = odd;
+      let isFirst = first;
+      let isLast = last;
+      trackBy: identify">
+    {{item | json}}</li>
+</ul>
+
+<button (click)="onClickToAdd()">add</button>
+<button (click)="onClickToRemove()">remove</button>
+
+<p>{{100000 | currency}}</p>
