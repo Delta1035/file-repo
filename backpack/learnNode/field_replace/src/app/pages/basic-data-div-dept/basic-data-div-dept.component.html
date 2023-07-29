@@ -1,0 +1,194 @@
+<div class="page_main scroll_bar maintain_main basic_data_div_dept">
+    <div class="header">
+        <div class="title">{{ "home.basicDataDivDept" | translate }}</div>
+        <div class="opera_area" *ngIf="!deleteFlag">
+            <button nz-button *ngIf="pagePermission.allowedDelete" nzType="primary" nzDanger="true" (click)="deleteStart()">{{ 'basicDataDivDept.batchDeleteDivDept' | translate }}</button>
+            <button nz-button *ngIf="pagePermission.allowedCreate" nzType="primary" (click)="newDivDeptStart('new')">{{ 'basicDataDivDept.newDivDept' | translate }}</button>
+        </div>
+        <div class="opera_area" *ngIf="deleteFlag">
+            <button nz-button nzType="default" (click)="cancelDelete()">{{ 'button.exit' | translate }}</button>
+            <button nz-button nzType="primary" nzDanger="true" (click)="confirmDelete()">{{ 'button.confirmDelete' | translate }}</button>
+        </div>
+    </div>
+    <div class="body">
+        <div class="opera_bar">
+            <div class="search_area">
+                <div class="search_item">
+                    <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px">
+                        <input type="text" nz-input [placeholder]="utils.searchPlacehoder('tableHead.div', 'tableHead.divCode')" [(ngModel)]="searchKeyWord" (keyup.enter)="dataSearch()" />
+                    </nz-input-group>
+                    <ng-template #searchInputIcon><i nz-icon nzType="search"></i></ng-template>
+                </div>
+                <div class="search_item">
+                    <button nz-button nzType="primary" (click)="dataSearch()">{{ "button.query" | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="data_table" #dataTable>
+            <nz-table #basicTable [nzData]="divDeptData" [nzBordered]="true" [(nzPageIndex)]="tableInfo.pageIndex" [(nzPageSize)]="tableInfo.pageSize" [nzFrontPagination]="false" [nzLoading]="tableInfo.loading" [nzTotal]="tableInfo.pageTotal" [nzHideOnSinglePage]="true"
+                (nzPageIndexChange)="tablePageIndexChange()">
+                <thead>
+                    <tr>
+                        <th *ngIf="!checkFlag" nzAlign="center" width="50px"></th>
+                        <th *ngIf="checkFlag" nzAlign="center" width="50px">
+                            <label nz-checkbox [(ngModel)]="tableInfo.checkedAll" (ngModelChange)="checkedAll()"></label>
+                        </th>
+                        <th nzAlign="center">{{ 'tableHead.div' | translate }} </th>
+                        <th nzAlign="center">{{ 'tableHead.divCode' | translate }} </th>
+                        <th nzAlign="center">{{ 'tableHead.function' | translate }} </th>
+                        <th nzAlign="center">{{ 'tableHead.rate' | translate }} </th>
+                        <th nzAlign="center">{{ 'tableHead.operation' | translate }} </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-template ngFor let-data let-i="index" [ngForOf]="basicTable.data">
+                        <tr>
+                            <td *ngIf="!checkFlag" nzAlign="center" [(nzExpand)]="data.expand"></td>
+                            <td *ngIf="checkFlag" nzAlign="center">
+                                <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="checkedItem()"></label>
+                            </td>
+                            <td nzAlign="center">{{ data.div }}</td>
+                            <td nzAlign="center">{{ data.divCode }}</td>
+                            <td nzAlign="center">{{ data.function }}</td>
+                            <td nzAlign="center">{{ data.rate }}</td>
+                            <td nzAlign="center">
+                                <i *ngIf="pagePermission.allowedUpdate" nz-icon nzType="edit" nzTheme="outline" (click)="newDivDeptStart('edit',data)"></i>
+                                <i *ngIf="pagePermission.allowedDelete" nz-icon nzType="delete" nzTheme="outline" (click)="deleteItem(data)"></i>
+                            </td>
+                        </tr>
+                        <tr [nzExpand]="data.expand">
+                            <div class="ant-table-expanded-row-fixed">
+                                <div class="div_dept_expand_item supervisor">
+                                    <div style="margin: 0 0 4px 4px; font-weight: 600;">{{ 'Supervisor' }}</div>
+                                    <nz-table #innerTable [nzData]="data.supervisorExpand" nzSize="middle" [nzBordered]="true" [nzShowPagination]="false" [nzFrontPagination]="false">
+                                        <tbody>
+                                            <tr class="inner_table_header">
+                                                <td nzAlign="center">{{ 'tableHead.chineseName' | translate }}</td>
+                                                <td nzAlign="center">{{ 'tableHead.englishName' | translate }}</td>
+                                                <td nzAlign="center">{{ 'tableHead.email' | translate }}</td>
+                                            </tr>
+                                            <tr *ngFor="let data of innerTable.data">
+                                                <td nzAlign="center">{{ data.chineseName }}</td>
+                                                <td nzAlign="center">{{ data.englishName }}</td>
+                                                <td nzAlign="center">{{ data.email }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </nz-table>
+                                </div>
+                                <div class="div_dept_expand_item dept">
+                                    <div style="margin: 0 0 4px 4px; font-weight: 600;">{{ 'Dept' }}</div>
+                                    <nz-table #innerTable1 [nzData]="data.deptExpand" nzSize="middle" [nzBordered]="true" [nzShowPagination]="false" [nzFrontPagination]="false">
+                                        <tbody>
+                                            <tr class="inner_table_header">
+                                                <td nzAlign="center">{{ 'tableHead.deptFrom' | translate }}</td>
+                                                <td nzAlign="center">{{ 'tableHead.deptTo' | translate }}</td>
+                                            </tr>
+                                            <tr *ngFor="let data of innerTable1.data">
+                                                <td nzAlign="center">{{ data.deptFrom }}</td>
+                                                <td nzAlign="center">{{ data.deptTo }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </nz-table>
+                                </div>
+                            </div>
+                        </tr>
+                    </ng-template>
+                </tbody>
+            </nz-table>
+        </div>
+    </div>
+</div>
+
+
+<nz-modal [(nzVisible)]="newDivDeptModalData.show" [nzWrapClassName]="newDivDeptModalData.className" nzTitle="{{ newDivDeptModalData.title | translate }}" (nzOnCancel)="newDivDeptModalData.onCancel()" nzCentered="true" [nzWidth]="newDivDeptModalData.width">
+    <div *nzModalContent>
+        <div class="model_main scroll_bar">
+            <div class="modal_item ipmModalItem">
+                <div class="item_name">{{ 'Div' }}</div>
+                <div class="item_content">
+                    <app-ipm-modal-item *ngFor="let item of newDivDeptModalData.newDivDeptData.inputData" [itemData]="item" (onChange)="newDivDeptInputDataChange(item)"></app-ipm-modal-item>
+                </div>
+            </div>
+            <div class="modal_item_box">
+                <div class="modal_item table">
+                    <div class="item_name">
+                        <span>{{ 'Supervisor' }}</span>
+                    </div>
+                    <div class="item_content">
+                        <nz-table #supervisorDataTable [nzData]="newDivDeptModalData.newDivDeptData.supervisorData" [nzBordered]="true" [nzFrontPagination]="false" [nzShowPagination]="false">
+                            <thead>
+                                <tr>
+                                    <th nzAlign="center">{{ 'tableHead.chineseName' | translate }}</th>
+                                    <th nzAlign="center">{{ 'tableHead.englishName' | translate }}</th>
+                                    <th nzAlign="center">{{ 'tableHead.email' | translate }}</th>
+                                    <th nzAlign="center">{{ 'tableHead.operation' | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of supervisorDataTable.data let j=index">
+                                    <td nzAlign="center">
+                                        <app-ipm-modal-item [itemData]="data.chineseName" (onChange)="newDivDeptSupervisorDataChange(data.chineseName,'chineseName')"></app-ipm-modal-item>
+                                    </td>
+                                    <td nzAlign="center">
+                                        <app-ipm-modal-item [itemData]="data.englishName" (onChange)="newDivDeptSupervisorDataChange(data.englishName,'englishName')"></app-ipm-modal-item>
+                                    </td>
+                                    <td nzAlign="center">
+                                        <app-ipm-modal-item [itemData]="data.email" (onChange)="newDivDeptSupervisorDataChange(data.email,'email')"></app-ipm-modal-item>
+                                    </td>
+                                    <td nzAlign="center">
+                                        <i nz-icon nzType="delete" *ngIf="this.newDivDeptModalData.newDivDeptData.supervisorData.length>1" nzTheme="outline" (click)="newDivDeptSupervisorDataRemove(j)"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </nz-table>
+                        <div class="add_btn">
+                            <button nz-button nzType="primary" (click)="newDivDeptSupervisorDataAdd()">
+                            <i nz-icon nzType="plus" nzTheme="outline"></i>
+                            <span>{{ "button.add" | translate }}</span>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal_item table">
+                    <div class="item_name">
+                        <span>{{ 'Dept' }}</span>
+                    </div>
+                    <div class="item_content">
+                        <nz-table #deptDataTable [nzData]="newDivDeptModalData.newDivDeptData.deptData" [nzBordered]="true" [nzFrontPagination]="false" [nzShowPagination]="false">
+                            <thead>
+                                <tr>
+                                    <th nzAlign="center">{{ 'tableHead.deptFrom' | translate }}</th>
+                                    <th nzAlign="center">{{ 'tableHead.deptTo' | translate }}</th>
+                                    <th nzAlign="center">{{ 'tableHead.operation' | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of deptDataTable.data let j=index">
+                                    <td nzAlign="center">
+                                        <app-ipm-modal-item [itemData]="data.deptFrom" (onChange)="newDivDeptDeptDataChange()"></app-ipm-modal-item>
+                                    </td>
+                                    <td nzAlign="center">
+                                        <app-ipm-modal-item [itemData]="data.deptTo" (onChange)="newDivDeptDeptDataChange()"></app-ipm-modal-item>
+                                    </td>
+                                    <td nzAlign="center">
+                                        <i nz-icon nzType="delete" *ngIf="this.newDivDeptModalData.newDivDeptData.deptData.length>1" nzTheme="outline" (click)="newDivDeptDeptDataRemove(j)"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </nz-table>
+                        <div class="add_btn">
+                            <button nz-button nzType="primary" (click)="newDivDeptDeptDataAdd()">
+                            <i nz-icon nzType="plus" nzTheme="outline"></i>
+                            <span>{{ "button.add" | translate }}</span>
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="newDivDeptModalData.onCancel()">{{ 'button.cancel' | translate }}</button>
+        <button nz-button nzType="primary" [disabled]="!newDivDeptModalData.canSubmit" [nzLoading]="newDivDeptModalData.submitLoading" (click)="newDivDeptSubmit()">{{ 'button.confirm' | translate }}</button>
+    </div>
+</nz-modal>

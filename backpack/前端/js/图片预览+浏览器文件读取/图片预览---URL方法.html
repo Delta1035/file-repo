@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../QQ图片20211120010818.png" />
+    <input id="files" type="file">
+</body>
+<script>
+    function creatObjectURL(file) {
+        //用于创建 URL 的 File 对象、Blob 对象或者 MediaSource 对象。​
+        if (window.URL) {
+            return window.URL.createObjectURL(file);
+        } else if (window.webkitURL) {
+            return window.webkitURL.createObjectURL(file);
+        } else {
+            return null
+        }
+    }
+    files.addEventListener('change', function (e) {
+        // 使用对象URL 显示图片
+        const imgs = Object.values(e.target.files); // 注意 : value才是 File对象
+        imgs.forEach(img => {
+            console.log('img',img);
+            const imgELE = document.createElement('img');
+            var url = creatObjectURL(img);// 创建URL对象
+            imgELE.src = url;
+            console.log('url', url);
+            imgELE.onload = function () {
+                // 当图片加载完毕时 撤销对URL对象的引用
+                window.URL.revokeObjectURL(this.src)
+            }
+            document.querySelector('body').appendChild(imgELE);
+        })
+    })
+
+</script>
+
+</html>

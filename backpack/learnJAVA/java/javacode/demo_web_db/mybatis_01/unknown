@@ -1,0 +1,100 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit" />
+  <title>淘宝网 - 淘！我喜欢</title>
+  <meta name="spm-id" content="1" />
+  <meta name="def-grey" content="grey=false,version=1668145" />
+  <meta name="description"
+    content="淘宝网 - 亚洲较大的网上交易平台，提供各类服饰、美容、家居、数码、话费/点卡充值… 数亿优质商品，同时提供担保交易(先收货后付款)等安全交易保障服务，并由商家提供退货承诺、破损补寄等消费者保障服务，让你安心享受网上购物乐趣！" />
+  <meta name="keyword"
+    content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺" />
+  <link rel="stylesheet" href="//g.alicdn.com/??kg/global-util/1.0.6/index-min.css,kg/tb-nav/2.4.1/index-min.css">
+  <link rel="stylesheet" type="text/css" href="//g.alicdn.com/tb/err/0.7.0/err/40x/index-min.css" />
+  <script
+    src="//g.alicdn.com/??kissy/k/1.4.16/seed-min.js,kg/kmd-adapter/0.1.5/index.js,kg/kmd-adapter/0.1.5/util.js,kg/global-util/1.0.7/index-min.js,/tb/tracker/index.js"></script>
+    <script src="https://o.alicdn.com/tbhome/tbnav/index.js"></script>
+</head>
+
+<body data-spm="7156474"><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&udpid=&&yunid=&&trid=7189361616519363116795515e&asid=AQAAAAA3jHZiEiYREQAAAABXtVFLlnUhHA==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+  <!--[if lt IE 8]>
+    <style>html,body{overflow:hidden;height:100%}</style>
+    <div class="tb-ie-updater-layer"></div>
+    <div class="tb-ie-updater-box" data-spm="20161112">
+      <a href="https://www.google.cn/intl/zh-CN/chrome/browser/desktop/" class="tb-ie-updater-google" target="_blank" data-spm-click="gostr=/tbieupdate;locaid=d1;name=google">谷歌 Chrome</a>
+      <a href="http://www.uc.cn/ucbrowser/download/" class="tb-ie-updater-uc" target="_blank" data-spm-click="gostr=/tbieupdate20161112;locaid=d2;name=uc">UC 浏览器</a>"
+    </div>
+    <![endif]-->
+  <div id="content">
+    <div id="J_Header" class="header clearfix">
+      <h1 id="logo" class="logo">
+        <a href="//www.taobao.com/" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">淘宝网<span></span></a>
+      </h1>
+    </div>
+    <div id="main">
+      <div id="banner" data-spm="1997480849">
+        <a id="J_Banner" href="//www.taobao.com"><img
+            src="//gtms04.alicdn.com/tps/i4/T1Sa1dFuJaXXaESgf7-520-500.png" /></a>
+      </div>
+      <div id="err" data-spm="1997480901">
+        <div class="tips">
+          <p>抱歉！页面无法访问……</p>
+        </div>
+        <div class="reason">
+          <p>可能因为：</p>
+          <ul class="reason-list">
+            <li>网址有错误<span><i class="gt">&gt;</i>请检查地址是否完整或存在多余字符</span></li>
+            <li>网址已失效<span><i class="gt">&gt;</i>可能页面已删除，活动已下线等</span></li>
+          </ul>
+        </div>
+        <div class="methods" style="display: none;">
+          <p><a href="//wenda.taobao.com/">了解更多原因<i class="gt">&gt;&gt;</i></a></p>
+          <div class="search">
+            <form class="search-form s-focus" action="//wenda.taobao.com/search.htm" method="get">
+              <input type="hidden" name="from_page_type" value="1">
+              <input type="hidden" name="cat" value="null">
+              <input id="J_SearchReason" placeholder="直接描述问题" accesskey="s" autofocus="true" x-webkit-speech=""
+                x-webkit-grammar="builtin:translate" type="search" autocomplete="off" name="q" value=""
+                hidefocus="true" />
+              <button type="submit" class="search-btn">寻找答案</button>
+            </form>
+          </div>
+        </div>
+        <div class="links">
+          <p>或者逛逛：<a href="//www.taobao.com/">淘宝首页</a><span>|</span><a
+              href="//i.taobao.com/my_taobao.htm">我的淘宝</a><span>|</span><a 
+              href="//s.taobao.com">搜宝贝/店铺&nbsp;<i
+                class="iconfont icon-search"></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+
+  <script> KISSY.use('kg/global-util/1.0.7/');</script>
+  <script>
+    KISSY.config({
+      packages: {
+        err: {
+          base: '//g.alicdn.com/tb/err/0.7.0/'
+        }
+      }
+    });
+    KISSY.use('err/40x/index', function (S, Index) {
+      Index.init();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wistron.avatar.checkdata.mapper.elasticsearch7.ICheckEs7DataMapper">
+
+    <select id="findMaxTimeByParam"  parameterType="map" resultType="com.wistron.avatar.common.entity.elasticsearch7.CommonEntity">
+        {"from":0,"size":"1"
+        <if test="sqlWhere.size() >= 1">
+        ,"query":{"bool":{"should":[
+            <foreach collection="sqlWhere.entrySet()"  index="key" item="val" separator=",">
+            {"match_phrase":{"${key}": {"query":"${val}","slop":0,"zero_terms_query":"NONE","boost":1.0}}}
+            </foreach>
+        ]}},"sort":[{"${checking_process_time}":{"order":"desc"}}]
+        </if>
+        }
+    </select>
+</mapper>

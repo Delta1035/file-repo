@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wistron.avatar.lineworkcentermap.mapper.oraclekpi.IInsertDataToOracleKpi">
+    <select id="selectAll" resultType="com.wistron.avatar.common.entity.oracle.OracleEffective">
+        select * from SFC_LINESTAGE_TEMP_ZCY
+    </select>
+    <insert id="insertDataToOracleKpi" parameterType="com.wistron.avatar.common.entity.oraclev360kpi.LineStage">
+        insert into SFC_LINESTAGE_TEMP_ZCY (TIMESTAMP,PLANT,GROUPNAME,LINE,WORKCENTER,OPERATIONSEQ,STAGE,PRIORITY,UPDT,OFFSET)
+        values (#{TIMESTAMP},#{PLANT},#{GROUPNAME},#{LINE},#{WORKCENTER},#{OPERATIONSEQ},#{STAGE},#{PRIORITY},#{UPDT},#{OFFSET})
+    </insert>
+</mapper>

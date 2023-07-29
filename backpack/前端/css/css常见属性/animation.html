@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            /* animation: name duration timing-function delay iteration-count(迭代次数) direction fill-mode; */
+            /* animation: changeColor 1s infinite; */
+            animation: move 1s infinite alternate;
+        }
+        @keyframes changeColor {
+            from{
+                background-color: orange;
+            }
+            to{
+                background-color: red;
+            }
+        }
+
+        @keyframes move {
+            from{
+                transform: translateY(0px);
+                background-color: orange;
+
+            }
+            to{
+                transform: translateY(100px);
+                background-color: red;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

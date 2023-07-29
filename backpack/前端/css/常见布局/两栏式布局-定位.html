@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html,
+        main {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+        aside{
+            width: 300px;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: gray;
+        }
+        /* margin-left */
+        /* article{
+            background-color: aquamarine;
+            margin-left: 300px;
+            height: 100%;
+        } */
+        /* absolute */
+        /* article{
+            background-color: aquamarine;
+            height: 100%;
+            position: absolute;
+            left: 300px;
+            top: 0px;
+            width: calc(100% - 300px);
+        } */
+        /* absolute 不指定宽度 */
+        article{
+            background-color: aquamarine;
+            height: 100%;
+            position: absolute;
+            left: 300px;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <aside></aside>
+        <article></article>
+    </main>
+</body>
+
+</html>

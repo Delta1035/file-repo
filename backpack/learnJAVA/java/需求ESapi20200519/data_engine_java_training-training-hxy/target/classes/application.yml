@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: data_engine_java_training
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    oraclev360:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.115:1523:AVADBD1
+      username: AVATAR
+      password: wisavt!
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatarengine
+      username: ENC(QCo1siLH/K7OCJg7jcKMMw==)
+      password: ENC(omWllI30KXfTAZ1gseZKsg==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.81:1523:SCCRQAS
+      username: ENC(EcPcjCEzk/PtnY9IEKB66Q==)
+      password: ENC(DMX8k47s2vqMJc0f6vteu/DrHlbJkS0z)
+      driver-class-name: oracle.jdbc.OracleDriver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: false
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+  elasticsearch7:
+    address:
+      - avaesapq11.wistron.com:9200
+      - avaesapq12.wistron.com:9200
+      - avaesapq13.wistron.com:9200
+    account: ENC(eX9FPBwFHctltFbXRKvOdA==)
+    password: ENC(9Yz3vQsf3cZdAfJazQ110xPF66dNNbMX)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(4HtczlYU+vhowKwldIeClQQ5lzZIg6pY)
+      path: D:\Work\env_avatar
+      file: wistron-root-base64.jks

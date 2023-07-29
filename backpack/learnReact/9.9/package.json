@@ -1,0 +1,113 @@
+{
+  "name": "wipcbtest",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/pro-components": "^1.1.14",
+    "@azure/msal-browser": "^2.28.2",
+    "@azure/msal-react": "^1.4.6",
+    "@azure/storage-blob": "^12.11.0",
+    "@babel/plugin-proposal-decorators": "^7.18.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^4.21.7",
+    "axios": "^0.27.2",
+    "axios-mock-adapter": "^1.21.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.4.2",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-es2015": "^6.24.1",
+    "customize-cra": "^1.0.0",
+    "dotenv-cli": "^6.0.0",
+    "file-saver": "^2.0.5",
+    "i18next": "^21.9.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.3",
+    "jest-css-modules-transform": "^2.5.0",
+    "jest-environment-jsdom": "^28.1.3",
+    "jest-transform-file": "^1.1.1",
+    "loader-utils": "^2.0.4",
+    "mobx": "^5.15.7",
+    "mobx-react": "^5.4.4",
+    "msw": "^0.47.3",
+    "react": "^17.0.2",
+    "react-app-rewired": "^2.2.1",
+    "react-canvas-nest": "^1.1.1",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-i18next": "^11.18.4",
+    "react-intl": "^6.0.5",
+    "react-quill": "^2.0.0",
+    "react-redux": "^8.0.2",
+    "react-router-cache-route": "^1.12.11",
+    "react-router-dom": "5",
+    "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
+    "redux": "^4.2.0",
+    "styled-components": "^5.3.3",
+    "vitest": "^0.23.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start:zyl": "dotenv -e .env.zyl react-app-rewired start",
+    "start:hxw": "dotenv -e .env.hxw react-app-rewired start",
+    "start:wh": "dotenv -e .env.wuhan react-app-rewired start",
+    "start:dev": "dotenv -e .env.development react-app-rewired start",
+    "start:qas": "dotenv -e .env.production react-app-rewired start",
+    "start:prd": "dotenv -e .env.prd react-app-rewired start",
+    "build:dev": "dotenv -e .env.development react-app-rewired build",
+    "build:qas": "react-app-rewired build",
+    "build:prd": "dotenv -e .env.prd react-app-rewired build",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0"
+  },
+  "overrides": {
+    "react-dev-utils": {
+      "loader-utils": "3.2.1"
+    },
+    "nth-check": "2.0.1",
+    "jake": "npm:noop-package@1.0.0",
+    "css-what": "6.1.0",
+    "react-scripts": {
+      "loader-utils": "2.0.4",
+      "css-select": {
+        "css-what": "6.1.0",
+        "react-dev-utils": {
+          "recursive-readdir": {
+            "minimatch": "3.0.5"
+          }
+        }
+      }
+    }
+  }
+}

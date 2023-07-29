@@ -1,0 +1,182 @@
+{
+  "connector": "rest",
+  "debug": true,
+  "operations": [
+    {
+      "template": {
+        "method": "POST",
+        "url": "http:/localhost:8080/auth/realms/k8sprdwihi40/protocol/openid-connect/token",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true,
+        "form": {
+          "grant_type": "password",
+          "client_id": "iwms-dashboard",
+          "client_secret": "iwms-dashboard",
+          "username": "{username:string}",
+          "password": "{password:string}"
+        }
+      },
+      "functions": {
+        "login": [
+          "username",
+          "password"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http:/localhost:8080/auth/realms/k8sprdwihi40/protocol/openid-connect/userinfo",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true
+      },
+      "functions": {
+        "getUserInfo": [
+          "token"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http:/localhost:8080/auth/admin/realms/k8sprdwihi40/users?username={userId:string}",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true
+      },
+      "functions": {
+        "getUserInfoById": [
+          "token",
+          "userId"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http:/localhost:8080/auth/admin/realms/k8sprdwihi40/clients?clientId=iwms-dashboard",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true
+      },
+      "functions": {
+        "getClientId": [
+          "token"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http:/localhost:8080/auth/admin/realms/k8sprdwihi40/users/{userId:string}/role-mappings/clients/{clientId:string}",
+        "headers": {
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true
+      },
+      "functions": {
+        "getUserRoles": [
+          "token",
+          "userId",
+          "clientId"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "http:/localhost:8080/auth/admin/realms/k8sprdwihi40/clients/{clientId:string}/roles/{role:string}",
+        "headers": {
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true
+      },
+      "functions": {
+        "getRole": [
+          "token",
+          "clientId",
+          "role"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "POST",
+        "url": "http:/localhost:8080/auth/admin/realms/k8sprdwihi40/users/{userId:string}/role-mappings/clients/{clientId:string}",
+        "headers": {
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "body": [
+          {
+            "id": "{roleId:string}",
+            "name": "{role:string}",
+            "composite": false,
+            "clientRole": true
+          }
+        ],
+        "json": true
+      },
+      "functions": {
+        "addUserRole": [
+          "token",
+          "userId",
+          "clientId",
+          "role",
+          "roleId"
+        ]
+      }
+    },
+    {
+      "template": {
+        "method": "DELETE",
+        "url": "http:/localhost:8080/auth/admin/realms/k8sprdwihi40/users/{userId:string}/role-mappings/clients/{clientId:string}",
+        "headers": {
+          "Authorization": "Bearer {token:string}"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "body": "{role:array}",
+        "json": true
+      },
+      "functions": {
+        "removeUserRole": [
+          "token",
+          "userId",
+          "clientId",
+          "role"
+        ]
+      }
+    }
+  ]
+}

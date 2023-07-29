@@ -1,0 +1,258 @@
+<div class="page_main scroll_bar maintain_main">
+  <div class="header">
+    <div class="title">{{ "home.basicDataTssCal" | translate }}</div>
+    <div class="opera_area">
+      <button
+        *ngIf="pagePermission.allowedCreate"
+        nz-button
+        nzType="primary"
+        (click)="addBasic()"
+      >
+        {{ "button.add" | translate }}
+      </button>
+    </div>
+  </div>
+  <div class="body" *ngIf="pagePermission.allowedRead">
+    <div class="opera_bar">
+      <div class="search_area">
+        <div class="search_item">
+          <nz-form-label>
+            {{ "tableHead.year" | translate }}
+          </nz-form-label>
+          <nz-select
+            name="month"
+            nzShowSearch
+            [nzAllowClear]="false"
+            [nzPlaceHolder]="
+              'basicDataTssCal.placeholder.selectCountry' | translate
+            "
+            [(ngModel)]="searchSelectedYear"
+            (nzOpenChange)="selectOpen($event)"
+          >
+            <nz-option nzValue="" nzLabel="All"></nz-option>
+            <nz-option
+              *ngFor="let country of years; trackBy: trackFn"
+              [nzLabel]="country.year"
+              [nzValue]="country.year"
+            ></nz-option>
+          </nz-select>
+        </div>
+        <div class="search_item">
+          <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px">
+            <input
+              type="text"
+              nz-input
+              [placeholder]="utils.searchPlacehoder('tableHead.country')"
+              [(ngModel)]="searchKeyWord"
+              (keyup.enter)="dataSearch()"
+            />
+          </nz-input-group>
+          <ng-template #searchInputIcon
+            ><i nz-icon nzType="search"></i
+          ></ng-template>
+        </div>
+        <div class="search_item">
+          <button nz-button nzType="primary" (click)="dataSearch()">
+            {{ "button.query" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- CAL維護 -->
+    <div class="data_table" #dataTable>
+      <nz-table
+        #basicTable
+        [nzData]="TssCalData"
+        [nzBordered]="true"
+        nzShowPagination
+        [(nzPageIndex)]="tableInfo.pageIndex"
+        [(nzPageSize)]="tableInfo.pageSize"
+        [nzTotal]="tableInfo.pageTotal"
+        [nzFrontPagination]="false"
+        [nzLoading]="tableInfo.loading"
+        [nzHideOnSinglePage]="true"
+        (nzPageIndexChange)="tablePageIndexChange()"
+      >
+        <thead>
+          <tr>
+            <th nzAlign="center">{{ "tableHead.index" | translate }}</th>
+            <th
+              nzAlign="center"
+              *ngFor="let column of tableColumns; trackBy: trackFn"
+            >
+              {{ column | translate }}
+            </th>
+            <th nzAlign="center" *ngIf="pagePermission.allowedUpdate">
+              {{ "tableHead.operation" | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let data of basicTable.data;
+              let i = index;
+              trackBy: trackFn
+            "
+          >
+            <!-- 顯示模式 -->
+            <ng-container *ngIf="!editCache[data.id].edit; else editTemplate">
+              <td nzAlign="center">
+                {{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}
+              </td>
+              <td nzAlign="center">{{ data.country }}</td>
+              <td nzAlign="center">{{ data.date | date: "yyyy" }}</td>
+              <td nzAlign="center">{{ data.date | date: "MMM" }}</td>
+              <td nzAlign="center">{{ data.day }}</td>
+              <td nzAlign="center" *ngIf="pagePermission.allowedUpdate">
+                <i
+                  (click)="editBasic(data.id)"
+                  nz-icon
+                  nzType="edit"
+                  nzTheme="outline"
+                ></i>
+              </td>
+            </ng-container>
+
+            <!-- 編輯模式 -->
+            <ng-template #editTemplate>
+              <td nzAlign="center">
+                {{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}
+              </td>
+              <td nzAlign="center">{{ data.country }}</td>
+              <td nzAlign="center">{{ data.date | date: "yyyy" }}</td>
+              <td nzAlign="center">{{ data.date | date: "MMM" }}</td>
+              <td nzAlign="center">
+                <nz-input-number
+                  [(ngModel)]="editCache[data.id].data.day"
+                  [nzMin]="0"
+                  [nzMax]="utils.maxDay(editCache[data.id].data.date)"
+                  [nzStep]="1"
+                ></nz-input-number>
+              </td>
+              <td nzAlign="center" *ngIf="true">
+                <i
+                  (click)="saveBasic(data.id)"
+                  nz-icon
+                  nzType="save"
+                  nzTheme="outline"
+                ></i>
+                <i
+                  (click)="cancleSaveBasic(data.id)"
+                  nz-icon
+                  nzType="close"
+                  nzTheme="outline"
+                ></i>
+              </td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzWidth]="800"
+  [nzTitle]="'basicDataTssCal.newInfo' | translate"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  nzCentered
+>
+  <div *nzModalContent>
+    <div class="model_main scroll_bar">
+      <div class="modal_item form">
+        <div class="item_content">
+          <form nz-form [nzLayout]="'inline'">
+            <!-- 國家/地區選擇 -->
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="country">
+                {{ "basicDataTssCal.tableHead.country" | translate }}
+              </nz-form-label>
+              <nz-select
+                name="country"
+                nzShowSearch
+                [nzAllowClear]="false"
+                [nzPlaceHolder]="
+                  'basicDataTssCal.placeholder.selectCountry' | translate
+                "
+                [(ngModel)]="selectedCountry"
+              >
+                <nz-option
+                  *ngFor="let country of countrys; trackBy: trackFn"
+                  [nzLabel]="country.name"
+                  [nzValue]="country.name"
+                ></nz-option>
+              </nz-select>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-label nzRequired nzFor="year">
+                {{ "basicDataTssCal.tableHead.year" | translate }}
+              </nz-form-label>
+              <nz-date-picker
+                name="month"
+                nzMode="year"
+                [nzAllowClear]="false"
+                [(ngModel)]="selectedYear"
+                (ngModelChange)="modelChange($event)"
+              ></nz-date-picker>
+            </nz-form-item>
+          </form>
+        </div>
+      </div>
+
+      <!-- 新增TSS-CAL表格 -->
+      <div class="modal_item table">
+        <div class="item_content">
+          <nz-table
+            #tssCalAddTable
+            [nzData]="addInfoTable"
+            [nzBordered]="true"
+            [nzShowPagination]="false"
+            [nzFrontPagination]="false"
+          >
+            <thead>
+              <tr>
+                <th nzWidth="60px" nzAlign="center">
+                  {{ "basicDataTssCal.tableHead.month" | translate }}
+                </th>
+                <th nzAlign="center" [nzWidth]="'145px'">
+                  {{ "basicDataTssCal.tableHead.day" | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let add of tssCalAddTable.data; let i = index">
+                <td nzAlign="center">
+                  {{ add.date | date: "MMM" }}
+                </td>
+                <td nzAlign="center">
+                  <nz-input-number
+                    [(ngModel)]="add.day"
+                    [nzMin]="0"
+                    [nzMax]="utils.maxDay(add.date)"
+                    [nzStep]="1"
+                  ></nz-input-number>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">
+      {{ "button.cancel" | translate }}
+    </button>
+    <button
+      nz-button
+      nzType="primary"
+      (click)="handleOk()"
+      [nzLoading]="calSuccessLoading"
+    >
+      {{ "button.confirm" | translate }}
+    </button>
+  </div>
+</nz-modal>

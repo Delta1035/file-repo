@@ -1,0 +1,395 @@
+spring:
+  application:
+    name: engine_data_monitor
+    debugmode: false
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.81:1523:SCCRQAS
+      username: ENC(mVWaTLJSQtofBISCGVj26A==)
+      password: ENC(iJJHWKU5QZMPl5z9d1GC1GgPqgaNG14s)
+      driver-class-name: oracle.jdbc.OracleDriver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresv360:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatar
+      username: ENC(jBmre/LFZZJip5tfI52xxufzydzR4e1E)
+      password: ENC(OJw34hqqT8YRDwUllz8heFfY5T8md8OA)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatarengine
+      username: ENC(QCo1siLH/K7OCJg7jcKMMw==)
+      password: ENC(omWllI30KXfTAZ1gseZKsg==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresb360:
+      jdbc-url: jdbc:postgresql://10.37.35.95:5434/b360
+      username: ENC(xQ/ALvJo0kOrUyedxfd7THzAPUtwrbSW)
+      password: ENC(6se0bx2se/uxfSaCDFeZ39A+BpVUDNIz)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresstaging:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatar
+      username: ENC(z7XTjfaf6IlnBvixstDkR2l6azpR1OLl)
+      password: ENC(ZCLouqbqHMILeWpB94mNATwAZlR+N1rG)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+  elasticsearch7:
+    address:
+      - avaespocv01.wistron.com:9200
+      - avaespocv02.wistron.com:9200
+      - avaespocv03.wistron.com:9200
+      - avaespocv04.wistron.com:9200
+    account: ENC(ViCJ+zbkEhNyazRCsq66lA==)
+    password: ENC(tSvdGogHlP8pjTluLIACel5O3GnRz7SD)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(jcKNMAai0SwF9ItiS+Y2Jlnwans3V30V)
+      path: /app
+      file: wistron-root.jks
+  logstash:
+    #address: 10.37.36.3:5001 #B360
+    #address: 10.37.36.3:5004 #KPI
+    address: 10.37.36.3:5005 #Data Engine
+  mail:
+    host: whqsmtp.wistron.com
+    port: 25
+    protocol: smtp
+    test-connection: false
+  ap_host:
+    host: k8s-dev.k8s.wistron.com
+
+---
+spring:
+  profiles: qas
+  datasource:
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.81:1523:SCCRQAS
+      username: ENC(EcPcjCEzk/PtnY9IEKB66Q==)
+      password: ENC(DMX8k47s2vqMJc0f6vteu/DrHlbJkS0z)
+      driver-class-name: oracle.jdbc.OracleDriver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresv360:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatar
+      username: ENC(eGGhJ7BebeaSxiiN7kKp7fkl/xyYgZP+)
+      password: ENC(tBfkcqScPh+AY7dN1DQamFHrID35a8vE)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatarengine
+      username: ENC(fdaVFi9+M7JMwtlZRQkesQ==)
+      password: ENC(3zGitafCJmUmgf5Cx44M2A==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresb360:
+      jdbc-url: jdbc:postgresql://10.37.35.188:5434/b360
+      username: ENC(7gSxSwZyoDC+Gr5QE0iNRpzHVlCU2Zuu)
+      password: ENC(/9Ne6ILVfWoRm3qhmf1GFql4sv27O1uC)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresstaging:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatar
+      username: ENC(uwQBDgJVxI+Nbsc9pZMsgwFpHgaWiHi0)
+      password: ENC(dbJVvQ5FgzUsVZ52jFDueZOwht/0n3PX)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+  elasticsearch7:
+    address:
+      - avaesapq11.wistron.com:9200
+      - avaesapq12.wistron.com:9200
+      - avaesapq13.wistron.com:9200
+    account: ENC(eX9FPBwFHctltFbXRKvOdA==)
+    password: ENC(9Yz3vQsf3cZdAfJazQ110xPF66dNNbMX)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(4HtczlYU+vhowKwldIeClQQ5lzZIg6pY)
+      path: /app
+      file: wistron-root.jks
+  logstash:
+    #address: 10.37.35.46:5001 #B360
+    #address: 10.37.35.46:5004 #KPI
+    address: 10.37.35.46:5005 #Data Engine
+  mail:
+    host: whqsmtp.wistron.com
+    port: 25
+    protocol: smtp
+    test-connection: false
+  ap_host:
+    host: k8sqas-whq.wistron.com
+
+---
+spring:
+  profiles: sandbox
+  datasource:
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.81:1523:SCCRQAS
+      username: ENC(EcPcjCEzk/PtnY9IEKB66Q==)
+      password: ENC(DMX8k47s2vqMJc0f6vteu/DrHlbJkS0z)
+      driver-class-name: oracle.jdbc.OracleDriver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresv360:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatar
+      username: ENC(eGGhJ7BebeaSxiiN7kKp7fkl/xyYgZP+)
+      password: ENC(tBfkcqScPh+AY7dN1DQamFHrID35a8vE)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatarengine
+      username: ENC(fdaVFi9+M7JMwtlZRQkesQ==)
+      password: ENC(3zGitafCJmUmgf5Cx44M2A==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresb360:
+      jdbc-url: jdbc:postgresql://10.37.35.188:5434/b360
+      username: ENC(7gSxSwZyoDC+Gr5QE0iNRpzHVlCU2Zuu)
+      password: ENC(/9Ne6ILVfWoRm3qhmf1GFql4sv27O1uC)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresstaging:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatar
+      username: ENC(uwQBDgJVxI+Nbsc9pZMsgwFpHgaWiHi0)
+      password: ENC(dbJVvQ5FgzUsVZ52jFDueZOwht/0n3PX)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+  elasticsearch7:
+    address:
+      - avaesapp11.wistron.com:9200
+      - avaesapp12.wistron.com:9200
+      - avaesapp13.wistron.com:9200
+      - avaesapp14.wistron.com:9200
+      - avaesapp15.wistron.com:9200
+      - avaesapp16.wistron.com:9200
+      - avaesapp17.wistron.com:9200
+      - avaesapp18.wistron.com:9200
+      - avaesapp19.wistron.com:9200
+    account: ENC(eX9FPBwFHctltFbXRKvOdA==)
+    password: ENC(9Yz3vQsf3cZdAfJazQ110xPF66dNNbMX)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(4HtczlYU+vhowKwldIeClQQ5lzZIg6pY)
+      path: /app
+      file: wistron-root.jks
+  logstash:
+    #address: 10.37.35.46:5001 #B360
+    #address: 10.37.35.46:5004 #KPI
+    address: 10.37.35.46:5005 #Data Engine
+  mail:
+    host: whqsmtp.wistron.com
+    port: 25
+    protocol: smtp
+    test-connection: false
+  ap_host:
+    host: k8sqas-whq.wistron.com
+
+---
+spring:
+  profiles: prd
+  datasource:
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.37.144:1523:WZSSCCR
+      username: ENC(qKYO+HftfemvqPI6QNcp7A==)
+      password: ENC(ir4cppyK+a6lRUeGVzZ6mB5vAtpoBeHO)
+      driver-class-name: oracle.jdbc.OracleDriver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresv360:
+      jdbc-url: jdbc:postgresql://10.37.37.63:5435/avatar
+      username: ENC(Pc4z/7vqTynHT5ADME+aeX3GPQSzT9Iy)
+      password: ENC(CvXdu7GE4lFE26wLD+2/XbTMkiE7MLFl)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.37.63:5435/avatarengine
+      username: ENC(CIJmehM1TvPPQz3XMvEd+w==)
+      password: ENC(sgplH/2EiYT8UGb64vfjxg==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresb360:
+      jdbc-url: jdbc:postgresql://10.37.32.67:5434/b360
+      username: ENC(RK8yZgvXUSaCzqdrcWSwaM8au5C7FitZ)
+      password: ENC(3cDKes97GSZ/L8Iv+f7qRLfX3SQsekPa)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    postgresstaging:
+      jdbc-url: jdbc:postgresql://10.37.37.113:5435/consumer
+      username: ENC(eJnpY8Zc3KtnLONBDd1WTE7tD1eng3qg)
+      password: ENC(bilDOsw9/dneNiAYvBCIernZtJf3n48B)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+  elasticsearch7:
+    address:
+      - avaesapp11.wistron.com:9200
+      - avaesapp12.wistron.com:9200
+      - avaesapp13.wistron.com:9200
+      - avaesapp14.wistron.com:9200
+      - avaesapp15.wistron.com:9200
+      - avaesapp16.wistron.com:9200
+      - avaesapp17.wistron.com:9200
+      - avaesapp18.wistron.com:9200
+      - avaesapp19.wistron.com:9200
+    account: ENC(sm1b6mBpCKrDJMqr+iwU1Q==)
+    password: ENC(U37dEgRojkJnXRlgABHoW4Ex2tQ/ej/w)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(OnAR7grwAya7jQsRteUp89UEksvFkl4G)
+      path: /app
+      file: wistron-root.jks
+  logstash:
+    #address: 10.37.37.109:5001 #B360
+    #address: 10.37.37.109:5004 #KPI
+    address: 10.37.37.109:5005 #Data Engine
+  mail:
+    host: whqsmtp.wistron.com
+    port: 25
+    protocol: smtp
+    test-connection: false
+  ap_host:
+    host: k8sprd-whq.wistron.com

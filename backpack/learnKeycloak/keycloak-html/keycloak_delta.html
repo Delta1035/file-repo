@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keycloak</title>
+  </head>
+  <body>
+ 
+    <button class="query">query</button>
+    <br>
+    <button class="logout">log out</button>
+  </body>
+  <script src="./keycloak.min.js"></script>
+  <script>
+    let initOptions = {
+      // authUrl: "http://127.0.0.1:8450/auth",
+      // realm: "myrealm",
+      clientId: "blog",
+      realm: "delta",
+      url:"https://124.221.95.189:8443/auth",
+      secret:"PK6tQ35Bur6MrkuLIYPqY23n8uEeeDNR"
+    };
+    let keycloak = Keycloak(initOptions);
+    keycloak
+      .init({ onLoad: "login-required" })
+      .then((auth) => {
+        if (!auth) {
+          window.location.reload();
+        } else {
+          console.log("Authenticated :>> 已认证",auth);
+        }
+        setInterval(() => {
+          console.log(Date.now());
+          keycloak
+            .updateToken(75)
+            .then((refreshed) => {
+              if (refreshed) {
+                console.log("token refreshed", refreshed);
+              } else {
+                // 表示access token的有效时间,默认是300s
+                //
+                console.log(
+                  "Token not refreshed, valid for " +
+                    Math.round(
+                      keycloak.tokenParsed.exp +
+                        keycloak.timeSkew -
+                        new Date().getTime() / 1000
+                    ) +
+                    " seconds"
+                );
+              }
+            })
+            .catch(() => {
+              console.log("failed to refresh token");
+            });
+        },5000);
+      })
+      .catch((error) => {
+        console.log("Authenticated Failed", error);
+      });
+
+
+      console.log('keycloak :>> ',keycloak);
+    const btn = document.querySelector(".query");
+    const logoutBtn = document.querySelector('.logout')
+    btn.addEventListener("click", () => {
+      console.log("click");
+      fetch("http://127.0.0.1:8081/test", { method: "post" });
+    });
+    logoutBtn.addEventListener('click',()=>{
+      console.log('log out');
+      keycloak.logout()
+    })
+  </script>
+</html>

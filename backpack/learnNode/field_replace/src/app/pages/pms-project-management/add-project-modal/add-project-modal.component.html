@@ -1,0 +1,263 @@
+<form nz-form [formGroup]="projectForm">
+  <nz-collapse>
+    <!-- 专案 ----------------------------------------------------------------------------------------->
+    <nz-collapse-panel nzHeader="{{ 'PMS.Project' | translate }}" [nzActive]="true">
+      <!-- 专案名称 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>{{'PMS.ProjectName' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="ProjectNameErrorTpl">
+          <input nz-input formControlName="projectName" [placeholder]="'PMS.ProjectName' | translate" />
+          <ng-template #ProjectNameErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">{{'common.messages.REQUIREDCOLUMN' | translate}}</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">{{'common.messages.beyondMaxLength' | translate}}</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 专案代码 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>{{'PMS.ProjectCode' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="ProjectCodeErrorTpl">
+          <input nz-input formControlName="projectCode" [placeholder]="'PMS.ProjectCode' | translate" />
+          <ng-template #ProjectCodeErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">{{'common.messages.REQUIREDCOLUMN' | translate}}</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">{{'common.messages.beyondMaxLength' | translate}}</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- <app-custom-input [required]="true" [label]="'PMS.ProjectCode' | translate" formControlName="projectCode"
+        [placeholder]="'PMS.ProjectCode' | translate"></app-custom-input> -->
+      <!-- 处级 -->
+      <app-custom-select [required]="true" [label]="'PMS.Division' | translate" formControlName="division"
+        [placeholder]="'PMS.Division' | translate" [options]="DEVISION_LIST"></app-custom-select>
+      <!-- 处级主管 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>{{'PMS.DivisionSupervisor' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="ProjectCodeErrorTpl">
+          <input nz-input formControlName="divisionSupervisor" [placeholder]="'PMS.DivisionSupervisor' | translate" />
+          <ng-template #ProjectCodeErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">{{'common.messages.REQUIREDCOLUMN' | translate}}</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">{{'common.messages.beyondMaxLength' | translate}}</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 处级主管电子信箱 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>{{'PMS.DivisionSupervisorEmail' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback [nzErrorTip]="DivisionSupervisorEmailErrorTpl">
+          <input nz-input formControlName="divisionSupervisorEmail"
+            [placeholder]="'PMS.DivisionSupervisorEmail' | translate" type="email" />
+          <ng-template #DivisionSupervisorEmailErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('email')">The input is not valid E-mail!</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Please input your E-mail!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- <app-custom-input [nzHasFeedback]="true" [control]="projectForm.get('divisionSupervisorEmail')" [required]="true"
+        [label]="'PMS.DivisionSupervisorEmail' | translate" formControlName="divisionSupervisorEmail"
+        [placeholder]="'PMS.DivisionSupervisorEmail' | translate">
+      </app-custom-input> -->
+      <!-- 专案模式 -->
+      <app-custom-select [required]="true" [label]="'PMS.ProjectMode' | translate" formControlName="projectMode"
+        [placeholder]="'PMS.ProjectMode' | translate" [options]="PROJECT_MODE_LIST"></app-custom-select>
+      <!-- 产品/模型 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.ProductType' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <label nz-checkbox formControlName="productTypeProduct">{{'PMS.ProductType.Product' |
+            translate}}</label>
+          <label nz-checkbox formControlName="productTypeModel">{{'PMS.ProductType.Model' |
+            translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 计划开始日期/结束日期 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.PlanStart' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-date-picker [nzPlaceHolder]="'PMS.PlanStart' | translate" formControlName="planStart"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.PlanEnd' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-date-picker [nzPlaceHolder]="'PMS.PlanEnd' | translate" formControlName="planEnd"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- jira key -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>{{'PMS.JiraKey' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="JiraKeyErrorTpl">
+          <input nz-input formControlName="jiraKey"  pattern="([A-Z]{1})+([A-Z0-9]+)" [placeholder]="'PMS.JiraKey' | translate" />
+          <ng-template #JiraKeyErrorTpl let-control>
+
+            <ng-container *ngIf="control.hasError('required')">{{'common.messages.REQUIREDCOLUMN' | translate}}</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">{{'common.messages.beyondMaxLength' | translate}}</ng-container>
+            <ng-container *ngIf="control.hasError('pattern')">{{'PMS.validateMsg.JiraKeyValidateFailed' | translate}}</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- jira 专案名称 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired>{{'PMS.JiraName' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="JiraNameErrorTpl">
+          <input nz-input formControlName="jiraName" [placeholder]="'PMS.JiraName' | translate" />
+          <ng-template #JiraNameErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">{{'common.messages.REQUIREDCOLUMN' | translate}}</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">{{'common.messages.beyondMaxLength' | translate}}</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- MVP日期 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.MVPDate' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-date-picker [nzPlaceHolder]="'PMS.MVPDate' | translate" formControlName="mvpDate"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- ----------------------------------------------------------------------------------- -->
+      <!-- 用户PM/PO -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.UserContact' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input placeholder="{{'PMS.UserName'|translate}} / {{'PMS.EmployeeId'|translate}}" nz-input
+            formControlName="userName" [nzAutocomplete]="auto" />
+        </nz-form-control>
+        <span class="loading-wrapper" *ngIf="isSearchUserInfo">
+          <ng-template #indicatorTemplate><i nz-icon nzType="loading"></i></ng-template>
+          <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
+        </span>
+      </nz-form-item>
+      <nz-autocomplete #auto [compareWith]="compareFun">
+        <nz-auto-option *ngFor="let option of contactUserSearchList$ | async" [nzValue]="option"
+          [nzLabel]="option.user_name" (click)="addContactUser(option)">
+          {{ option.user_name }}
+        </nz-auto-option>
+      </nz-autocomplete>
+      
+      <nz-form-item>
+      <!-- 用户数据 -->
+        <nz-form-label [nzSpan]="6" [nzRequired]="false" [nzNoColon]="true"></nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-card style="width:300px;box-shadow: 8px 8px 8px #999;">
+            <input placeholder="{{'PMS.UserContact'|translate}}" nz-input formControlName="userContactUserName"
+              [nzAutocomplete]="auto" />
+            <nz-divider [nzDashed]="true"></nz-divider>
+            <input placeholder="{{'PMS.UserContactEmail'|translate}}" nz-input formControlName="userContactEmail"
+              [nzAutocomplete]="auto" />
+          </nz-card>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- ----------------------------------------------------------------------------------- -->
+      <!-- IT PM/Tech Leader -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.ITContact' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input placeholder="{{'PMS.UserName'|translate}} / {{'PMS.EmployeeId'|translate}}" nz-input
+            formControlName="itUserName" [nzAutocomplete]="autoIT" />
+        </nz-form-control>
+        <span class="loading-wrapper" *ngIf="isSearchITInfo">
+          <ng-template #indicatorTemplate><i nz-icon nzType="loading"></i></ng-template>
+          <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
+        </span>
+      </nz-form-item>
+      <nz-autocomplete #autoIT [compareWith]="compareFun">
+        <nz-auto-option *ngFor="let option of itSearchList$ | async" [nzValue]="option" [nzLabel]="option.user_name"
+          (click)="addITUser(option)">
+          {{ option.user_name }}
+        </nz-auto-option>
+      </nz-autocomplete>
+      <!--  -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="false" [nzNoColon]="true"></nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-card style="width:300px;box-shadow: 8px 8px 8px #999;">
+            <input placeholder="{{'PMS.ITContact'|translate}}" nz-input formControlName="itContactUserName"
+              [nzAutocomplete]="autoIT" />
+            <nz-divider [nzDashed]="true"></nz-divider>
+            <input placeholder="{{'PMS.ITContactEmail'|translate}}" nz-input formControlName="itContactEmail"
+              [nzAutocomplete]="autoIT" />
+          </nz-card>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 导入PMS -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="true">{{'PMS.InvolvePms' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <label nz-checkbox formControlName="involvePms" (ngModelChange)="involvePmsChange()"></label>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 导入psm 下面的时间 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="false" [nzNoColon]="true"></nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-card style="width:300px;box-shadow: 8px 8px 8px rgb(97, 96, 96);">
+            <nz-date-picker [nzPlaceHolder]="'PMS.InvolvePmsStart' | translate" formControlName="involvePmsStart">
+            </nz-date-picker>
+            <nz-divider [nzDashed]="true"></nz-divider>
+            <nz-date-picker [nzPlaceHolder]="'PMS.InvolvePmsEnd' | translate" formControlName="involvePmsEnd">
+            </nz-date-picker>
+          </nz-card>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 关闭专案 -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" [nzRequired]="false">{{'PMS.CloseProject' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <label nz-checkbox formControlName="closeProject"></label>
+        </nz-form-control>
+      </nz-form-item>
+    </nz-collapse-panel>
+    <!-- 新增专案程式码 -------------------------------------------------------------------------------------->
+    <nz-collapse-panel nzHeader="{{ 'PMS.AddProjectRepo' | translate }}" [nzActive]="true">
+      <button nz-button (click)="openProjectRepoModal()" [ngStyle]="{'marginBottom':'15px'}">
+        <i nz-icon nzType="plus" nzTheme="outline" nz-tooltip
+          nzTooltipTitle="{{ 'PMS.AddProjectRepo' | translate }}"></i>
+      </button>
+      <!-- TODO 頻繁變更檢測問題 *ngIf="checkShowRepo()" -->
+      <app-common-table  [isShowPagination]="false" [operationTemplateRef]="repoOperationTemplate"
+        [dataSource]="getProjectRepoTableSource" [tableHeaders]="PROJECT_REPO_HEADER" [isShowDownload]="false"
+        [nzScroll]="{}"></app-common-table>
+
+    </nz-collapse-panel>
+    <!-- 新增专案人员 --------------------------------------------------------------------------------------->
+    <nz-collapse-panel nzHeader="{{ 'PMS.AddProjectUser' | translate }}" [nzActive]="true">
+      <button nz-button (click)="openProjectUserModal()" [ngStyle]="{'marginBottom':'15px'}">
+        <i nz-icon nzType="plus" nzTheme="outline" nz-tooltip
+          nzTooltipTitle="{{ 'PMS.AddProjectUser' | translate }}"></i>
+      </button>
+      <!-- TODO 頻繁變更檢測問題 *ngIf="checkShowUser()" -->
+      <app-common-table  [isShowPagination]="false" [operationTemplateRef]="userOperationTemplate"
+        [dataSource]="getProjectUserTableSource" [tableHeaders]="PROJECT_USER_HEADER" [isShowDownload]="false"
+        [nzScroll]="{}"></app-common-table>
+    </nz-collapse-panel>
+  </nz-collapse>
+
+  <!-- 操作模板 -->
+  <ng-template #repoOperationTemplate let-data="element">
+    <div class="operation">
+      <button nz-button>
+        <i [style.fontSize]="'20px'" nz-tooltip nzTooltipTitle="{{ 'common.tooltip.edit' | translate }}" nz-icon
+          nzType="edit" (click)="openProjectRepoModal(data)"></i>
+      </button>
+      <button nz-button>
+        <i [style.fontSize]="'20px'" nz-tooltip nzTooltipTitle="{{ 'common.tooltip.delete' | translate }}" nz-icon
+          nzType="delete" (click)="deleteItem(data,'projectRepoTableSource')"></i>
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template #userOperationTemplate let-data="element">
+    <div class="operation">
+      <button nz-button>
+        <i [style.fontSize]="'20px'" nz-tooltip nzTooltipTitle="{{ 'common.tooltip.edit' | translate }}" nz-icon
+          nzType="edit" (click)="openProjectUserModal(data)"></i>
+      </button>
+      <button nz-button>
+        <i [style.fontSize]="'20px'" nz-tooltip nzTooltipTitle="{{ 'common.tooltip.delete' | translate }}" nz-icon
+          nzType="delete" (click)="deleteItem(data,'projectUserTableSource')"></i>
+      </button>
+    </div>
+  </ng-template>
+
+
+
+</form>

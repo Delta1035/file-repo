@@ -1,0 +1,268 @@
+<div class="page_main scroll_bar maintain_main">
+  <div class="header">
+    <div class="title">{{ "home.basicDataOrganization" | translate }}</div>
+    <div class="opera_area">
+      <button
+        *ngIf="pagePermission.allowedCreate"
+        nz-button
+        nzType="primary"
+        (click)="addBasic()"
+      >
+        {{ "basicDataOrganization.newInfo" | translate }}
+      </button>
+    </div>
+  </div>
+  <div class="body" *ngIf="pagePermission.allowedRead">
+    <div class="opera_bar">
+      <div class="search_area">
+        <div class="search_item">
+          <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px">
+            <input
+              type="text"
+              nz-input
+              [placeholder]="utils.searchPlacehoder(
+                'basicDataOrganization.tableHead.bo',
+                'basicDataOrganization.tableHead.bg',
+                'basicDataOrganization.tableHead.bu'
+              )"
+              [(ngModel)]="searchKeyWord"
+              (keyup.enter)="dataSearch()"
+            />
+          </nz-input-group>
+          <ng-template #searchInputIcon
+            ><i nz-icon nzType="search"></i
+          ></ng-template>
+        </div>
+        <div class="search_item">
+          <button nz-button nzType="primary" (click)="dataSearch()">
+            {{ "button.query" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="data_table" #dataTable>
+      <nz-table
+        #basicTable
+        [nzData]="EnterpriseData"
+        [nzBordered]="true"
+        nzShowPagination
+        [(nzPageIndex)]="tableInfo.pageIndex"
+        [(nzPageSize)]="tableInfo.pageSize"
+        [nzTotal]="tableInfo.pageTotal"
+        [nzFrontPagination]="true"
+        [nzLoading]="tableInfo.loading"
+        [nzHideOnSinglePage]="true"
+        (nzPageIndexChange)="tablePageIndexChange()"
+      >
+        <thead>
+          <tr>
+            <th nzAlign="center">{{ "tableHead.index" | translate }}</th>
+            <th nzAlign="center">
+              {{ "basicDataOrganization.tableHead.bo" | translate }}
+            </th>
+            <th nzAlign="center">
+              {{ "basicDataOrganization.tableHead.bg" | translate }}
+            </th>
+            <th nzAlign="center">
+              {{ "basicDataOrganization.tableHead.bu" | translate }}
+            </th>
+            <th nzAlign="center" *ngIf="pagePermission.allowedDelete">
+              {{ "tableHead.operation" | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data; let i = index">
+            <td nzAlign="center">
+              {{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}
+            </td>
+            <td nzAlign="center">{{ data.bo }}</td>
+            <td nzAlign="center">{{ data.bg }}</td>
+            <td nzAlign="center">{{ data.bu }}</td>
+            <td nzAlign="center" *ngIf="pagePermission.allowedDelete">
+              <i
+                (click)="delBasic(data.id)"
+                nz-icon
+                nzType="delete"
+                nzTheme="outline"
+              ></i>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzWidth]="800"
+  [nzTitle]="'basicDataOrganization.newInfo' | translate"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  nzCentered
+>
+  <div *nzModalContent>
+    <div class="model_main scroll_bar">
+      <div class="modal_item table">
+        <div class="item_content">
+          <nz-table
+            #basicAddTable
+            [nzData]="addInfoTable"
+            [nzBordered]="true"
+            [nzFrontPagination]="false"
+            [nzShowPagination]="false"
+          >
+            <thead>
+              <tr>
+                <th nzAlign="center">{{ "tableHead.index" | translate }}</th>
+                <th nzAlign="center">
+                  {{ "basicDataOrganization.tableHead.bo" | translate }}
+                </th>
+                <th nzAlign="center" [nzWidth]="'145px'">
+                  {{ "basicDataOrganization.tableHead.bg" | translate }}
+                </th>
+                <th nzAlign="center">
+                  {{ "basicDataOrganization.tableHead.bu" | translate }}
+                </th>
+                <th nzAlign="center">
+                  {{ "tableHead.operation" | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let add of basicAddTable.data; let i = index">
+                <td nzAlign="center">
+                  {{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}
+                </td>
+                <td nzAlign="center">
+                  <nz-select
+                    class="w-full"
+                    nzShowSearch
+                    [nzPlaceHolder]="
+                      'basicDataOrganization.placeholder.bo' | translate
+                    "
+                    [nzDropdownRender]="boRenderTemplate"
+                    [(ngModel)]="add.bo"
+                    (nzOpenChange)="selectChange($event, 'bo')"
+                    (ngModelChange)="modelChange($event, 'bo')"
+                  >
+                    <nz-option
+                      *ngFor="let list of selectFilterList; let i = index"
+                      [nzLabel]="list.bo"
+                      [nzValue]="list.bo"
+                    ></nz-option>
+                  </nz-select>
+
+                  <ng-template #boRenderTemplate>
+                    <div class="container">
+                      <input
+                        type="text"
+                        nz-input
+                        #inputElement
+                        autocomplete="new-password"
+                        [minLength]="1"
+                        [maxLength]="20"
+                      />
+                      <button
+                        nz-button
+                        nzType="primary"
+                        class="add-item"
+                        (click)="addItem(inputElement, 'bo', i)"
+                      >
+                        {{ "button.addBo" | translate }}
+                      </button>
+                    </div>
+                  </ng-template>
+                </td>
+
+                <td nzAlign="center">
+                  <nz-select
+                    class="w-full"
+                    nzShowSearch
+                    [nzDropdownRender]="bgRenderTemplate"
+                    [nzPlaceHolder]="
+                      'basicDataOrganization.placeholder.bg' | translate
+                    "
+                    [(ngModel)]="add.bg"
+                    (ngModelChange)="modelChange($event, 'bg')"
+                  >
+                    <nz-option
+                      *ngFor="let list of bgDataList; let i = index"
+                      [nzLabel]="list.bg"
+                      [nzValue]="list.bg"
+                    ></nz-option>
+                  </nz-select>
+
+                  <ng-template #bgRenderTemplate>
+                    <div class="container">
+                      <input
+                        type="text"
+                        autocomplete="new-password"
+                        nz-input
+                        #inputElement
+                      />
+                      <button
+                        nz-button
+                        nzType="primary"
+                        class="add-item"
+                        (click)="addItem(inputElement, 'bg', i)"
+                      >
+                        {{ "button.addBg" | translate }}
+                      </button>
+                    </div>
+                  </ng-template>
+                </td>
+
+                <td nzAlign="center">
+                  <input
+                    nz-input
+                    type="text"
+                    [minlength]="1"
+                    [maxlength]="20"
+                    [placeholder]="
+                      'basicDataOrganization.placeholder.bu' | translate
+                    "
+                    [(ngModel)]="add.bu"
+                  />
+                </td>
+                <td nzAlign="center">
+                  <i
+                    (click)="delEnpirsee(add.id)"
+                    nz-icon
+                    nzType="delete"
+                    nzTheme="outline"
+                  ></i>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+
+          <!-- 添加按鈕 -->
+          <div
+            class="mt-4 flex justify-center align-center cursor-pointer font-size-18"
+            *ngIf="addInfoTable.length < 10"
+          >
+            <button nz-button nzType="primary" (click)="addEnpirsee()">
+              <i nz-icon nzType="plus" nzTheme="outline"></i>
+              <span>{{ "button.add" | translate }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">
+      {{ "button.cancel" | translate }}
+    </button>
+    <button
+      nz-button
+      nzType="primary"
+      (click)="handleOk()"
+      [disabled]="isEmpty()"
+    >
+      {{ "button.confirm" | translate }}
+    </button>
+  </div>
+</nz-modal>

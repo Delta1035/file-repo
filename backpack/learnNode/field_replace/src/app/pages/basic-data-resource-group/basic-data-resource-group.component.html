@@ -1,0 +1,256 @@
+<div class="page_main scroll_bar maintain_main">
+  <div class="header">
+    <div class="title">{{ "home.basicDataResourceGroup" | translate }}</div>
+    <div class="opera_area">
+      <button
+        *ngIf="pagePermission.allowedCreate"
+        nz-button
+        nzType="primary"
+        (click)="addResource()"
+      >
+        {{ "button.add" | translate }}
+      </button>
+    </div>
+  </div>
+  <div class="body" *ngIf="pagePermission.allowedRead">
+    <div class="opera_bar">
+      <div class="search_area">
+        <div class="search_item">
+          <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px">
+            <input
+              type="text"
+              nz-input
+              [placeholder]="
+                utils.searchPlacehoder('tableHead.resource', 'tableHead.div')
+              "
+              [(ngModel)]="searchKeyWord"
+              (keyup.enter)="dataSearch()"
+            />
+          </nz-input-group>
+          <ng-template #searchInputIcon
+            ><i nz-icon nzType="search"></i
+          ></ng-template>
+        </div>
+        <div class="search_item">
+          <button nz-button nzType="primary" (click)="dataSearch()">
+            {{ "button.query" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="data_table" #dataTable>
+      <nz-table
+        #resourceTable
+        [nzData]="resourceGroupList"
+        [nzBordered]="true"
+        nzShowPagination
+        [(nzPageIndex)]="tableInfo.pageIndex"
+        [(nzPageSize)]="tableInfo.pageSize"
+        [nzTotal]="tableInfo.pageTotal"
+        [nzFrontPagination]="false"
+        [nzLoading]="tableInfo.loading"
+        [nzHideOnSinglePage]="true"
+        (nzPageIndexChange)="tablePageIndexChange()"
+      >
+        <thead>
+          <tr>
+            <th nzAlign="center">{{ "tableHead.index" | translate }}</th>
+            <th
+              nzAlign="center"
+              *ngFor="let item of tableColumns; trackBy: trackFn"
+            >
+              {{ item | translate }}
+            </th>
+            <th nzAlign="center" *ngIf="pagePermission.allowedDelete">
+              {{ "tableHead.operation" | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of resourceTable.data; let i = index">
+            <!-- 显示模式 -->
+            <ng-container *ngIf="!editCache[data.id].edit; else editTemplate">
+              <td nzAlign="center">
+                {{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}
+              </td>
+              <td nzAlign="center">{{ data.resource }}</td>
+              <td nzAlign="center">
+                {{ data.divName }}
+                <i
+                  *ngIf="pagePermission.allowedUpdate"
+                  (click)="editResource(data.id)"
+                  nz-icon
+                  nzType="edit"
+                  nzTheme="outline"
+                ></i>
+              </td>
+              <td nzAlign="center" *ngIf="pagePermission.allowedDelete">
+                <i
+                  (click)="delResource(data.id)"
+                  nz-icon
+                  nzType="delete"
+                  nzTheme="outline"
+                ></i>
+              </td>
+            </ng-container>
+
+            <!-- 编辑模式 -->
+            <ng-template #editTemplate>
+              <td nzAlign="center">
+                {{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}
+              </td>
+              <td nzAlign="center">{{ editCache[data.id].data.resource }}</td>
+              <td nzAlign="center">
+                <nz-select
+                  nzShowSearch
+                  [nzPlaceHolder]="
+                    'messages.selected' | translate: { selectName: 'Div' }
+                  "
+                  [(ngModel)]="editCache[data.id].data.divName"
+                  [nzDropdownRender]="renderTemplate"
+                  (nzOpenChange)="divOpenChange($event)"
+                >
+                  <nz-option
+                    *ngFor="let divs of divList; trackBy: trackFn"
+                    [nzValue]="divs.name"
+                    [nzLabel]="divs.name"
+                  >
+                    {{ divs.name }}
+                  </nz-option>
+                </nz-select>
+                <ng-template #renderTemplate>
+                  <nz-spin *ngIf="divLoading"></nz-spin>
+                </ng-template>
+              </td>
+              <td nzAlign="center">
+                <i
+                  (click)="saveEdit(data.id)"
+                  nz-icon
+                  nzType="save"
+                  nzTheme="outline"
+                ></i>
+                <i
+                  (click)="cancelEdit(data.id)"
+                  nz-icon
+                  nzType="close"
+                  nzTheme="outline"
+                ></i>
+              </td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzWidth]="800"
+  [nzTitle]="'basicDataResourceGroup.newInfo' | translate"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  nzCentered
+>
+  <div *nzModalContent>
+    <div class="model_main scroll_bar">
+      <div class="modal_item table">
+        <div class="item_content">
+          <nz-table
+            #resourceAddTable
+            [nzData]="addResourceTable"
+            [nzBordered]="true"
+            [nzFrontPagination]="false"
+            [nzShowPagination]="false"
+          >
+            <thead>
+              <tr>
+                <th nzAlign="center">
+                  {{ "tableHead.resource" | translate }}
+                </th>
+                <th nzAlign="center">
+                  {{ "tableHead.div" | translate }}
+                </th>
+                <th nzAlign="center">
+                  {{ "tableHead.operation" | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let add of resourceAddTable.data; let i = index">
+                <td nzAlign="center">
+                  <input
+                    type="text"
+                    nz-input
+                    minlength="1"
+                    maxlength="30"
+                    [placeholder]="
+                      'basicDataResourceGroup.placeholder.resource' | translate
+                    "
+                    [(ngModel)]="add.resource"
+                  />
+                </td>
+
+                <td nzAlign="center">
+                  <nz-select
+                    nzShowSearch
+                    [nzPlaceHolder]="
+                      'messages.selected' | translate: { selectName: 'Div' }
+                    "
+                    [(ngModel)]="add.divName"
+                    [nzDropdownRender]="renderTemplate"
+                    (nzOpenChange)="divOpenChange($event)"
+                  >
+                    <nz-option
+                      *ngFor="let divs of divList; trackBy: trackFn"
+                      [nzValue]="divs.name"
+                      [nzLabel]="divs.name"
+                    >
+                      {{ divs.name }}
+                    </nz-option>
+                  </nz-select>
+                  <ng-template #renderTemplate>
+                    <nz-spin *ngIf="divLoading"></nz-spin>
+                  </ng-template>
+                </td>
+                <td nzAlign="center">
+                  <i
+                    (click)="delAddResource(add.id)"
+                    nz-icon
+                    nzType="delete"
+                    nzTheme="outline"
+                  ></i>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+
+          <!-- 添加按鈕 -->
+          <div
+            class="mt-4 flex justify-center align-center cursor-pointer font-size-18"
+            *ngIf="addResourceTable.length < 10"
+          >
+            <button nz-button nzType="primary" (click)="addAddResource()">
+              <i nz-icon nzType="plus" nzTheme="outline"></i>
+              <span>{{ "button.add" | translate }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">
+      {{ "button.cancel" | translate }}
+    </button>
+    <button
+      nz-button
+      [nzLoading]="addSuccessLoading"
+      nzType="primary"
+      (click)="handleOk()"
+      [disabled]="isEmpty()"
+    >
+      {{ "button.confirm" | translate }}
+    </button>
+  </div>
+</nz-modal>

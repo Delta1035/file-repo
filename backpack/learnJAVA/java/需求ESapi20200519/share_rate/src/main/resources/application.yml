@@ -1,0 +1,264 @@
+spring:
+  application:
+    name: share_rate
+    debugmode: false
+  profiles:
+    active: dev
+  mail:
+    host: whqsmtp.wistron.com
+    port: 25
+    protocol: smtp
+    test-connection: false
+---
+spring:
+  profiles: dev
+  datasource:
+    postgresql:
+      platform: postgres
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatarengine
+      username: ENC(OwkcR8xpFU6zLkILFUHS5A==)
+      password: ENC(4Rt5csJrTCJUJlEhAjvqvQ==)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: false
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 60000
+      pool-name: ShareRateHikariPg
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    oracle:
+      platform: oracle
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@10.37.37.16:1523:cbg3
+      username: ENC(ikYYxvDns3w/J0yBjAVgmg==)
+      password: ENC(nXT8gQxNFSk0E70+i9i4/z7zvJc0f+hN)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 60000
+      pool-name: ShareRateHikariOra
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+  jpa:
+    show-sql: true
+    postgresql-database-platform: com.wistron.avatar.sharerate.jpaconfig.AvtPostgreSqlDialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        jdbc:
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+  elasticsearch7:
+    address:
+      - avaespocv01.wistron.com:9200
+      - avaespocv02.wistron.com:9200
+      - avaespocv03.wistron.com:9200
+    account: ENC(ViCJ+zbkEhNyazRCsq66lA==)
+    password: ENC(tSvdGogHlP8pjTluLIACel5O3GnRz7SD)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(jcKNMAai0SwF9ItiS+Y2Jlnwans3V30V)
+      path: /app
+      file: wistron-root.jks
+  api:
+    url: https://avanoded01.wistron.com/AvatarWebService/
+  logstash:
+    address: 10.37.36.3:5005
+  ap_host:
+    host: k8s-dev.k8s.wistron.com
+
+---
+spring:
+  profiles: qas
+  datasource:
+    postgresql:
+      platform: postgres
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatarengine
+      username: ENC(TEKeDqsE6QlAEiI9W2smsw==)
+      password: ENC(QntJHcgz7lX+a6KyKkTN7A==)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 60000
+      pool-name: ShareRateHikariPg
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    oracle:
+      platform: oracle
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@10.37.37.16:1523:cbg3
+      username: ENC(nmsGUKRoeR0NRmEpS04jDw==)
+      password: ENC(wQM5qkXfQ6npmbXt59Jr7binewHWqyiV)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 120000
+      idle-timeout: 120000
+      pool-name: ShareRateHikariOra
+      max-lifetime: 3600000
+      connection-test-query: SELECT 1 FROM DUAL
+  jpa:
+    show-sql: true
+    postgresql-database-platform: com.wistron.avatar.sharerate.jpaconfig.AvtPostgreSqlDialect
+    hibernate:
+      ddl-auto: none
+  elasticsearch7:
+    address:
+      - AVAESAPQ11.wistron.com:9200
+      - AVAESAPQ12.wistron.com:9200
+      - AVAESAPQ13.wistron.com:9200
+    account: ENC(eX9FPBwFHctltFbXRKvOdA==)
+    password: ENC(9Yz3vQsf3cZdAfJazQ110xPF66dNNbMX)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(4HtczlYU+vhowKwldIeClQQ5lzZIg6pY)
+      path: /app
+      file: wistron-root.jks
+  api:
+    url: https://avatartcqas.wistron.com/AvatarWebService/
+  logging:
+    config: classpath:logback-spring.xml
+    level:
+      root: info
+  logstash:
+    address: 10.37.35.46:5005
+  ap_host:
+    host: k8sqas-whq.wistron.com
+
+---
+spring:
+  profiles: sandbox
+  datasource:
+    postgresql:
+      platform: postgres
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatarengine
+      username: ENC(TEKeDqsE6QlAEiI9W2smsw==)
+      password: ENC(QntJHcgz7lX+a6KyKkTN7A==)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 60000
+      pool-name: ShareRateHikariPg
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    oracle:
+      platform: oracle
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@10.37.37.16:1523:cbg3
+      username: ENC(nmsGUKRoeR0NRmEpS04jDw==)
+      password: ENC(wQM5qkXfQ6npmbXt59Jr7binewHWqyiV)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 120000
+      idle-timeout: 120000
+      pool-name: ShareRateHikariOra
+      max-lifetime: 3600000
+      connection-test-query: SELECT 1 FROM DUAL
+  jpa:
+    show-sql: true
+    postgresql-database-platform: com.wistron.avatar.sharerate.jpaconfig.AvtPostgreSqlDialect
+    hibernate:
+      ddl-auto: none
+  elasticsearch7:
+    address:
+      - avaesapp11.wistron.com:9200
+      - avaesapp12.wistron.com:9200
+      - avaesapp13.wistron.com:9200
+    account: ENC(sm1b6mBpCKrDJMqr+iwU1Q==)
+    password: ENC(U37dEgRojkJnXRlgABHoW4Ex2tQ/ej/w)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(OnAR7grwAya7jQsRteUp89UEksvFkl4G)
+      path: /app
+      file: wistron-root.jks
+  api:
+    url: https://avatartcqas.wistron.com/AvatarWebService/
+  logging:
+    config: classpath:logback-spring.xml
+    level:
+      root: info
+  logstash:
+    address: 10.37.35.46:5005
+  ap_host:
+    host: k8sqas-whq.wistron.com
+
+---
+spring:
+  profiles: prd
+  datasource:
+    postgresql:
+      platform: postgres
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://10.37.37.63:5435/avatarengine
+      username: ENC(m3Hs3q2H9wzRKiYYrtVaiw==)
+      password: ENC(93AkogWjoMQAaYN+fIAolQ==)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 60000
+      pool-name: ShareRateHikariPg
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    oracle:
+      platform: oracle
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@10.37.37.16:1523:cbg3
+      username: ENC(3HnOCsHqoR2utebVqICvOQ==)
+      password: ENC(5dR31NpLiQCioxAFtGbL8HKadp75omLo)
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 120000
+      idle-timeout: 120000
+      pool-name: ShareRateHikariOra
+      max-lifetime: 3600000
+      connection-test-query: SELECT 1 FROM DUAL
+  jpa:
+    show-sql: false
+    postgresql-database-platform: com.wistron.avatar.sharerate.jpaconfig.AvtPostgreSqlDialect
+    hibernate:
+      ddl-auto: none
+  elasticsearch7:
+    address:
+      - avaesapp11.wistron.com:9200
+      - avaesapp12.wistron.com:9200
+      - avaesapp13.wistron.com:9200
+    account: ENC(sm1b6mBpCKrDJMqr+iwU1Q==)
+    password: ENC(U37dEgRojkJnXRlgABHoW4Ex2tQ/ej/w)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(OnAR7grwAya7jQsRteUp89UEksvFkl4G)
+      path: /app
+      file: wistron-root.jks
+  api:
+    url: http://avatartc.wistron.com:8080/AvatarWebService/
+  logging:
+    config: classpath:logback-spring.xml
+    level:
+      root: info
+  logstash:
+    address: 10.37.37.109:5005
+  ap_host:
+    host: k8sprd-whq.wistron.com

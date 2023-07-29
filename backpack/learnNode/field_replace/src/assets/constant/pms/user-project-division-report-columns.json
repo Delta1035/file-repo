@@ -1,0 +1,60 @@
+{
+  "tableColumnsTypes": [
+    {
+      "translateKey": "JIRAUSER.JiraUserId",
+      "translateKey4UI": "",
+      "objectKey": "jira_user_id"
+    },
+    {
+      "translateKey": "JIRAUSER.JiraUserName",
+      "translateKey4UI": "",
+      "objectKey": "display_name"
+    },
+    {
+      "translateKey": "PMS.UserName",
+      "translateKey4UI": "",
+      "objectKey": "user_name"
+    },
+    {
+      "translateKey": "PMS.EmployeeId",
+      "translateKey4UI": "",
+      "objectKey": "employee_id"
+    },
+    {
+      "translateKey": "PMS.Email",
+      "translateKey4UI": "",
+      "objectKey": "email"
+    },
+    {
+      "translateKey": "PMS.CreateDate",
+      "translateKey4UI": "",
+      "objectKey": "create_date"
+    },
+    {
+      "translateKey": "PMS.ProjectName",
+      "translateKey4UI": "",
+      "objectKey": "project_name"
+    },
+    {
+      "translateKey": "PMS.Division",
+      "translateKey4UI": "",
+      "objectKey": "division"
+    },
+    {
+      "translateKey": "PMS.JoinDate",
+      "translateKey4UI": "",
+      "objectKey": "join_date"
+    }
+  ],
+  "tableColumnsWidth": {
+    "jira_user_id": "250px",
+    "display_name": "100px",
+    "user_name": "100px",
+    "employee_id": "100px",
+    "email": "250px",
+    "create_date": "40px",
+    "project_name": "250px",
+    "division": "40px",
+    "join_date": "40px"
+  }
+}

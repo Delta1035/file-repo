@@ -1,0 +1,32 @@
+{
+  "connector": "rest",
+  "debug": true,
+  "operations": [
+    {
+      "template": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8080/auth/realms/myrealm/protocol/openid-connect/token",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded"
+        },
+        "options": {
+          "rejectUnauthorized": false
+        },
+        "json": true,
+        "form": {
+          "grant_type": "password",
+          "client_id": "loopback",
+          "client_secret": "0yZYKqzNppmDBl2JQiIFZU53jcri35zk",
+          "username": "{username:string}",
+          "password": "{password:string}"
+        }
+      },
+      "functions": {
+        "login": [
+          "username",
+          "password"
+        ]
+      }
+    }
+  ]
+}

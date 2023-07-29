@@ -1,0 +1,3 @@
+<div class="ipm_tab" [class]="tabType">
+    <div *ngFor="let item of tabList" class="tab_item" [ngClass]="{tab_item_avtive: item.tab===tab, tab_item_disabled: item.disabled}" (click)="doTabChange(item)">{{ item.tabName | translate }}</div>
+</div>

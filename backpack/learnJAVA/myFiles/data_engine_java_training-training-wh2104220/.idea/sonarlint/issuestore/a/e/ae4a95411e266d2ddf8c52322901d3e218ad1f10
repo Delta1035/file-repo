@@ -1,0 +1,17 @@
+
+g
+java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(Å«ö£
+p
+java:S1104"UMake groupname a static final constant or non-public and provide accessors if needed.(ˆÅÙ…ÿÿÿÿÿ
+m
+java:S1104	"PMake line a static final constant or non-public and provide accessors if needed.(•šÕÄ8ÎŠ³ú0
+x
+java:S1104
+"VMake workcenter a static final constant or non-public and provide accessors if needed.(ÄÍùŒÿÿÿÿÿ8Á¼³ú0
+z
+java:S1104"XMake operationseq a static final constant or non-public and provide accessors if needed.(¤íßåúÿÿÿÿ8Áœ´ú0
+s
+java:S1104"QMake stage a static final constant or non-public and provide accessors if needed.(âöÑÿÿÿÿÿ8€Á´ú0
+q
+java:S1104"TMake priority a static final constant or non-public and provide accessors if needed.(å‚ü¨8ò‰µú0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğÅº

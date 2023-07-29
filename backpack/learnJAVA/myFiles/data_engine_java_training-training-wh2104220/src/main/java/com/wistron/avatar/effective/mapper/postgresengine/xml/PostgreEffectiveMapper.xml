@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wistron.avatar.effective.mapper.postgresengine.IPostgreEffectiveMapper">
+<!--查找at_ba_mo_lineeffective表所有的数据-->
+    <select id="selectAll" resultType="com.wistron.avatar.common.entity.postgre.PostgreEffective">
+        select * from at_ba_mo_lineeffective
+    </select>
+<!--    在哪找厂区查找at_ba_mo_lineeffective表的数据-->
+    <select id="selectByPlants" resultType="com.wistron.avatar.common.entity.postgre.PostgreEffective">
+        select * from at_ba_mo_lineeffective where plant in
+        <foreach item="plant" collection="plants" separator="," open="(" close=")" index="">
+            #{plant}
+        </foreach>
+    </select>
+<!--    单个插入at_ba_mo_lineeffective表数据-->
+    <insert id="insertOneEffective" parameterType="com.wistron.avatar.common.entity.oracle.OracleEffective">
+        insert into at_ba_mo_lineeffective (plant,process,line,crby,crdate,updby,upddate,line_top,line_btm,line_change)
+        values (#{plant},#{process},#{line},#{crby},#{crdate},#{updby},#{upddate},#{lineTop},#{lineBtm},#{lineChange})
+    </insert>
+
+    <insert id="insertEffective" parameterType="java.util.List">
+        insert into at_ba_mo_lineeffective (plant,process,effective,crby,crdate,updby,upddate,line_top,line_btm,line_change) values
+        <foreach item="effective" collection="effectives" separator=","  index="">
+            (#{effective.plant},#{effective.process},#{effective.effective},
+            #{effective.crby},#{effective.crdate},#{effective.updby},#{effective.upddate}#{effective.lineTop},
+            #{effective.lineBtm},#{effective.lineChange})
+        </foreach>
+    </insert>
+</mapper>

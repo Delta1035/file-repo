@@ -1,0 +1,20 @@
+<span class="tip-wrapper">
+  <i (click)="handleClick(modalContent)" nz-icon nzType="question-circle" nzTheme="outline" nz-tooltip
+    [nzTooltipTitle]="nzTooltipTitle"></i>
+</span>
+
+<ng-template #modalContent>
+  <div class="tip-content-wrapper">
+    <nz-card style="width: 100%" *ngFor="let item of guides; index as i;" [nzHoverable]="true"
+      [nzTitle]="item.guide | translate">
+      <p>
+        {{ item.guideDescription | translate }}
+      </p>
+      <div>
+        <a href="{{ item.picture }}" target="_blank">
+          <img src="{{ item.picture }}" *ngIf="item.picture">
+        </a>
+      </div>
+    </nz-card>
+  </div>
+</ng-template>

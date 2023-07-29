@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>渲染条数</li>
+    </ul>
+</body>
+<script>
+    function render(totalCount) {
+        console.log('start');
+        const times = Math.ceil(totalCount / 100);//总的渲染次数
+        const randeredCount = 0; //已渲染次数
+        const ul = document.querySelector('ul');
+        function appendLi() {
+            let once = 100; //每次一百条
+            const fragment = document.createDocumentFragment();
+            while (once > 0) {
+                const li = document.createElement('li');
+                // li.textContent = Math.ceil(Math.random() * once * (randeredCount + 1));
+                li.textContent = once;
+                fragment.appendChild(li);
+                -- once;
+            }
+            ul.appendChild(fragment);
+        }
+        for(let i=0;i<times;i++){
+            window.requestAnimationFrame(()=>{
+                appendLi();
+            })
+        }
+    }
+    render(10000);
+</script>
+
+</html>

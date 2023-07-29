@@ -1,0 +1,7 @@
+{
+  "realm": "master",
+  "public_key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhhzZxycFbva0cgP79d01QEh59a8EOSWNOPgHBa83QXo7RZY1MQVdSvOCcsZqw70OMRNJHfVzvBEYL8dUOkecC5ZrmomYIJrpg9+87KPzK5t9lkgsaPW+k+PbbcDO8JexKgBQVBSB8P4HpNpbWnng75mImOWwh0cp73my9NwyF8B/OhJ/Rd42ORlflw3TREKk8aFSPf9Lw1dB1X2mpmMYL1RqAIh9zkhaqnr76Pw6evFSSZ2wQRrc1gbOj2UQpQPdXYEcE6SN1cuhmHpRaOf/GGVBfDW4+kwaBz6L+24+79negyaRpTynJRw9EPLPVK4zOJu3yc/f5HJMjFsHTB6FSwIDAQAB",
+  "token-service": "https://124.221.95.189:8443/auth/realms/master/protocol/openid-connect",
+  "account-service": "https://124.221.95.189:8443/auth/realms/master/account",
+  "tokens-not-before": 0
+}

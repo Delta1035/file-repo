@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>表头1</th>
+            <th>表头1</th>
+            <th>表头1</th>
+            <th>表头1</th>
+            <th>表头1</th>
+            <th>表头1</th>
+            <th>表头1</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>body1</td>
+                <td>body2</td>
+                <td>body3</td>
+                <td>body4</td>
+                <td>body5</td>
+                <td>body6</td>
+            </tr>
+            <tr>
+                <td>body1</td>
+                <td>body2</td>
+                <td>body3</td>
+                <td>body4</td>
+                <td>body5</td>
+                <td>body6</td>
+            </tr>
+            <tr>
+                <td>body1</td>
+                <td>body2</td>
+                <td>body3</td>
+                <td>body4</td>
+                <td>body5</td>
+                <td>body6</td>
+            </tr>
+            <tr>
+                <td>body1</td>
+                <td>body2</td>
+                <td>body3</td>
+                <td>body4</td>
+                <td>body5</td>
+                <td>body6</td>
+            </tr>
+            <tr>
+                <td>body1</td>
+                <td>body2</td>
+                <td>body3</td>
+                <td>body4</td>
+                <td>body5</td>
+                <td>body6</td>
+            </tr>
+            <tr>
+                <td>body1</td>
+                <td>body2</td>
+                <td>body3</td>
+                <td>body4</td>
+                <td>body5</td>
+                <td>body6</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var tbody = document.querySelector('table>tbody');
+    var row =  tbody.insertRow(tbody.rows.length-1);
+    row.innerHTML = '<td>插入</td><td>插入</td><td>插入</td><td>插入</td><td>插入</td><td>插入</td>';
+    setTimeout(function(diff){
+        if(diff>0){
+            console.log('调用晚',diff);
+        }else if(diff<0){
+            console.log('调用早',diff);
+        }else{
+            console.log('调用及时',diff);
+        }
+    },250)
+</script>
+
+</html>

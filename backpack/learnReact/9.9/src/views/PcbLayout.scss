@@ -1,0 +1,38 @@
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.site-layout-background {
+  background: #EDEDED;
+}
+
+#root,
+.ant-layout 
+{
+  height: 100%;
+}
+
+.popover-inner{
+  .ant-popover-inner-content{
+    padding: 6px 0px;
+  }
+}
+
+
+// .ant-menu-item-selected {
+//   background-color: #f5c910 !important;
+//   height: 78px !important;
+//   line-height: 78px !important;
+//   :global(.ant-menu-title-content) {
+//     color: black ;
+//   }
+  
+//   .ant-menu-item-icon{
+//     color: black !important;
+//   }
+// }
+

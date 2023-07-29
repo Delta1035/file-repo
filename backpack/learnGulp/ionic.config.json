@@ -1,0 +1,17 @@
+{
+    "name": "iMQM",
+    "integrations": {
+        "cordova": {}
+    },
+    "type": "angular",
+    "version": "1.0.3",
+    "id": "com.wistron.dx.imqm",
+    "f237-id": "com.wistron.dx.imqm_f237",
+    "ios-dev-id": "com.wistron.dx.imqm-dev",
+    "ios-allie-id": "com.wistron.dx.imqm-allie",
+    "ios-allie-dev-id": "com.wistron.dx.imqm-allie",
+    "android-dev-id": "com.wistron.dx.imqm_dev",
+    "android-dev-f237-id": "com.wistron.dx.imqm_f237_dev",
+    "android-versionCode": "21121501",
+    "ios-CFBundleVersion": "21121501"
+}

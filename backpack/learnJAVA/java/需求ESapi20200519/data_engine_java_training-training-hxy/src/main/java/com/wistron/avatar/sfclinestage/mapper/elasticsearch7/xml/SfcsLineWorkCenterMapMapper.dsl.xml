@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wistron.avatar.sfclinestage.mapper.elasticsearch7.ISfcsLineWorkCenterMapMapper">
+    <select id="getSfcLineStageByParam" parameterType="map"
+            resultType="com.wistron.avatar.common.entity.elasticsearch7.SfcsLineWorkCenterMapEntity">
+{
+    "from": 0,
+    "size": 1,
+    "query": {
+        "bool": {
+            "filter": {
+                <if test="plant != null and plant != '' and plant.size() != 0">
+                "terms": {
+                    "plant":
+                    <foreach collection="plant" index="index" item="item" open="[" separator="," close="]">
+                        "${item}"
+                    </foreach>
+                }
+                </if>
+                <if test="plant == null or plant == '' or plant.size() == 0">
+                "exists": {
+                    "field": "plant"
+                }
+                </if>
+            }
+        }
+    }
+}
+    </select>
+</mapper>

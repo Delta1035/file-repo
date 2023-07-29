@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wistron.avatar.checkdata.mapper.oraclekpi.ICheckStagingDataOracleKpiMapper">
+
+    <select id="findMaxTimeDateByParam" parameterType="map" resultType="java.util.Date">
+        select  Max(${timeType}) as timeStamp from ${tableName}
+        <if test="sqlWhere.size() >= 1">
+            where
+            <foreach collection="sqlWhere.entrySet()" open="(" separator="and" close=")" index="key" item="val">
+                ${key} = #{val}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="findMaxTimeStringByParam" parameterType="map" resultType="java.lang.String">
+        select  Max(${timeType}) as timeStamp from ${tableName}
+        <if test="sqlWhere.size() >= 1">
+            where
+            <foreach collection="sqlWhere.entrySet()" open="(" separator="and" close=")" index="key" item="val">
+                ${key} = #{val}
+            </foreach>
+        </if>
+    </select>
+</mapper>

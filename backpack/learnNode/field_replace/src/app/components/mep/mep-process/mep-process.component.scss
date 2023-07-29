@@ -1,0 +1,26 @@
+.mep_steps_main.steps {
+    height: 32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+    .step {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .index {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            margin: 0 0 0 8px;
+        }
+        .arrow {
+            margin: 0 8px;
+        }
+    }
+}

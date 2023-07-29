@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        :root{
+            font-size: 12px;
+        }
+        .border-box{
+
+        }
+/* 87491700 */
+        .content-box{
+            /* 1. content 通常包含背景, 背景图像 */
+            /* 2. padding 用来延伸content部分的背景和背景图片, 也可以用来填充内容和边框的间距 */
+            box-sizing: content-box;
+            width: 10rem;
+            height: 10rem;
+            background: red;
+            border: 1rem solid gray;
+            padding: 1rem;
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-box">
+        
+    </div>
+    <div class="content-box">
+        content
+    </div>
+</body>
+</html>

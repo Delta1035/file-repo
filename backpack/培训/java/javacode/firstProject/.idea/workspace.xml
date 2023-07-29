@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0d6eebb-a696-4fc3-8f39-4cecea0933b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/common/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/test/java/com/wistron/common/mapper/SampleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__org_mybatis_mybatis_3_5_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/.idea/libraries/Maven__org_springframework_spring_tx_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/mybatis_01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/Mybatis01Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/Mybatis01Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/common/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/common/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/controller/FirstController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/controller/FirstController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/mapper/IFirstMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/mapper/IFirstMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_web_db/mybatis_01/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kafka.md" beforeDir="false" afterPath="$PROJECT_DIR$/../kafka.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28v4opSg5UeWohGj341XZieqN0x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0d6eebb-a696-4fc3-8f39-4cecea0933b9" name="Changes" comment="" />
+      <created>1652083905013</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652083905013</updated>
+    </task>
+    <servers />
+  </component>
+</project>

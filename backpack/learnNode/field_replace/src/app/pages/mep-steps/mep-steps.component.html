@@ -1,0 +1,205 @@
+<div class="page_main scroll_bar maintain_main mep_steps">
+    <div class="header">
+        <div class="title">{{ "home.mepSteps" | translate }}{{ tssMonth?' - '+tssMonth+'-'+tssYear:'' }}</div>
+        <div class="opera_area">
+            <app-mep-process *ngIf="stepNumber" [activeStep]="stepNumber"></app-mep-process>
+        </div>
+    </div>
+    <div class="body step_main" *ngIf="step==='complete'||step==='upload'||step==='uploading'">
+        <div class="step_main_content" *ngIf="step==='complete'">
+            <div class="step_main_title">{{ "mepSteps.completeMonthEnd" | translate }}{{ tssMonth?' - '+tssMonth+'-'+tssYear:'' }}</div>
+            <nz-card>
+                <div class="step_main_body">
+                    <div class="step_main_icon"><i nz-icon nzType="calendar" nzTheme="outline"></i></div>
+                    <button nz-button nzType="primary" (click)="mepStepsComplete()">{{ "mepSteps.complete" | translate }}</button>
+                    <div class="step_main_descript">
+                        <div><i *ngIf="completeStatus.notice1.show" [ngClass]="{success_color: !completeStatus.notice1.loading&&completeStatus.notice1.status,danger_color: !completeStatus.notice1.loading&&!completeStatus.notice1.status}" nz-icon [nzType]="completeStatus.notice1.loading?'sync':'check-circle'"
+                                [nzSpin]="completeStatus.notice1.loading"></i>{{ "mepSteps.completeDescript1" | translate }}</div>
+                        <div><i *ngIf="completeStatus.notice2.show" [ngClass]="{success_color: !completeStatus.notice2.loading&&completeStatus.notice2.status,danger_color: !completeStatus.notice2.loading&&!completeStatus.notice2.status}" nz-icon [nzType]="completeStatus.notice2.loading?'sync':'check-circle'"
+                                [nzSpin]="completeStatus.notice2.loading"></i>{{ "mepSteps.completeDescript2" | translate }}</div>
+                        <div><i *ngIf="completeStatus.notice3.show" [ngClass]="{success_color: !completeStatus.notice3.loading&&completeStatus.notice3.status,danger_color: !completeStatus.notice3.loading&&!completeStatus.notice3.status}" nz-icon [nzType]="completeStatus.notice3.loading?'sync':'check-circle'"
+                                [nzSpin]="completeStatus.notice3.loading"></i>{{ "mepSteps.completeDescript3" | translate }}</div>
+                        <div><i *ngIf="completeStatus.notice4.show" [ngClass]="{success_color: !completeStatus.notice4.loading&&completeStatus.notice4.status,danger_color: !completeStatus.notice4.loading&&!completeStatus.notice4.status}" nz-icon [nzType]="completeStatus.notice4.loading?'sync':'check-circle'"
+                                [nzSpin]="completeStatus.notice4.loading"></i>{{ "mepSteps.completeDescript4" | translate }}</div>
+                    </div>
+                </div>
+            </nz-card>
+        </div>
+        <div class="step_main_content" *ngIf="step==='upload'">
+            <div class="step_main_title">{{ "mepSteps.uploadTSS" | translate }}{{ tssMonth?' - '+tssMonth+'-'+tssYear:'' }}</div>
+            <nz-card>
+                <div class="step_main_body">
+                    <div class="step_main_icon"><i nz-icon nzType="upload" nzTheme="outline"></i></div>
+                    <button nz-button nzType="primary" (click)="uploadExcelStart()">{{ "mepSteps.upload" | translate }}</button>
+                    <div class="step_main_descript">
+                        <div>{{ "mepSteps.uploadDescript1" | translate }}</div>
+                    </div>
+                </div>
+            </nz-card>
+        </div>
+        <div class="step_main_content" *ngIf="step==='uploading'">
+            <div class="step_main_title">{{ "mepSteps.uploading" | translate }}{{ tssMonth?' - '+tssMonth+'-'+tssYear:'' }}</div>
+            <nz-card>
+                <div class="step_main_body">
+                    <div class="step_main_icon"><i nz-icon nzType="sync" [nzSpin]="true"></i></div>
+                    <div class="step_main_descript">
+                        <div>{{ "mepSteps.uploadingDescript1" | translate }}</div>
+                    </div>
+                </div>
+            </nz-card>
+        </div>
+    </div>
+    <div class="body" *ngIf="step==='uploaded'||step==='maintain'">
+        <div class="tab_bar">
+            <app-ipm-tab [(tab)]="tab" [tabList]="tabList" (tabChange)="tabChange()"></app-ipm-tab>
+        </div>
+        <div class="opera_bar">
+            <div class="search_area">
+                <div class="search_item">
+
+                </div>
+                <div class="search_item">
+
+                </div>
+                <div class="search_item">
+
+                </div>
+            </div>
+            <div class="opera_btn">
+                <button *ngIf="step==='uploaded'" nz-button nzType="primary" [nzLoading]="gotoMaintainLoading" (click)="gotoMaintain()">{{ "mepSteps.enableMaintainPAJChargeManMonth" | translate }}</button>
+            </div>
+        </div>
+        <div class="data_table" #dataTable>
+            <nz-table *ngIf="tab==='unkownName'" #basicTable [nzData]="unkownNameData" [nzBordered]="true" [(nzPageIndex)]="tableInfo.pageIndex" [(nzPageSize)]="tableInfo.pageSize" [nzTotal]="tableInfo.pageTotal" [nzLoading]="tableInfo.loading" [nzHideOnSinglePage]="true"
+                (nzPageIndexChange)=tablePageIndexChange()>
+                <thead>
+                    <tr>
+                        <th nzAlign="center">{{ 'tableHead.index' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.pmcsIbProjectName' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.misIbCode' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.itPm' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.empName' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.empId' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.dept' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.operation' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of basicTable.data let i=index">
+                        <td nzAlign="center">{{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}</td>
+                        <td nzAlign="center">{{ data.pmcsIbProjectName }}</td>
+                        <td nzAlign="center">{{ data.misIbCode }}</td>
+                        <td nzAlign="center">{{ data.itPm }}</td>
+                        <td nzAlign="center">{{ data.empName }}</td>
+                        <td nzAlign="center">{{ data.empId }}</td>
+                        <td nzAlign="center">{{ data.dept }}</td>
+                        <td nzAlign="center">
+                            <i nz-icon nzType="user-add" nzTheme="outline" (click)="unknownTSSNameNewStart(data)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </nz-table>
+            <nz-table *ngIf="tab==='unkownProject'" #basicTable [nzData]="unkownProjectData" [nzBordered]="true" [(nzPageIndex)]="tableInfo.pageIndex" [(nzPageSize)]="tableInfo.pageSize" [nzTotal]="tableInfo.pageTotal" [nzFrontPagination]="false" [nzLoading]="tableInfo.loading"
+                [nzHideOnSinglePage]="true" (nzPageIndexChange)=tablePageIndexChange()>
+                <thead>
+                    <tr>
+                        <th nzAlign="center">{{ 'tableHead.index' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.tssProjectName' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.misIbCode' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.itPm' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of basicTable.data let i=index">
+                        <td nzAlign="center">{{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}</td>
+                        <td nzAlign="center">{{ data.tssProjectName }}</td>
+                        <td nzAlign="center">{{ data.misIbCode }}</td>
+                        <td nzAlign="center">{{ data.itPm }}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </div>
+    </div>
+</div>
+
+<nz-modal [(nzVisible)]="uploadExcelModalData.show" [nzWrapClassName]="uploadExcelModalData.className" nzTitle="{{ uploadExcelModalData.title | translate }}" (nzOnCancel)="uploadExcelModalData.onCancel()" nzCentered="true" [nzWidth]="uploadExcelModalData.width">
+    <div *nzModalContent>
+        <div class="upload_excel_modal_main select_excel">
+            <div class="upload_content">
+                <div class="upload_main upload_area">
+                    <div class="upload_main_title">{{ "budgetMaintain.uploadFile" | translate }}</div>
+                    <div class="upload_main_content">
+                        <div class="upload_area_up">
+                            <div class="upload_area_up_input" *ngIf="!uploadExcelModalData.fileName">{{ "budgetMaintain.fileName" | translate }}</div>
+                            <div class="upload_area_up_input text_overflow_1_line" *ngIf="uploadExcelModalData.fileName">{{ uploadExcelModalData.fileName }}</div>
+                            <div class="upload_area_up_button">
+                                <nz-upload *ngIf="!uploadExcelModalData.fileName" [nzBeforeUpload]="beforeUploadExcel" [nzAccept]="uploadExcelModalData.acceptFileType">
+                                    <button nz-button nzType="primary" (click)="uploadClick()">
+                                        <span>{{ 'button.selectFile' | translate }}</span>
+                                    </button>
+                                </nz-upload>
+                                <button nz-button *ngIf="uploadExcelModalData.fileName" nzType="primary" [nzLoading]="uploadExcelModalData.excelUploading" (click)="handleUpload()">
+                                    <span *ngIf="uploadExcelModalData.excelUploading">{{ 'button.uploading' | translate }}</span>
+                                    <span *ngIf="!uploadExcelModalData.excelUploading">{{ 'button.upload' | translate }}</span>
+                                </button>
+                                <nz-upload *ngIf="uploadExcelModalData.fileName" [nzBeforeUpload]="beforeUploadExcel" [nzAccept]="uploadExcelModalData.acceptFileType">
+                                    <button nz-button nzType="primary" [disabled]="uploadExcelModalData.excelUploading" (click)="uploadClick()">
+                                        <span>{{ 'button.selectFileAgain' | translate }}</span>
+                                    </button>
+                                </nz-upload>
+                            </div>
+                        </div>
+                        <div class="upload_area_down">
+                            <div class="upload_area_down_link" (click)="downloadExcelPublicFile()">{{ "budgetMaintain.downloadPublicFile" | translate }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload_main upload_notice">
+                    <div class="upload_main_title">{{ 'notice.instructionsM' | translate }}</div>
+                    <div class="upload_main_content">
+                        <div class="upload_notice_item">{{ "budgetMaintain.uploadExcelNotice1" | translate }}</div>
+                        <div class="upload_notice_item">{{ "budgetMaintain.uploadExcelNotice2" | translate }}</div>
+                        <div class="upload_notice_item">{{ "budgetMaintain.uploadExcelNotice3" | translate }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *nzModalFooter></div>
+</nz-modal>
+
+<nz-modal [(nzVisible)]="unknownTSSNameNewModalData.show" [nzWrapClassName]="unknownTSSNameNewModalData.className" nzTitle="{{ unknownTSSNameNewModalData.title | translate }}" (nzOnCancel)="unknownTSSNameNewModalData.onCancel()" nzCentered="true" [nzWidth]="unknownTSSNameNewModalData.width">
+    <div *nzModalContent>
+        <div class="model_main scroll_bar">
+            <div class="modal_item table">
+                <div class="item_content">
+                    <nz-table #basicTable [nzData]="[1]" [nzBordered]="true" [nzFrontPagination]="false" [nzShowPagination]="false">
+                        <thead>
+                            <tr>
+                                <th nzAlign="center">{{ 'tableHead.empName' | translate }}</th>
+                                <th nzAlign="center">{{ 'tableHead.div' | translate }}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of basicTable.data let i=index">
+                                <td nzAlign="center">
+                                    <input type="text" nz-input [placeholder]="'messages.inputValue' | translate: { inputName: 'Emp Name' }" [(ngModel)]="unknownTSSNameNewModalData.unknownTSSNameNewData.empName" (input)="unknownTSSNameNewNameChange()" />
+                                </td>
+                                <td nzAlign="center">
+                                    <nz-select class="div-select" nzShowSearch [nzPlaceHolder]="'messages.selected' | translate: { selectName: 'Div' }" [(ngModel)]="unknownTSSNameNewModalData.unknownTSSNameNewData.div" (ngModelChange)="unknownTSSNameNewDivChange()">
+                                        <nz-option *ngFor="let item of divList;" [nzValue]="item.value" [nzLabel]="item.text"></nz-option>
+                                    </nz-select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </nz-table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="unknownTSSNameNewModalData.onCancel()">{{ 'button.cancel' | translate }}</button>
+        <button nz-button nzType="primary" [disabled]="!unknownTSSNameNewModalData.canSubmit" [nzLoading]="unknownTSSNameNewModalData.submitLoading" (click)="unknownTSSNameNewSubmit()">{{ 'button.confirm' | translate }}</button>
+    </div>
+</nz-modal>

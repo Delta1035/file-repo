@@ -1,0 +1,62 @@
+<div class="page_main scroll_bar maintain_main maintain_person">
+    <div class="header">
+        <div class="title">{{ 'home.maintainPerson' | translate }}</div>
+        <div class="opera_area">
+            <button nz-button *ngIf="!deleteFlag&&pagePermission.allowedDelete" nzType="primary" nzDanger="true" (click)="deleteData()">{{ 'maintainPerson.batchDeletePerson' | translate }}</button>
+            <button nz-button *ngIf="deleteFlag" nzType="default" (click)="cancelDelete()">{{ 'button.exit' | translate }}</button>
+            <button nz-button *ngIf="deleteFlag" nzType="primary" nzDanger="true" (click)="confirmDelete()">{{ 'button.confirmDelete' | translate }}</button>
+        </div>
+    </div>
+    <div class="body">
+        <div class="opera_bar">
+            <div class="search_area">
+                <div class="search_item">
+                    <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px;">
+                        <input type="text" nz-input [placeholder]="utils.searchPlacehoder('tableHead.empno','tableHead.chineseName','tableHead.englishName','tableHead.email')" [(ngModel)]="searchKeyWord" (keyup.enter)="dataSearch()" />
+                    </nz-input-group>
+                    <ng-template #searchInputIcon><i nz-icon nzType="search"></i></ng-template>
+                </div>
+                <div class="search_item">
+                    <button nz-button nzType="primary" (click)="dataSearch()">{{ 'button.query' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="data_table" #dataTable>
+            <nz-table #basicTable [nzData]="personInfoData" [nzBordered]="true" [(nzPageIndex)]="tableInfo.pageIndex" [(nzPageSize)]="tableInfo.pageSize" [nzTotal]="tableInfo.pageTotal" [nzFrontPagination]="false" [nzLoading]="tableInfo.loading" [nzHideOnSinglePage]="true"
+                (nzPageIndexChange)=tablePageIndexChange()>
+                <thead>
+                    <tr>
+                        <th *ngIf="!deleteFlag" nzAlign="center">{{ 'tableHead.index' | translate }}</th>
+                        <th *ngIf="deleteFlag" nzAlign="center">
+                            <label nz-checkbox [(ngModel)]="tableInfo.checkedAll" (ngModelChange)="checkedAll()"></label>
+                        </th>
+                        <th nzAlign="center">{{ 'tableHead.chineseName' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.englishName' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.email' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.role' | translate }}</th>
+                        <th nzAlign="center">{{ 'tableHead.operation' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of basicTable.data let i=index">
+                        <td *ngIf="!deleteFlag" nzAlign="center">{{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}</td>
+                        <td *ngIf="deleteFlag" nzAlign="center">
+                            <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="checkedItem()"></label>
+                        </td>
+                        <td nzAlign="center">{{ data.nameC }}</td>
+                        <td nzAlign="center">{{ data.nameE }}</td>
+                        <td nzAlign="center">{{ data.email }}</td>
+                        <td nzAlign="center">
+                            <nz-select [(ngModel)]="data.roleId" [nzDisabled]="!pagePermission.allowedUpdate" style="width: 200px;" (ngModelChange)="roleIdChange(data)">
+                                <nz-option *ngFor="let item of roleList" [nzValue]="item.roleId" [nzLabel]="item.roleName"></nz-option>
+                            </nz-select>
+                        </td>
+                        <td nzAlign="center">
+                            <i nz-icon nzType="delete" nzTheme="outline" (click)="deleteItem(data)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </div>
+    </div>
+</div>

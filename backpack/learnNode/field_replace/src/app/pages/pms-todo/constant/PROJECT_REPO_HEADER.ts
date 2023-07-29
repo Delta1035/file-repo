@@ -1,0 +1,43 @@
+import { TableHeaderInfo } from './../../../define/common.define';
+export const PROJECT_REPO_HEADER:TableHeaderInfo[] = [
+  {
+    content:'PMS.VersionControl',
+    left:false,
+    right:false,
+    align:'center',
+    width:50,
+    key:'version_control'
+  },
+  {
+    content:'PMS.VersionControlType',
+    left:false,
+    right:false,
+    align:'center',
+    width:50,
+    key:'type'
+  },
+  {
+    content:'PMS.RepoID',
+    left:false,
+    right:false,
+    align:'center',
+    width:50,
+    key:'repo_id'
+  },
+  {
+    content:'PMS.RepoUrl',
+    left:false,
+    right:false,
+    align:'center',
+    width:50,
+    key:'repo_url'
+  },
+  {
+    content:'PMS.UTJobName',
+    left:false,
+    right:false,
+    align:'center',
+    width:50,
+    key:'ut_job_name'
+  },
+]

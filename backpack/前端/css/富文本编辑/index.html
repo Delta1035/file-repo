@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe name="richedit" src="iframe.html" style="height: 100px; width: 100px">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+</body>
+<script>
+    window.addEventListener("load", () => {
+        frames["richedit"].document.designMode = "on";
+    }); 
+</script>
+
+</html>

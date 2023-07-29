@@ -1,0 +1,15 @@
+{
+  "CICDMTP": {
+    "CaseOwner": "11005152",
+    "Approver": "9911103",
+    "Title": "CICD Test",
+    "Description": "CICD Test",
+    "DetailRequirement": "CICD integrated with ITSM test",
+    "ReturnURL": "https://gitlab.wistron.com/api/v4/projects/",
+    "ProjectID": "2814",
+    "Branch": "production",
+    "Token": "99d064b26827d8dba87f0cdd5581de",
+    "CINo": ""
+  }
+
+}

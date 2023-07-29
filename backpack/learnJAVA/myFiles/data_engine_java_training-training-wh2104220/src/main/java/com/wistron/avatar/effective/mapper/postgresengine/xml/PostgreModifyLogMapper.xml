@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wistron.avatar.effective.mapper.postgresengine.IPostgreModifyLogMapper">
+<!--更新编辑日志-->
+    <insert id="insertModifyInfo" parameterType="com.wistron.avatar.common.entity.postgre.AtBaModifyLog">
+        insert into at_ba_modify_log (table_name,modify_time,modify_user_code) values (#{tableName},#{modifyTime},#{modifyUserCode})
+    </insert>
+<!--判断是否已编辑的 parameterType="com.wistron.avatar.common.entity.postgre.AtBaModifyLog"-->
+    <select id="selectByUserAndTableName" parameterType="com.wistron.avatar.common.entity.postgre.AtBaModifyLog" resultType="List">
+        select * from at_ba_modify_log where table_name=#{tableName} and modify_user_code=#{modifyUserCode}
+    </select>
+<!--如果当前用户已经编辑过当前这张表, 更显而不是插入-->
+    <update id="updateModifyInfo" parameterType="com.wistron.avatar.common.entity.postgre.AtBaModifyLog">
+        update at_ba_modify_log set modify_time=#{modifyTime}
+        where table_name=#{tableName} and modify_user_code=#{modifyUserCode}
+    </update>
+</mapper>

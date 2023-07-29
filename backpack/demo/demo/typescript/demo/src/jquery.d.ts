@@ -1,0 +1,1 @@
+declare var jquery:(selector:string)=>any;

@@ -1,0 +1,14 @@
+<nz-form-item>
+  <nz-form-label [nzRequired]="required" *ngIf="label" [nzSpan]="labelSpan" [nzFor]="label">
+    {{ label }}
+  </nz-form-label>
+  <nz-form-control [nzSpan]="controlSpan">
+    <nz-radio-group [(ngModel)]="value" [nzDisabled]="isDisabled">
+      <ng-container *ngFor="let option of options">
+        <label nz-radio [nzValue]="option.optionValue">{{
+          option.optionLabel | translate
+        }}</label>
+      </ng-container>
+    </nz-radio-group>
+  </nz-form-control>
+</nz-form-item>

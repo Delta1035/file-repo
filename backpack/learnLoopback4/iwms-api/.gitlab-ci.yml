@@ -1,0 +1,59 @@
+include:
+  project: 'i4.0/CICDTemplate'
+  file: '/.gitlab-ci.api.loopback4.yml'
+
+variables:
+  BUILD_IMAGE_NAME: 'iwms-dashboard-api'
+  SERVICE_NAME: 'iwms-dashboard-api'
+  EXPOSE_PORT: 3000
+
+build_dist:
+  extends: npm_build
+  only:
+    - master
+  tags:
+    - k8s-runners
+
+build_test:
+  extends: build_testimage
+  only:
+    - master
+  tags:
+    - k8s-runners
+
+deploy_test:
+  extends: deploy_for_test
+  only:
+    - master
+  tags:
+    - k8s-runners
+
+zap_scan:
+  extends: vulnerability_scan
+  only:
+    - master
+  tags:
+    - k8s-runners
+
+sonar_scan:
+  extends: code_scan
+  only:
+    - master
+  tags:
+    - k8s-runners
+
+version_job:
+  extends: get_version
+  only:
+    - master
+    - pre-production
+    - production
+  tags:
+    - k8s-runners
+
+build_running:
+  extends: docker-build
+  only:
+    - master
+  tags:
+    - k8s-runners

@@ -1,0 +1,273 @@
+{
+  "processListContent": [
+    {
+      "processName": "PMS.Process.SOP",
+      "process": [
+        {
+          "content": "SOP",
+          "showLine": false,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsSOP",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        }
+      ]
+    },
+    {
+      "processName": "PMS.Process.AddProject",
+      "process": [
+        {
+          "content": "Add User (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Add Project (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsProjectManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Approve (Scott)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsTodo",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Create JIRA accounts automatically (Job)",
+          "showLine": true,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Create JIRA project automatically (Job)",
+          "showLine": true,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Add team member into Jira Project (Job)",
+          "showLine": true,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Set up Jira Project role (TL)",
+          "showLine": true,
+          "bgColor": "#0000E3",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Let new member change their employee ID in JIRA (All members)",
+          "showLine": false,
+          "bgColor": "#0000E3",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        }
+      ]
+    },
+    {
+      "processName": "PMS.Process.AddProjectUser",
+      "process": [
+        {
+          "content": "Add User (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Edit Project - Add User (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Approve (Scott)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsTodo",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Create JIRA accounts automatically (Job)",
+          "showLine": true,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Create JIRA project automatically (Job)",
+          "showLine": true,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Add team member into Jira Project (Job)",
+          "showLine": true,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Set up Jira Project role (TL)",
+          "showLine": true,
+          "bgColor": "#0000E3",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Let new member change their employee ID in JIRA (All members)",
+          "showLine": false,
+          "bgColor": "#0000E3",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        }
+      ]
+    },
+    {
+      "processName": "PMS.Process.RemoveProjectUser",
+      "process": [
+        {
+          "content": "Edit Project - Remove User (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Remove team member from Jira Project (Job)",
+          "showLine": false,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        }
+      ]
+    },
+    {
+      "processName": "PMS.Process.UserResigned",
+      "process": [
+        {
+          "content": "Edit Project - Remove User (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Edit User - Change user status to Deleted (TL)",
+          "showLine": true,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Remove team member from Jira Project (Job)",
+          "showLine": false,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        },
+        {
+          "content": "Delete Jira Account (Job)",
+          "showLine": false,
+          "bgColor": "#BEBEBE",
+          "path": "/home/pms/pmsProcess",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        }
+      ]
+    },
+    {
+      "processName": "PMS.Process.CloseProject",
+      "process": [
+        {
+          "content": "Edit Project - Check Close Project check box (TL)",
+          "showLine": false,
+          "bgColor": "#51B540",
+          "path": "/home/pms/pmsUserManagement",
+          "textColor": "#fff",
+          "width": "10vw",
+          "textSize": "0.5vw"
+        }
+      ]
+    }
+  ],
+  "iconDescriptionContent": [
+    {
+      "processIconDesctiption": "PMS",
+      "processIconTextColor": "#fff",
+      "processIconTextSize": "0.5vw",
+      "processIconBgColor": "#51B540",
+      "processIconWidth": "5vw"
+    },
+    {
+      "processIconDesctiption": "PMS Job",
+      "processIconTextColor": "#fff",
+      "processIconTextSize": "0.5vw",
+      "processIconBgColor": "#BEBEBE",
+      "processIconWidth": "5vw"
+    },
+    {
+      "processIconDesctiption": "Jira",
+      "processIconTextColor": "#fff",
+      "processIconTextSize": "0.5vw",
+      "processIconBgColor": "#0000E3",
+      "processIconWidth": "5vw"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+packages:
+  - "fd/*"
+  - "ed/*"
+  - "packages/*"

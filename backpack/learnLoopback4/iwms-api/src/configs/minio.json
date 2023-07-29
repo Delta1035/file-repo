@@ -1,0 +1,7 @@
+{
+  "endPoint": "minio-poem.minio.10.66.224.2.k8sprd-wks.k8s.wistron.com",
+  "port": 80,
+  "useSSL": false,
+  "accessKey": "minio@poem",
+  "secretKey": "minio@poem"
+}

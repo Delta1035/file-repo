@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wistron.avatar.atbamohitrate.mapper.oraclev360.IAtBaMoHitrateOfOracleMapper">
+    <sql id="selectFields">
+        BATCHID, PLANT, PARTNUMBER, PERCENTAGE, CRBY, CRDATE, UPDBY, UPDDATE
+    </sql>
+
+    <resultMap id="HitrateMap" type="com.wistron.avatar.common.entity.oraclev360.AtBaMoHitrateOfOracleEntity">
+        <result column="BATCHID" jdbcType="INTEGER" property="batchId"/>
+        <result column="PLANT" jdbcType="VARCHAR" property="plant"/>
+        <result column="PARTNUMBER" jdbcType="VARCHAR" property="partNumber"/>
+        <result column="PERCENTAGE" jdbcType="NUMERIC" property="percentage"/>
+        <result column="CRBY" jdbcType="VARCHAR" property="createBy"/>
+        <result column="CRDATE" jdbcType="DATE" property="createDate"/>
+        <result column="UPDBY" jdbcType="VARCHAR" property="updateBy"/>
+        <result column="UPDDATE" jdbcType="DATE" property="updateDate"/>
+    </resultMap>
+
+    <select id="selectByPlants" parameterType="list" resultMap="HitrateMap">
+        select
+        <include refid="selectFields"/>
+        from AT_BA_MO_HITRATE
+        <if test="plant != null and plant != '' and plant.size() != 0">
+            where PLANT in
+            <foreach collection="plant" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <delete id="deleteByPlants" parameterType="list">
+        delete from AT_BA_MO_HITRATE
+        <if test="plant != null and plant != '' and plant.size() != 0">
+            where PLANT in
+            <foreach collection="plant" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </delete>
+
+</mapper>

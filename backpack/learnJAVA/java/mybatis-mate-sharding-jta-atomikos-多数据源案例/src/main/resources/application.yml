@@ -1,0 +1,40 @@
+# Mybatis Mate 配置
+mybatis-mate:
+  cert:
+    # 请添加微信wx153666购买授权，不白嫖从我做起！ 测试证书会失效，请勿正式环境使用
+    grant: thisIsTestLicense
+    license: bGVwxDOPMZMe5CJ2F8Wk0rXTBEu2dxtf606xLkujp4Iasu3RZbAPMiSHcoZsLJgBsgYmRSTeftIjBeHMwMGl+H5AUapa2AHfIFB/6WMHJsfTKETwnew5Wmhg/YRJnzCz4RxV4omJQ1Y35xdaLRmu0+eQjLFP8pjus1GrJq+h6CfP5VZJGzWYVaUfl6Z79+9mIiv5n9iDDvyL9us91NU5kkIr+Th8K/dzmsc/FtOMCT0+2wgL/tdZsC3Vt7jVsk9+9HaQYIFWrLEyB0yVAiwu3UKeZQ8Uc3AjMldzbozCuu8BmPAMrT5tIpACTuISfIXiI8lJIIEC2TqiEvCdyZf9sg==
+  sharding:
+    health: true # 健康检测
+    primary: test # 默认选择数据源
+    datasource:
+      test:
+        # 数据源 test 节点 1
+        - key: t1
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+      test2:
+        # 数据源 test2 节点 1
+        - key: t1
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/test2?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+      test3:
+        # 数据源 test3 节点 1
+        - key: t1
+          driver-class-name: org.postgresql.Driver
+          url: jdbc:postgresql://localhost:5432/test
+          username: postgres
+          password: 123456
+
+# 允许bean定义重写
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+# Logger Config
+logging:
+  level:
+    mybatis.mate: debug
+    org.apache: debug

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../QQ图片20211120010818.png" />
+    <input id="files" type="file">
+</body>
+<script>
+
+    files.addEventListener('change', function (e) {
+        // 使用对象URL 显示图片
+        const imgs = Object.values(e.target.files); // 注意 : value才是 File对象
+        imgs.forEach(img => {
+            let reader = new FileReader();
+            reader.onload = function (evt) {
+                console.log(evt.target.result);
+            }
+            reader.readAsDataURL(img);
+            reader.onload = function (e) {
+                let image = new Image();
+                image.src = e.target.result; // reader.result 存放的是DATA URI(base64), 可以读取文件数据
+                let base64 = e.target.result;
+                console.log('base64', base64);
+                document.querySelector('body').appendChild(image);
+            }
+            // const imgELE = document.createElement('img');
+            // imgELE.src = url;
+            // imgELE.onload = function () {
+
+            // }
+        })
+    })
+
+</script>
+
+</html>

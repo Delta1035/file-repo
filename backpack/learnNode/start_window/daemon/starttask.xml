@@ -1,0 +1,31 @@
+<service>
+	<id>starttask.exe</id>
+	<name>start task</name>
+	<description>a node window task</description>
+	<executable>D:\node\nodejs\node.exe</executable>
+	<argument>--harmony</argument>
+	<argument>D:\node\nvm\v14.21.1\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>E:\desktop\triennium\learnNode\start_window\task.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>start task wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<serviceaccount>
+		<domain>PC-WH2104220</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>E:\desktop\triennium\learnNode\start_window</workingdirectory>
+</service>

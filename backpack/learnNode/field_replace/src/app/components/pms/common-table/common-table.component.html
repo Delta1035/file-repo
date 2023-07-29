@@ -1,0 +1,57 @@
+<div class="table-wrapper">
+  <nz-table #basicTable nzBordered [nzTitle]="isShowTableHeader?titleTemplateRef:null" [nzData]="dataSource"
+    nzTableLayout="fixed" [nzShowSizeChanger]="true" [nzPageIndex]="index" [nzScroll]="nzScroll" [nzLoading]="false"
+    [nzShowQuickJumper]="true" [nzLoading]="isLoading" [(nzPageIndex)]="index" [(nzPageSize)]="size"
+    [nzShowPagination]="isShowPagination" (nzPageSizeChange)="pageSizeChange($event)">
+    <thead>
+      <tr>
+        <!-- 表头单元格 -->
+        <th [nzWidth]="item.width + 'px'" [nzAlign]="item.align" [nzLeft]="item.left" [nzRight]="item.right"
+          *ngFor="let item of tableHeaders;let i=index;trackBy:trackByIndexFn">
+          {{ item.content | translate }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data; let i = index">
+        <ng-container *ngFor="let cell of tableHeaders; let cellIndex = index;trackBy:trackByIndexFn">
+          <td [nzAlign]="cell.align" [nzLeft]="cell.left" [nzRight]="cell.right" [ngSwitch]="cell.key">
+            <!-- 序号 -->
+            <ng-container *ngSwitchCase="'index'">
+              {{(index-1)*size + i + 1 }}
+            </ng-container>
+            <!-- 系统操作 -->
+            <ng-container *ngSwitchCase="'operation'" [ngTemplateOutlet]="operationTemplateRef"
+              [ngTemplateOutletContext]="{ element: data, index: i }">
+            </ng-container>
+            <!-- 单元格数据 -->
+            <ng-container *ngSwitchCase="'email'">
+              <a *ngIf="cell.key === 'email'" href="mailto:{{ data[cell.key] }}" target="_blank">{{
+                data[cell.key] }}
+              </a>
+            </ng-container>
+            <ng-container *ngSwitchCase="'repo_url'">
+              <a *ngIf="cell.key === 'repo_url'" [href]="data[cell.key]" target="_blank">
+                {{data[cell.key] }}
+              </a>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              <span>{{data[cell.key??''] }}</span>
+            </ng-container>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <!-- 存放table表头搜索栏为的模板 -->
+  <ng-template #titleTemplateRef>
+    <div [ngStyle]="{'display':'inline-block'}">
+      <ng-template [ngTemplateOutlet]="titleFormRef">
+      </ng-template>
+    </div>
+    <button *ngIf="isShowDownload" nz-button nzType="primary" (click)="download()">{{ 'common.exportToExcel' | translate
+      }}</button>
+  </ng-template>
+
+</div>

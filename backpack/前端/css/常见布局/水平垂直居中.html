@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html,
+        main {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            /* 使用flex居中 */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            /* 使用定位居中 */
+            position: relative;
+        }
+        /* 定位1 */
+        .box-1{
+            background-color: gray;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* 相对于父级容器的百分比 */
+            top: 50%;
+            right: 50%;
+            /* 相对于自身宽高的百分比 */
+            transform: translate(50px,50px);
+        }
+        .box-2{
+            background-color: gray;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+        .box{
+            background-color: gray;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* 移动自身 */
+            transform: translate(-50%,-50%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            
+        </div>
+    </main>
+</body>
+
+</html>

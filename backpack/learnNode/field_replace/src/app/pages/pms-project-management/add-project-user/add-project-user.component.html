@@ -1,0 +1,49 @@
+<div class="form-wrapper">
+  <form nz-form [formGroup]="userForm">
+    <!-- 用戶名稱/工號 -->
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" [nzRequired]="false">{{'PMS.UserName'|translate}} / {{'PMS.EmployeeId'|translate}}
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input placeholder="{{'PMS.UserName'|translate}} / {{'PMS.EmployeeId'|translate}}" nz-input
+          formControlName="userNameSearchWord" [nzAutocomplete]="auto" />
+      </nz-form-control>
+      <span class="loading-wrapper" *ngIf="isSearchUserInfo">
+        <ng-template #indicatorTemplate><i nz-icon nzType="loading"></i></ng-template>
+        <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
+      </span>
+    </nz-form-item>
+    <!-- [compareWith]="compareFun" -->
+    <nz-autocomplete #auto>
+      <nz-auto-option *ngFor="let option of userSearchList$ | async" [nzValue]="option" [nzLabel]="option.user_name"
+        (click)="addUser(option)">
+        {{ option.user_name }}
+      </nz-auto-option>
+    </nz-autocomplete>
+    <!-- 用户数据 -->
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" [nzRequired]="false" [nzNoColon]="true"></nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-card style="width:300px;box-shadow: 8px 8px 8px #999;">
+          <input placeholder="{{'PMS.Id'|translate}}" nz-input formControlName="userId" [nzAutocomplete]="auto" />
+          <nz-divider [nzDashed]="true"></nz-divider>
+          <input placeholder="{{'PMS.UserName'|translate}}" nz-input formControlName="userName"
+            [nzAutocomplete]="auto" />
+          <nz-divider [nzDashed]="true"></nz-divider>
+          <input placeholder="{{'PMS.EmployeeId'|translate}}" nz-input formControlName="employeeId"
+            [nzAutocomplete]="auto" />
+          <nz-divider [nzDashed]="true"></nz-divider>
+          <input placeholder="{{'PMS.Email'|translate}}" nz-input formControlName="email" [nzAutocomplete]="auto" />
+        </nz-card>
+      </nz-form-control>
+    </nz-form-item>
+    <!-- 專案角色 -->
+    <app-custom-select formControlName="projectRole" [required]="true" [label]="'PMS.ProjectRole' | translate"
+      [options]="projectRoleOptions"></app-custom-select>
+    <!-- JIRA角色 -->
+    <app-custom-select formControlName="jiraRole" [required]="true" [label]="'PMS.JiraRole' | translate"
+      [options]="jiraRoleOptions"></app-custom-select>
+  </form>
+
+
+</div>

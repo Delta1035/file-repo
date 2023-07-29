@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Canvas</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .border{
+            width: 100vw;
+            height: 100vh;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+            border: 1px solid gray;
+            /* cursor:url(3D-high-definition-03-small.jpg), auto; */
+            cursor: url(https://picsum.photos/20/20), auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border">
+        <canvas id="drawing" width="400" height="600">A drawing of something.</canvas>
+    </div>
+</body>
+<script>
+    let drawing = document.getElementById('drawing');
+    if (drawing.getContext) {
+        let context = drawing.getContext('2d');
+        // 创建路径 很重要
+        context.beginPath();
+        // layerX layerY
+        context.strokeStyle = "orange"; // 绘制风格
+        context.fillStyle = "blue"; //填充风格
+        let canDrawFlag = false;
+        // drawing.addEventListener('click', function (event) {
+        //     console.log('click', event);
+        //     // 将光标移到当前位置
+        //     context.moveTo(event.layerX, event.layerY);
+        // });
+        // drawing.addEventListener('mousedown', function (event) {
+        //     console.log('mousedown', event);
+        //     context.moveTo(event.layerX, event.layerY);
+        //     canDrawFlag = true;
+        // });
+        drawing.addEventListener('touchstart', function (event) {
+            // console.log('touchstart', event);
+            context.moveTo(event.touches[0].clientX, event.touches[0].clientY);
+            canDrawFlag = true;
+        });
+        // drawing.addEventListener('mouseup', function (event) {
+        //     console.log('mouseup', event);
+        //     canDrawFlag = false;
+        // });
+        drawing.addEventListener('touchend', function (event) {
+            // console.log('touchend', event);
+            canDrawFlag = false;
+        });
+        // drawing.addEventListener('mousemove', function (event) {
+        //     if (canDrawFlag) {
+        //         console.log('mousemove', event);
+        //         requestAnimationFrame(function () {
+        //             context.lineTo(event.layerX, event.layerY);
+        //             context.stroke();// 绘制路径
+        //         })
+        //     } else {
+        //         return;
+        //     }
+        // });
+        drawing.addEventListener('touchmove', function (event) {
+            if (canDrawFlag) {
+                console.log('touchmove', event);
+                requestAnimationFrame(function () {
+                    context.lineTo(event.touches[0].clientX, event.touches[0].clientY);
+                    context.stroke();// 绘制路径
+                })
+            } else {
+                return;
+            }
+        });
+
+    }
+
+</script>
+
+</html>

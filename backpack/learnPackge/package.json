@@ -1,0 +1,20 @@
+{
+  "name": "package-learn",
+  "version": "1.0.0",
+  "description": "描述介绍,npmjs.org 包的描述",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["包的关键字, 介绍下面的小胶囊方块"],
+  "author": "作者信息,可以是一个字符串也可以是一个对象{name:'张三',email:'528491526@11.com'}",
+  "license": "ISC",
+  "homepage":"项目首页",
+  "bugs": {
+    "url":"https://gitee.com/delta1035/triennium 提交bug的地址"
+  },
+  "repository": {
+    "type":"git项目地址",
+    "url":"https://gitee.com/delta1035/triennium"
+  }
+}

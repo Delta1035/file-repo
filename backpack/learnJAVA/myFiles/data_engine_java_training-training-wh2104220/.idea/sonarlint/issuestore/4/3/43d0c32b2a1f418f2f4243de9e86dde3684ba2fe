@@ -1,0 +1,11 @@
+
+D
+java:S1604‹"(Make this anonymous inner class a lambda(îÒÃÑÿÿÿÿÿ
+V
+java:S1874*";Remove this use of "RestHighLevelClient"; it is deprecated.(¸«Á÷øÿÿÿÿ
+P
+java:S1874N";Remove this use of "RestHighLevelClient"; it is deprecated.(Ïû½x
+Z	java:S106p"9Replace this use of System.out or System.err by a logger.(É»«Òúÿÿÿÿ8ÈŠª0
+U	java:S106q"9Replace this use of System.out or System.err by a logger.(Êù¾°8Ó±ª0
+W
+java:S1874Á";Remove this use of "RestHighLevelClient"; it is deprecated.(âºŸ´ÿÿÿÿÿ

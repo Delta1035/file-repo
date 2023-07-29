@@ -1,0 +1,7 @@
+com\wistron\avatar\firstProject\service\impl\FirstServiceImpl.class
+com\wistron\avatar\firstProject\controller\FirstController.class
+com\wistron\avatar\common\entity\First.class
+com\wistron\avatar\common\util\DsPostgresEngineUtil.class
+com\wistron\avatar\firstProject\service\IFirstService.class
+com\wistron\avatar\App.class
+com\wistron\avatar\firstProject\mapper\postgresengine\IFirstMapper.class

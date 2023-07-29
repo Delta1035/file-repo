@@ -1,0 +1,43 @@
+<p [ngStyle]="{'color':'red','textAlign':'left'}"><strong>* 簽核作業目前還在測試中，會先都由Scott Yang協助簽核，若有任何問題，請與Scott_Yang@wistron.com聯絡。</strong></p>
+<form nz-form [formGroup]="projectForm">
+  <!-- 专案名称 -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.ProjectName" | translate }}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input placeholder="{{ 'PMS.ProjectName' | translate }}" nz-input formControlName="projectName" maxlength="50" />
+    </nz-form-control>
+  </nz-form-item>
+  <!-- jira key -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.JiraKey" | translate }}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input placeholder="{{ 'PMS.JiraKey' | translate }}" nz-input formControlName="jiraKey" maxlength="10" />
+    </nz-form-control>
+  </nz-form-item>
+    <!-- 处级主管 -->
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.DivisionSupervisor" | translate }}
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input placeholder="{{ 'PMS.DivisionSupervisor' | translate }}" nz-input formControlName="divisionSupervisor" maxlength="10" />
+      </nz-form-control>
+    </nz-form-item>
+    <!-- 初级主管电子信箱 -->
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.DivisionSupervisorEmail" | translate }}
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input placeholder="{{ 'PMS.DivisionSupervisorEmail' | translate }}" nz-input formControlName="divisionSupervisorEmail" maxlength="10" />
+      </nz-form-control>
+    </nz-form-item>
+  <!-- 备注 -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.Remark" | translate }}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input placeholder="{{ 'PMS.Remark' | translate }}" nz-input formControlName="remark" />
+    </nz-form-control>
+  </nz-form-item>
+</form>

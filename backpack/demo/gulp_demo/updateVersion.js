@@ -1,0 +1,10 @@
+const path = require('path');
+const fs = require('fs');
+const json = fs.readFileSync(path.join(__dirname, 'ionic.config.json'), { encoding: 'utf-8' });
+const xml = fs.readFileSync(path.join(__dirname, 'config.xml'), { encoding: 'utf-8' });
+const date = new Date().toLocaleDateString().replace(/\//g, '').substring(2) + '01';
+const jsonStr = json.replace(/(?<="android-versionCode": "|"ios-CFBundleVersion": ")\d{8,8}/g, date);
+const xmlStr = xml.replace(/(?<=android-versionCode="|ios-CFBundleVersion=")\d{8,8}/g, date);
+console.log(xmlStr);
+fs.writeFileSync(path.join(__dirname, 'ionic.config.json'), jsonStr, { encoding: 'utf-8' });
+fs.writeFileSync(path.join(__dirname, 'config.xml'), xmlStr, { encoding: 'utf-8' });

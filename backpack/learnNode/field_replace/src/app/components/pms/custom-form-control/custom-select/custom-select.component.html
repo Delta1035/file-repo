@@ -1,0 +1,14 @@
+<nz-form-item>
+  <nz-form-label *ngIf="label" [nzRequired]="required" [nzSpan]="labelSpan" [nzFor]="label">{{ label }}</nz-form-label>
+  <nz-form-control [nzSpan]="controlSpan" >
+    <nz-select class="min-select-container" [(ngModel)]="value" [id]="label" [nzPlaceHolder]="placeholder" [nzDisabled]="isDisabled">
+      <ng-container *ngFor="let option of options">
+        <nz-option 
+          [nzValue]="option.optionValue"
+          [nzLabel]="option.optionLabel | translate"
+          [nzDisabled]="option.disabled"
+        ></nz-option>
+      </ng-container>
+    </nz-select>
+  </nz-form-control>
+</nz-form-item>

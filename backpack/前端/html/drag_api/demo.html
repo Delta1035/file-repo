@@ -1,0 +1,46 @@
+
+<style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(153, 80, 202);
+    }
+    .container {
+      width: 400px;
+      height: 400px;
+      margin: 100px auto;
+      border: 3px solid rgb(40, 180, 127);
+    }
+  </style>
+  <body>
+    <div class="box" draggable="true"></div>
+    <div class="container"></div>
+  </body>
+  <script>
+    const box = document.getElementsByClassName("box")[0];
+    const container = document.getElementsByClassName("container")[0];
+    box.addEventListener("drag", function (e) {
+      //console.log(e.target, "drop")
+    })
+    box.addEventListener("dragstart", function (e) {
+      console.log(e.target, "dragstart")
+    })
+    box.addEventListener("dragend", function (e) {
+      console.log(e.target, "dragend")
+    })
+    box.addEventListener("dragexit", function (e) {
+      console.log(e.target, "dragexit")
+    })
+    container.addEventListener("dragenter", function (e) {
+      e.preventDefault()
+      console.log(e.target, "dragenter")
+    })
+    container.addEventListener("dragover", function (e) {
+      //e.preventDefault()
+      //console.log(e.target, "dragover")
+    })
+    container.addEventListener("dragleave", function (e) {
+      console.log(e.target, "dragleave")
+    })
+  </script>
+  

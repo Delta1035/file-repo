@@ -1,0 +1,12 @@
+.oddRow {
+  background-color: #F2F2F2;
+}
+.evenRow {
+  background-color: #FFFFFF;
+}
+.lock{
+  margin-right: 5px;  
+}
+.lock :hover {
+  color: red;
+}

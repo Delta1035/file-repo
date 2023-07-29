@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            /* 先定义一个font family */
+            font-family: "small milk";
+            src: url(./小可奶酪体.ttf);
+        }
+
+        p {
+            color: orange;
+            font-weight: 900;
+            font-size: large;
+            /* 使用之前定义好的font family */
+            font-family: "small milk";
+        }
+
+        span {
+            color: aqua !important;
+            visibility: hidden;
+        }
+        body{
+            background: scroll ;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <span style="color: red;">我在测试1</span>
+        <span>我在测试2</span>
+        <span>我在测试3</span>
+        <span>我在测试4</span>
+        <span>我在测试5</span>
+    </p>
+</body>
+
+</html>

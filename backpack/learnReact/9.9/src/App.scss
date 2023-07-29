@@ -1,0 +1,50 @@
+@import '~antd/dist/antd.css';
+
+@import '@ant-design/pro-components/dist/components.css';
+
+
+#root{
+  height: 100%;
+}
+
+
+.newTooptip{
+  .ant-tooltip-arrow{
+    display: none;
+  }
+  .ant-tooltip-inner{
+    border-radius: 4px;
+  }
+}
+.ant-collapse-ghost > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box{
+  padding-top: 3px;
+}
+
+/*整个滚动条*/
+::-webkit-scrollbar {
+  
+  width: 5px;
+  
+  height: 8px;
+  
+  background-color: #fff;
+  
+}
+  
+/*定义滚动条轨道*/
+  
+::-webkit-scrollbar-track {
+  
+  background-color: #fff;
+  
+}
+  
+/*定义滑块*/
+  
+::-webkit-scrollbar-thumb {
+  
+  background-color: #ACB1BF;
+  
+  border-radius: 4px;
+  
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wistron.avatar.effective.mapper.oraclev360.IOracleEffectiveMapper">
+
+    <select id="selectAll" resultType="com.wistron.avatar.common.entity.oracle.OracleEffective">
+        select * from AT_BA_MO_LINEEFFECTIVE
+    </select>
+
+    <select id="selectByPlants" resultType="com.wistron.avatar.common.entity.oracle.OracleEffective">
+        select * from AT_BA_MO_LINEEFFECTIVE where PlANT in
+        <foreach item="plant" collection="plants" separator="," open="(" close=")" index="">
+            #{plant}
+        </foreach>
+    </select>
+
+    <select id="selectAllPlantName" resultType="String">
+        SELECT DISTINCT PLANT FROM AT_BA_MO_LINEEFFECTIVE
+    </select>
+
+<!--    删除转移到postgre的数据-->
+    <delete id="deleteByPlants">
+        delete from AT_BA_MO_LINEEFFECTIVE where PLANT in
+        <foreach item="plant" collection="plants" separator="," open="(" close=")" index="">
+            #{plant}
+        </foreach>
+    </delete>
+</mapper>

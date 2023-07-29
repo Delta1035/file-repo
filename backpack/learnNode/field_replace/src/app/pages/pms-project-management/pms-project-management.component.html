@@ -1,0 +1,84 @@
+<div class="page_main scroll_bar pms_project_management">
+  <app-header title="{{ subTitle | translate }}" [isShowButtons]="true">
+    <div buttons>
+      <!-- 报表 -->
+      <button nz-button nzType="primary" (click)="exportExcel()"> {{ 'common.report' | translate }}
+      </button>
+      <!-- 新增专案 -->
+      <button nz-button nzType="primary" (click)="addProject()">
+        {{ "PMS.AddProject" | translate }}
+      </button>
+      <!-- 下载模板 -->
+      <a href="assets/templates/專案列管清單上傳範本.xlsx" download style="margin-left: 10px;">
+        <button nz-button nzType="primary">
+          {{ "common.downloadTemplate" | translate }}
+        </button>
+      </a>
+      <!-- 上传文件 -->
+      <div>
+        <button nz-button nzType="primary" (click)="doUploadFile(inputFile)">
+          {{ "common.uploadFile" | translate }}
+        </button>
+        <input #inputFile type="file" hidden (change)="onUploadedFileChanged($event)" accept=".xlsx">
+      </div>
+    </div>
+  </app-header>
+  <ng-template #titleFormRef>
+    <div class="tab-wrapper">
+      <form nz-form [nzLayout]="'inline'">
+        <!-- 专案名称 -->
+        <app-custom-input label="{{ 'PMS.ProjectName' | translate }}" [labelSpan]="null" [controlSpan]="null"
+          [(ngModel)]="projectName" [ngModelOptions]="{ standalone: true }"
+          placeholder="{{ 'PMS.ProjectName' | translate }}"></app-custom-input>
+        <!-- 处级 -->
+        <app-custom-select label="{{ 'PMS.Division' | translate }}" [labelSpan]="null" [controlSpan]="null"
+          [(ngModel)]="div" [ngModelOptions]="{ standalone: true }"
+          placeholder="{{ 'PMS.Division' | translate }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" [options]="DEVISION_LIST">
+        </app-custom-select>
+        <!-- 關閉專案 -->
+        <app-custom-select label="{{ 'PMS.CloseProject' | translate }}" [labelSpan]="null" [controlSpan]="null"
+          [(ngModel)]="isClosedProject" [ngModelOptions]="{ standalone: true }"
+          placeholder="{{ 'PMS.CloseProject' | translate }}" [options]="PROJECT_STATIS"></app-custom-select>
+        <!-- 搜索 -->
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="getProjectList()">
+              {{ "common.SEARCH" | translate }}
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </ng-template>
+  <!-- 查詢結果 -->
+  <app-common-table [titleFormRef]="titleFormRef" [isLoading]="isLoading" [dataSource]="projectDataSource"
+    [tableHeaders]="tableHeaders" [operationTemplateRef]="operationTemplateRef">
+  </app-common-table>
+  <!-- 系統操作 -->
+  <!-- 讀取上下文對象的element屬性值 {element:data,index:i}-->
+  <ng-template #operationTemplateRef let-data="element">
+    <div class="operation flex justify-around align-center">
+      <button nz-button [disabled]="!(0 | checkOperateIcon:data)">
+        <i [style.fontSize]="'20px'" nz-tooltip nzTooltipTitle="{{ 'common.tooltip.edit' | translate }}" nz-icon
+          nzType="edit" (click)="editProject(data)"></i>
+      </button>
+      <button nz-button>
+        <i [style.fontSize]="'20px'" nz-tooltip nzTooltipTitle="{{ 'common.tooltip.detail' | translate }}" nz-icon
+          nzType="snippets" nzTheme="outline" (click)="detail(data)"></i>
+      </button>
+      <button *ngIf="1 | checkOperateIcon:data" i-button color="primary" nz-tooltip
+        nzTooltipTitle="{{ 'PMS.CreateUser' | translate }}" (click)="updateReadyToCreateUser(data)">
+        <i nz-icon nzType="user-add" nzTheme="outline"></i>
+      </button>
+      <button *ngIf="2 | checkOperateIcon:data" i-button color="primary" nz-tooltip
+        nzTooltipTitle="{{ 'PMS.CreatedJiraProject' | translate }}" (click)="updateReadyToCreateProject(data)">
+        <i nz-icon nzType="appstore-add" nzTheme="outline"></i>
+      </button>
+      <button *ngIf="3 | checkOperateIcon:data" i-button color="primary" nz-tooltip
+        nzTooltipTitle="{{ 'PMS.SubmitToSign' | translate }}" (click)="submitToApprove(data)">
+        <i nz-icon nzType="safety-certificate" nzTheme="outline"></i>
+      </button>
+    </div>
+  </ng-template>
+
+</div>

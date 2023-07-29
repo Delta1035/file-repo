@@ -1,0 +1,98 @@
+{
+    "processListContent": {
+        "misCodeList": [
+            {
+                "bgColor": "#51B540",
+                "textColor": "#fff",
+                "content": "Copy Budget-->PRF",
+                "path": "/budget-project/man-month",
+                "showLine": true
+            },
+            {
+                "bgColor": "#51B540",
+                "textColor": "#fff",
+                "content": "Review/Add PRF and Print PDF",
+                "path": "/prf/prf-maint",
+                "showLine": false
+            }
+        ],
+        "pajList": [
+            {
+                "content": "Upload TSS(By KT)",
+                "showLine": true,
+                "bgColor": "#51B540",
+                "path": "/basedata/tss-data",
+                "textColor": "#fff"
+            },
+            {
+                "content": "Exception Report:Unknown TSS Names",
+                "showLine": true,
+                "bgColor": "#51B540",
+                "path": "/basedata/bo",
+                "textColor": "#fff"
+            },
+            {
+                "content": "Exception Report:Unknown TSS Projects",
+                "showLine": true,
+                "bgColor": "#51B540",
+                "path": "/basedata/tss-ext-names",
+                "textColor": "#fff"
+            },
+            {
+                "content": "Maintain PAJ Charge Man-Month",
+                "showLine": true,
+                "bgColor": "#51B540",
+                "path": "/basedata/bo",
+                "textColor": "#fff"
+            },
+            {
+                "content": "Tracking Report:PAJ Maintain Incomplete",
+                "showLine": true,
+                "bgColor": "#51B540",
+                "path": "/paj/paj-maint",
+                "textColor": "#fff"
+            },
+            {
+                "content": "Download PAJ File(by Division PIC)",
+                "showLine": false,
+                "bgColor": "#51B540",
+                "path": "/basedata/bo",
+                "textColor": "#fff"
+            }
+        ],
+        "monthProList": [
+            {
+                "content": "Complete Month-end Steps(by KT)",
+                "showLine": false,
+                "bgColor": "#51B540",
+                "path": "/basedata/bo",
+                "textColor": "#fff"
+            }
+        ],
+        "TSSList": [
+            {
+                "bgColor": "#51B540",
+                "textColor": "#fff",
+                "content": "Maintain/Add MISIB Code Info",
+                "path": "/ib/ib-maint",
+                "showLine": true
+            },
+            {
+                "bgColor": "#51B540",
+                "textColor": "#fff",
+                "content": "Query IB Project Man-Month Summary",
+                "path": "/basedata/bo",
+                "showLine": false
+            }
+        ],
+        "ReportList": [
+            {
+                "bgColor": "#51B540",
+                "textColor": "#fff",
+                "content": "Checking Report:PRF vs IB vs TSS vs PAJ by Div/Month(all proj)",
+                "path": "/basedata/bo",
+                "showLine": false
+            }
+        ]
+    }
+}

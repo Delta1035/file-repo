@@ -1,0 +1,5 @@
+<router-outlet *ngIf="isReady"></router-outlet>
+
+<div class="example" *ngIf="!isReady">
+  <nz-spin nzSimple></nz-spin>
+</div>

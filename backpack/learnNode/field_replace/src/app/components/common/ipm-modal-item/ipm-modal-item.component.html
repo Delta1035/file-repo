@@ -1,0 +1,45 @@
+<div class="modal_item_c" *ngIf="type!=='text'">
+    <div class="item_name_c" *ngIf="itemData.title" [ngClass]="{must: must}">{{ itemData.title | translate }}</div>
+
+    <div class="item_content_c" *ngIf="type==='input'&&itemType!=='number'">
+        <nz-input-group [nzSuffix]="suffixTemplateInfo" [class]="status" style="width: 100%;">
+            <input type="text" nz-input [disabled]="disabled" [placeholder]="placeholder" [(ngModel)]="itemData.value" (ngModelChange)="valueChange($event)" />
+        </nz-input-group>
+    </div>
+
+    <div class="item_content_c" *ngIf="type==='input'&&itemType==='number'">
+        <!-- <nz-input-group *ngIf="itemType==='number'" [nzSuffix]="suffixTemplateInfoNumber" [class]="status" style="width: 100%;">
+            <input type="number" [min]="range[0]" [max]="range[1]" [step]="itemData.step?itemData.step:1" nz-input [disabled]="disabled" [placeholder]="placeholder" [(ngModel)]="itemData.value" (ngModelChange)="valueChange($event)" />
+        </nz-input-group> -->
+        <nz-input-number [(ngModel)]="itemData.value" [nzMin]="range[0]" [nzMax]="range[1]" [nzPrecision]="precision" [nzStep]="itemData.step?itemData.step:1" [nzPlaceHolder]="placeholder" style="width: 100%;" (ngModelChange)="valueChange($event)"></nz-input-number>
+    </div>
+
+    <div class="item_content_c" *ngIf="type==='select'">
+        <nz-select [(ngModel)]="itemData.value" [nzShowSearch]="itemData.selectSearch?true:false" style="width: 100%;" [nzDropdownMatchSelectWidth]="false" [nzPlaceHolder]="placeholder" [class]="status" [disabled]="disabled" (ngModelChange)="valueChange($event)">
+            <nz-option *ngFor="let item of list" [nzValue]="item.value" [nzLabel]="item.text"></nz-option>
+        </nz-select>
+    </div>
+
+    <div class="item_content_c" *ngIf="type==='calendar'">
+        <nz-date-picker [nzMode]="itemType" [nzPlaceHolder]="placeholder" [(ngModel)]="itemData.value" [disabled]="disabled" [class]="status" style="width: 100%;" [nzDisabledDate]="disabledDate" (ngModelChange)="valueChange($event)"></nz-date-picker>
+    </div>
+
+</div>
+
+<div class="modal_item_c text" *ngIf="type==='text'">
+    <div class="item_name_c" *ngIf="itemData.title" [ngClass]="{must: must}">{{ itemData.title | translate }}</div>
+    <div class="item_content_c">
+        <div>{{ itemData.value!==undefined&&itemData.value!==null&&itemData.value.toString()?itemData.value:'--' }}</div>
+    </div>
+</div>
+
+<ng-template #suffixTemplateInfo>
+    <i nz-icon nz-tooltip *ngIf="status==='success'" class="success_color" [nzTooltipTitle]="tipInfo" nzType="check-circle"></i>
+    <i nz-icon nz-tooltip *ngIf="status==='warning'" class="warning_color" [nzTooltipTitle]="tipInfo" nzType="info-circle"></i>
+    <i nz-icon nz-tooltip *ngIf="status==='error'" class="error_color" [nzTooltipTitle]="tipInfo" nzType="close-circle"></i>
+</ng-template>
+
+<ng-template #suffixTemplateInfoNumber>
+    <i nz-icon nz-tooltip *ngIf="status==='warning'" class="warning_color" [nzTooltipTitle]="tipInfo" nzType="info-circle"></i>
+    <i nz-icon nz-tooltip *ngIf="status==='error'" class="error_color" [nzTooltipTitle]="tipInfo" nzType="close-circle"></i>
+</ng-template>

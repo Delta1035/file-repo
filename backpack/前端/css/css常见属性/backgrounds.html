@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /**
+        * background-attachment:scroll;(背景随页面滚动,默认)
+        * background-attachment:fixed;(背景不随页面滚动)
+        * background-attachment:local;(背景随元素内容滚动)
+        * background-attachment:initial;(默认值)
+        * background-attachment:inherit;(从父元素继承)
+        */
+        .image {
+            width: 100px;
+            height: 100px;
+            padding: 30px;
+            background-image: url(./bg.png);
+            background-repeat:no-repeat;
+            background-position: 20px 20px;
+            background-size: 20px 20px;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image"></div>
+</body>
+
+</html>

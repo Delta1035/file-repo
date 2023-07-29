@@ -1,0 +1,4 @@
+<div class="login_main" *ngIf="!loginok">
+    <nz-spin nzSimple nzTip="{{ 'app.loading' | translate }}..."></nz-spin>
+</div>
+<router-outlet *ngIf="loginok"></router-outlet>

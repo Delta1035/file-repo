@@ -1,0 +1,46 @@
+<ng-container>
+  <div class="flex flex-col .align-center mb-12px">
+    <nz-card
+      [nzBordered]="false"
+      class="text-center"
+      [ngStyle]="{
+        width: width + unit,
+        'font-size': fontSize + unit,
+        'background-color': bgColor,
+        color: fontColor,
+        'font-weight': fontWeight
+      }"
+      >{{ title }}</nz-card
+    >
+    <div
+      class="h-4px mt-12px"
+      [ngStyle]="{
+        'background-color': lineColor,
+        width: width + unit
+      }"
+    ></div>
+  </div>
+  <div class="flex flex-col align-center" *ngFor="let item of dataSource">
+    <nz-card
+      [nzBordered]="false"
+      [ngStyle]="{
+        width: item.width ? item.width : '200px',
+        'background-color': item.bgColor ? item.bgColor : '#fff',
+        'font-size': item.textSize ? item.textSize : '16px',
+        'font-weight': item.fontWeight ? item.fontWeight : 'bold',
+        color: item.textColor ? item.textColor : '#000',
+        'padding':'16px'
+      }"
+      class="text-center cursor-pointer content-card"
+      [routerLink]="item.path"
+      >{{ item.content }}</nz-card
+    >
+    <div
+      class="w-4px h-12px"
+      [ngStyle]="{
+        'background-color': item.lineColor ? item.lineColor : '#6877CA',
+        display: item.showLine ? 'block' : 'none'
+      }"
+    ></div>
+  </div>
+</ng-container>

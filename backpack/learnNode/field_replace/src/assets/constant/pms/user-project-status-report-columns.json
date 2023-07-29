@@ -1,0 +1,78 @@
+{
+  "tableColumnsTypes": [
+    {
+      "translateKey": "PMS.JiraKey",
+      "translateKey4UI": "",
+      "objectKey": "jira_key"
+    },
+    {
+      "translateKey": "PMS.JiraProjectId",
+      "translateKey4UI": "",
+      "objectKey": "jira_project_id"
+    },
+    {
+      "translateKey": "JIRAUSER.JiraUserId",
+      "translateKey4UI": "",
+      "objectKey": "jira_user_id"
+    },
+    {
+      "translateKey": "JIRAUSER.JiraUserName",
+      "translateKey4UI": "",
+      "objectKey": "display_name"
+    },
+    {
+      "translateKey": "JIRAUSER.JiraUserId",
+      "translateKey4UI": "",
+      "objectKey": "pms_jira_user_id"
+    },
+    {
+      "translateKey": "PMS.ProjectRole",
+      "translateKey4UI": "",
+      "objectKey": "project_roleDescription"
+    },
+    {
+      "translateKey": "PMS.PmsJiraProjectID",
+      "translateKey4UI": "",
+      "objectKey": "pms_project_id"
+    },
+    {
+      "translateKey": "PMS.UserID",
+      "translateKey4UI": "",
+      "objectKey": "pms_user_id"
+    },
+    {
+      "translateKey": "PMS.Division",
+      "translateKey4UI": "",
+      "objectKey": "division"
+    },
+    {
+      "translateKey": "PMS.ProjectName",
+      "translateKey4UI": "",
+      "objectKey": "project_name"
+    },
+    {
+      "translateKey": "PMS.JiraName",
+      "translateKey4UI": "",
+      "objectKey": "jira_name"
+    },
+    {
+      "translateKey": "PMS.UserProjectStatus",
+      "translateKey4UI": "",
+      "objectKey": "statusDescription"
+    }
+  ],
+  "tableColumnsWidth": {
+    "jira_key": "40px",
+    "jira_project_id": "40px",
+    "jira_user_id": "250px",
+    "display_name": "100px",
+    "pms_jira_user_id": "250px",
+    "project_role": "40px",
+    "pms_project_id": "40px",
+    "pms_user_id": "40px",
+    "division": "40px",
+    "project_name": "250px",
+    "jira_name": "250px",
+    "statusDescription": "250px"
+  }
+}

@@ -1,0 +1,7 @@
+<div class="mep_steps_main steps">
+    <div class="step" [ngClass]="{active: activeStep===i+1}" *ngFor="let item of stepList let i=index">
+        <div class="index">{{ i+1 }}</div>
+        <div class="content">{{ item.content }}</div>
+        <div class="arrow" *ngIf="i!==stepList.length-1"><i nz-icon nzType="right" nzTheme="outline"></i></div>
+    </div>
+</div>

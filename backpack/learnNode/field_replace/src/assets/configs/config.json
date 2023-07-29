@@ -1,0 +1,14 @@
+{
+  "impBaseURL": "https://imp-api.k8sqas-whq.k8s.wistron.com",
+  "apiVersion": "api",
+  "apiFormat": "?format=json",
+  "impversion": "Qas:1.0.55",
+  "mqtturl":"10.66.28.51",
+  "mqttport":9001,
+  "mqttcheckconnentionduration": 30,
+  "mqtttopic": {
+    "success":"wih/imp/{UserId}/message",
+    "error":"wih/imp/{UserId}/error"
+  }
+}
+

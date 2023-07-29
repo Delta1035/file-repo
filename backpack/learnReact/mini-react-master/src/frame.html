@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Frame test</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <style>
+      #animation {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: red;
+        animation: myfirst 5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes myfirst {
+        from {
+          width: 30px;
+          height: 30px;
+          border-radius: 0;
+          background: red;
+        }
+        to {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: yellow;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <input id="myinput" type="text" />
+      <div id="animation">test</div>
+    </div>
+    <script>
+      function sleep(delay) {
+        const start = new Date().getTime();
+        while (new Date().getTime() - start < delay) {}
+      }
+      const works = [
+        () => {
+          console.log("first task start");
+          sleep(5);
+          console.log("first task end");
+        },
+        () => {
+          console.log("second task start");
+          sleep(7);
+          console.log("second task end");
+        },
+        () => {
+          console.log("third task start");
+          sleep(9);
+          console.log("third task end");
+        },
+      ];
+      // const timeout = 1000;
+      // requestIdleCallback(workLoop, { timeout });
+      // function workLoop({ timeRemaining, didTimeout }) {
+      //   while ((timeRemaining() > 0 || didTimeout) && works.length) {
+      //     performUnitOfWork();
+      //   }
+      //   if (works.length) {
+      //     requestIdleCallback(workLoop, { timeout });
+      //   }
+      // }
+      // function performUnitOfWork() {
+      //   works.shift()();
+      // }
+    </script>
+  </body>
+</html>

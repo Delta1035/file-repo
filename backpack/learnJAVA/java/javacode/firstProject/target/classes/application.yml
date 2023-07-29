@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: firstProject
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatarengine
+      username: avatarengine
+      password: 1q2w#E$R
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+
+---
+spring:
+  profiles: qas
+  datasource:
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.113:5435/avatarengine
+      username: avatarengine
+      password: 1q2w#E$R
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1

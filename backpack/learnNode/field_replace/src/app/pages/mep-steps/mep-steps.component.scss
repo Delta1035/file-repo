@@ -1,0 +1,88 @@
+.mep_steps {
+    .step_main {
+        display: flex;
+        flex-direction: unset;
+        justify-content: center;
+        align-items: flex-start;
+        .step_main_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .step_main_title {
+                font-size: 28px;
+                font-weight: 600;
+                margin: 80px 0;
+            }
+            nz-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .step_main_body {
+                    width: 400px;
+                    // border: 1px solid red;
+                    text-align: center;
+                    .step_main_icon {
+                        font-size: 30px;
+                        margin: 0 0 20px 0;
+                    }
+                    // button {}
+                    .step_main_descript {
+                        i {
+                            margin: 0 5px 0 0;
+                        }
+                        margin: 20px 0 0 0;
+                        font-size: 14px;
+                        text-align: left;
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep .upload_excel_modal {
+    .upload_excel_modal_main {
+        &.select_excel {
+            .upload_content {
+                width: 100%;
+                .upload_main {
+                    padding: 22px 0;
+                    .upload_main_content {
+                        .upload_notice_item {
+                            margin: 10px 0 0 0;
+                        }
+                        .upload_area_up {
+                            margin: 8px 0 0 0;
+                            padding: 0 0 0 8px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            .upload_area_up_button {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                button {
+                                    margin: 0 0 0 8px;
+                                }
+                            }
+                        }
+                        .upload_area_down {
+                            margin: 8px 0 0 0;
+                            .upload_area_down_link {
+                                text-decoration: underline;
+                                user-select: none;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .upload_area {
+                    border-bottom: 1px solid;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

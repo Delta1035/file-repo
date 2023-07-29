@@ -1,0 +1,19 @@
+<div class="page_main scroll_bar pms_sop">
+  <div class="content">
+    <div class="markdown-wrapper scroll_bar cursor-pointer">
+      <nz-card>
+        <markdown class="markdown" [src]="mdSrc" lineNumbers></markdown>
+      </nz-card>
+    </div>
+    <div class="select-wrapper">
+        <nz-select [(ngModel)]="mdLan" ngModel="{{mdLan}}" (ngModelChange)="onLanChange(mdLan)">
+          <nz-option [nzValue]="item.language" [nzLabel]="item.language | translate" *ngFor="let item of sopList; index as i;">
+          </nz-option>
+        </nz-select>
+      <nz-select [(ngModel)]="mdSrc">
+        <nz-option [nzValue]="item.sopPath" [nzLabel]="item.sopI18n | translate" *ngFor="let item of mdList; index as i;">
+        </nz-option>
+      </nz-select>
+    </div>
+  </div>
+</div>

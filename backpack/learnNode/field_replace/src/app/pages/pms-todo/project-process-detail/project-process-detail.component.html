@@ -1,0 +1,196 @@
+<div class="form-wrapper">
+  <h2 *ngIf="selectSign?.sign_id">
+    {{ selectSign.sign_id }}
+  </h2>
+  <!-- 签核结果 -->
+  <p *ngIf="selectSign?.result">
+    <span class="title">
+      {{ 'PMS.SignResult' | translate }}:
+    </span>
+    <span class="content">
+      {{ 'PMS.SignResult.'+(selectSign.result ? selectSign.result : "OPEN") | translate }}
+    </span>
+  </p>
+  <!-- 申请人备注 -->
+  <p *ngIf="selectSign?.requester_remark">
+    <span class="title">
+      {{ 'PMS.RequesterRemark' | translate }}:
+    </span>
+    <span class="content">
+      {{ selectSign.requester_remark }}
+    </span>
+  </p>
+  <!-- 分割线 -->
+  <nz-divider *ngIf="selectSign.result || selectSign.requester_remark"></nz-divider>
+  <!-- 专案 -->
+  <nz-collapse>
+    <nz-collapse-panel nzHeader="{{'PMS.Project' | translate}}" [nzActive]="true">
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.ProjectName' | translate}} : </span>
+        <span class="content">{{ project.project_name }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.ProjectCode' | translate}} : </span>
+        <span class="content">{{ project.project_code }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.Division' | translate}} : </span>
+        <span class="content">{{ project.division }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.DivisionSupervisor' | translate}} : </span>
+        <span class="content">{{ project.division_supervisor }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.DivisionSupervisorEmail' | translate}} : </span>
+        <span class="content"><a href="mailto:{{ project.division_supervisor_email }}" target="_blank">{{
+            project.division_supervisor_email }}</a></span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.ProjectMode' | translate}} : </span>
+        <span class="content">{{ 'PMS.ProjectMode.'+ project.mode | translate }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.ProductType' | translate}} :</span>
+        <span class="content" *ngIf="project.product_type.includes('Product')">{{'PMS.ProductType.Product' |
+          translate}}</span>
+        <span class="content"
+          *ngIf="project.product_type.includes('Product') && project.product_type.includes('Model')">/</span>
+        <span class="content" *ngIf="project.product_type.includes('Model')">{{'PMS.ProductType.Model' |
+          translate}}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.Status' | translate}} : </span>
+        <span class="content">{{ 'PMS.Status.'+project.status | translate }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.PlanStart' | translate}} : </span>
+        <span class="content">{{ project.plan_start }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.PlanEnd' | translate}} : </span>
+        <span class="content">{{ project.plan_end }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.JiraKey' | translate}} : </span>
+        <label class="content" *ngIf="project.jira_project_id">
+          <a href="https://swpc.atlassian.net/browse/{{
+          project.jira_key
+          }}" target="_blank">{{ project.jira_key }}</a>
+        </label>
+        <span class="content" *ngIf="!project.jira_project_id">{{project.jira_key}}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.JiraName' | translate}} : </span>
+        <span class="content">{{ project.jira_name }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.UserContact' | translate}} : </span>
+        <span class="content">{{ project.user_contact[0].user_name }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.UserContactEmail' | translate}} : </span>
+        <span class="content"><a href="mailto:{{ project.user_contact[0].email }}" target="_blank">{{
+            project.user_contact[0].email }}</a></span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.ITContact' | translate}} : </span>
+        <span class="content">{{ project.it_contact[0].user_name }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.ITContactEmail' | translate}} : </span>
+        <span class="content"><a href="mailto:{{ project.it_contact[0].email }}" target="_blank">{{
+            project.it_contact[0].email }}</a></span>
+
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.MVPDate' | translate}} : </span>
+        <span class="content">{{ project.mvp_date }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.InvolvePms' | translate}} : </span>
+        <span class="content">{{ project.involve_pms }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.InvolvePmsStart' | translate}} : </span>
+        <span class="content">{{ project.involve_pms_start }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.InvolvePmsEnd' | translate}} : </span>
+        <span class="content">{{ project.involve_pms_end }}</span>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="title">{{'PMS.CloseProject' | translate}} : </span>
+        <span class="content">{{ project.close }}</span>
+      </div>
+    </nz-collapse-panel>
+  </nz-collapse>
+  <!-- 专案程式码 -->
+  <nz-collapse>
+    <nz-collapse-panel [nzHeader]="'PMS.ProjectRepo' | translate" [nzActive]="true">
+      <app-common-table *ngIf="versionControlTableSource.length>0" [isShowPagination]="false"
+        [dataSource]="versionControlTableSource" [tableHeaders]="PROJECT_REPO_HEADER" [isShowDownload]="false"
+        [nzScroll]="{}"></app-common-table>
+      <p *ngIf="versionControlTableSource.length===0" [ngStyle]="{'textAlign':'center'}">{{'PMS.noData' | translate}}
+      </p>
+    </nz-collapse-panel>
+  </nz-collapse>
+  <!-- 专案人员 -->
+  <nz-collapse>
+    <nz-collapse-panel [nzHeader]="'PMS.ProjectUser' | translate" [nzActive]="true">
+      <app-common-table *ngIf="projectUsersTableSource.length>0" [isShowPagination]="false"
+        [dataSource]="projectUsersTableSource" [tableHeaders]="PROJECT_USER_HEADER" [isShowDownload]="false"
+        [nzScroll]="{}"></app-common-table>
+      <p *ngIf="projectUsersTableSource.length===0" [ngStyle]="{'textAlign':'center'}">{{'PMS.noData' | translate}}</p>
+
+    </nz-collapse-panel>
+  </nz-collapse>
+  <!-- 异动清单 -->
+  <nz-collapse *ngIf="isTODO">
+    <nz-collapse-panel [nzHeader]="'PMS.UpdateUsers' | translate" [nzActive]="true">
+      <app-common-table *ngIf="updateUsers.length>0" [isShowPagination]="false" [dataSource]="updateUsers"
+        [tableHeaders]="PROJECT_UPDATE_HEADER" [isShowDownload]="false" [nzScroll]="{}"></app-common-table>
+    </nz-collapse-panel>
+    <p *ngIf="updateUsers.length===0" [ngStyle]="{'textAlign':'center'}">{{'PMS.noData' | translate}}</p>
+  </nz-collapse>
+  <!-- 签核结果 -->
+  <nz-collapse *ngIf="isTODO">
+    <nz-collapse-panel [nzHeader]="'PMS.SignResult' | translate" [nzActive]="true">
+      <app-common-table *ngIf="signDetails.length>0" [isShowPagination]="false" [dataSource]="signDetails"
+        [tableHeaders]="PROJECT_PROCESS_RESULT_HEADER" [isShowDownload]="false" [nzScroll]="{}"></app-common-table>
+      <p *ngIf="signDetails.length===0" [ngStyle]="{'textAlign':'center'}">{{'PMS.noData' | translate}}</p>
+    </nz-collapse-panel>
+  </nz-collapse>
+  <!-- 簽核 -->
+  <!-- 是否展示 -->
+  <div [hidden]="!showApprove">
+    <div style="padding-top: 0.5vh;">
+      <span [ngStyle]="{'fontWeight':'700'}">
+        {{ 'PMS.SignResult.APPROVED' | translate }}:
+      </span>
+    </div>
+    <div style="padding-top: 0.5vh;">
+      <nz-radio-group [(ngModel)]="approved">
+        <label nz-radio nzValue="APPROVED" style="margin-right: 5px;">{{ 'PMS.SignResult.APPROVED' | translate
+          }}
+        </label>
+        <label nz-radio nzValue="REJECTED" style="margin-left: 5px;">{{ 'PMS.SignResult.REJECTED' | translate }}
+        </label>
+      </nz-radio-group>
+    </div>
+    <div style="padding-top: 0.5vh;">
+      <span [ngStyle]="{'fontWeight':'700'}">
+        {{ 'PMS.Remark' | translate }}:
+      </span>
+    </div>
+    <div style="padding-top: 0.5vh;">
+      <textarea rows="2" nz-input [(ngModel)]="remark" placeholder="{{ 'PMS.Remark' | translate }}"></textarea>
+    </div>
+    <div class="flex justify-start">
+      <button nz-button nzType="primary" (click)="approve()" [disabled]="this.approved | isApprovedNull">
+        {{ "PMS.SignResult.APPROVED" | translate }}
+      </button>
+    </div>
+  </div>
+
+</div>

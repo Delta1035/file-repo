@@ -1,0 +1,34 @@
+.modal_item_c {
+    width: 100%;
+    .item_name_c {
+        margin: 0 0 4px 0;
+        &.must {
+            &::before {
+                content: '* ';
+            }
+        }
+    }
+    // .item_content {
+    //     &.text {
+    //         height: 32px;
+    //         display: flex;
+    //         justify-content: flex-start;
+    //         align-items: center;
+    //     }
+    // }
+    &.text {
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+        .item_name_c {
+            font-weight: 600;
+            //     margin: 0 2px 0 0;
+            //     &::after {
+            //         content: ":";
+            //     }
+        }
+        .item_content_c {
+            font-weight: 100;
+        }
+    }
+}

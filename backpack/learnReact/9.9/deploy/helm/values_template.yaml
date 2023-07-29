@@ -1,0 +1,27 @@
+replicaCount: 1
+namespace: ee
+
+resourceGroup: ${RESOURCE_GROUP}
+
+site: ${SITE}
+
+imageName: "${IMAGE_NAME}"
+
+imagePullSecret: gitlab-secret-wipcb
+
+gateWayName: common-deploy/common-deploy-gateway
+hosts: ${SITE_FQDN}
+
+parameters: 
+  insights_connection: ${INSIGHTS_CONNECTION}
+
+spec:
+  loadBalancerIP: ${AKS_LOADBALANCER_IP}
+
+resources:
+  limits:
+    cpu: "2000m"
+    memory: 2048Mi
+  requests:
+    cpu: "60m"
+    memory: 0.5Gi

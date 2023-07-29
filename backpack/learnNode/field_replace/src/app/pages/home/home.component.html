@@ -1,0 +1,166 @@
+<nz-layout class="main_layout">
+    <nz-header>
+        <div class="logo">
+            <div class="wistron_logo"></div>
+            <div class="line"></div>
+            <div class="project_name">
+                <div class="title">{{ 'title' | translate }}</div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="header-menu"></div>
+            <div class="header-menu operation">
+                <div class="header-menu-item setting" (click)="toggleTheme()">
+                    <i nz-icon nzType="skin" nzTheme="outline"></i>
+                </div>
+                <div nz-dropdown class="header-menu-item setting" [nzDropdownMenu]="settingDropdownMenu">
+                    <i nz-icon nzType="translation" nzTheme="outline"></i>
+                </div>
+                <nz-dropdown-menu #settingDropdownMenu="nzDropdownMenu">
+                    <ul nz-menu>
+                        <li nz-menu-item (click)="changeLanguage('tw')">{{ 'language.tw' | translate }}</li>
+                        <li nz-menu-item (click)="changeLanguage('zh')">{{ 'language.zh' | translate }}</li>
+                        <li nz-menu-item (click)="changeLanguage('en')">{{ 'language.en' | translate }}</li>
+                    </ul>
+                </nz-dropdown-menu>
+                <div class="header-menu-item user" nz-popover nzPopoverPlacement="bottomRight" [nzPopoverContent]="userPopoverTemplate" nzPopoverOverlayClassName='user_popover' nzPopoverTrigger="hover">
+                    <div class="user_info">
+                        <div class="user_name">{{ language!=='en'?userInfo.nameC:userInfo.nameE }}</div>
+                    </div>
+                </div>
+                <ng-template #userPopoverTemplate>
+                    <div class="popover_header">
+                        <div class="user_info">
+                            <div class="user_name">{{ userInfo.nameC }}&nbsp;{{ userInfo.nameE }}</div>
+                            <div class="user_role">{{ userInfo.email }}</div>
+                        </div>
+                    </div>
+                    <div class="popover_footer">
+                        <div class="menu_item" (click)="logout()">
+                            <div class="menu_item_icon"><i nz-icon nzType="logout" nzTheme="outline"></i></div>
+                            <div class="menu_item_name">{{ 'home.logout' | translate }}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </nz-header>
+    <nz-layout class="body_layout">
+        <nz-sider nzCollapsible [(nzCollapsed)]="siderCollapsed" nzWidth="250px" nzBreakpoint="lg" [nzCollapsedWidth]="64" [nzTrigger]="siderTrigger">
+            <ul nz-menu nzMode="inline" class="home-header-menu scroll_bar" *ngIf="permissionsService.userInfo.roleId!==-1">
+                <li nz-menu-item [routerLink]="['/', 'home', 'index']" routerLinkActive="ant-menu-item-selected">
+                    <i nz-icon nzType="home" nzTheme="outline"></i>
+                    <span>{{ 'home.index' | translate }}</span>
+                </li>
+
+                <div class="menu_item_division" *ngIf="budgetShow||tssShow||mepShow||reportShow||basicDataShow">
+                    <nz-divider [nzText]="siderCollapsed?'':'IPM'"></nz-divider>
+                </div>
+
+                <li nz-submenu *ngIf="budgetShow" nzTitle="{{ 'home.budget' | translate }}" [nzOpen]="routerII==='budget'" nzIcon="dollar">
+                    <ul>
+                        <li nz-menu-item *ngIf="budgetShowList[0]" [routerLink]="['/', 'home', 'budget', 'budgetMaintain']" routerLinkActive="ant-menu-item-selected">{{ 'home.budgetMaintain' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="budgetShowList[1]" [routerLink]="['/', 'home', 'budget', 'budgetPRF']" routerLinkActive="ant-menu-item-selected">{{ 'home.budgetPRF' | translate }}</li>
+                    </ul>
+                </li>
+
+                <li nz-submenu *ngIf="tssShow" nzTitle="{{ 'home.tss' | translate }}" [nzOpen]="routerII==='tss'" nzIcon="control">
+                    <ul>
+                        <li nz-menu-item *ngIf="tssShowList[0]" [routerLink]="['/', 'home', 'tss', 'tssMaintain' ]" routerLinkActive="ant-menu-item-selected">{{ 'home.tssMaintain' | translate }}</li>
+                    </ul>
+                    <!-- <ul>
+                        <li nz-menu-item *ngIf="tssShowList[1]" [routerLink]="['/', 'home', 'tss', 'tssReport' ]" routerLinkActive="ant-menu-item-selected">{{ 'home.tssReport' | translate }}</li>
+                    </ul> -->
+                </li>
+
+                <li nz-submenu *ngIf="mepShow" nzTitle="{{ 'home.mep' | translate }}" [nzOpen]="routerII==='mep'" nzIcon="calendar">
+                    <ul>
+                        <li nz-menu-item *ngIf="mepShowList[0]" [routerLink]="['/', 'home', 'mep', 'mepSteps' ]" routerLinkActive="ant-menu-item-selected">{{ 'home.mepSteps' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="mepShowList[1]" [routerLink]="['/', 'home', 'mep', 'mepPAJMaintain' ]" routerLinkActive="ant-menu-item-selected">{{ 'home.mepPAJMaintain' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="mepShowList[2]" [routerLink]="['/', 'home', 'mep', 'mepBUWiwynnPAJ' ]" routerLinkActive="ant-menu-item-selected">{{ 'home.mepBUWiwynnPAJ' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="mepShowList[3]" [routerLink]="['/', 'home', 'mep', 'mepExternalNameMaintain' ]" routerLinkActive="ant-menu-item-selected">{{ 'home.mepExternalNameMaintain' | translate }}</li>
+                    </ul>
+                </li>
+
+                <li nz-submenu *ngIf="reportShow" nzTitle="{{ 'home.report' | translate }}" [nzOpen]="routerII==='report'" nzIcon="file-search">
+                    <ul>
+                        <li nz-menu-item *ngIf="reportShowList[0]" [routerLink]="['/', 'home', 'report', 'reportChecking']" routerLinkActive="ant-menu-item-selected">{{ 'home.reportChecking' | translate }}</li>
+                    </ul>
+                </li>
+
+                <li nz-submenu *ngIf="basicDataShow" nzTitle="{{ 'home.basicData' | translate }}" [nzOpen]="routerII==='basicData'" nzIcon="database">
+                    <ul>
+                        <li nz-menu-item *ngIf="basicDataShowList[0]" [routerLink]="['/', 'home', 'basicData', 'basicDataOrganization']" routerLinkActive="ant-menu-item-selected">{{ 'home.basicDataOrganization' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="basicDataShowList[1]" [routerLink]="['/', 'home', 'basicData', 'basicDataTssCal']" routerLinkActive="ant-menu-item-selected">{{ 'home.basicDataTssCal' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="basicDataShowList[2]" [routerLink]="['/', 'home', 'basicData', 'basicDataResourceGroup']" routerLinkActive="ant-menu-item-selected">{{ 'home.basicDataResourceGroup' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="basicDataShowList[3]" [routerLink]="['/', 'home', 'basicData', 'basicDataDivDept']" routerLinkActive="ant-menu-item-selected">{{ 'home.basicDataDivDept' | translate }}</li>
+                    </ul>
+                </li>
+
+                <div class="menu_item_division">
+                    <nz-divider [nzText]="siderCollapsed?'':'PMS'"></nz-divider>
+                </div>
+
+                <li nz-submenu nzTitle="{{ 'home.pms' | translate }}" [nzOpen]="routerII==='pms'" nzIcon="fund-projection-screen">
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsProcess']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsProcess' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsSOP']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsSOP' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsUserManagement']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsUserManagement' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsProjectManagement']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsProjectManagement' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsTodo']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsTodo' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsStatusReport']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsStatusReport' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item [routerLink]="['/', 'home', 'pms', 'pmsDivisionReport']" routerLinkActive="ant-menu-item-selected">{{ 'home.pmsDivisionReport' | translate }}</li>
+                    </ul>
+                </li>
+
+                <div class="menu_item_division" *ngIf="maintainShow">
+                    <nz-divider [nzText]="siderCollapsed?'':'COMMON'"></nz-divider>
+                </div>
+
+                <li nz-submenu *ngIf="maintainShow" nzTitle="{{ 'home.maintain' | translate }}" [nzOpen]="routerII==='maintain'" nzIcon="desktop">
+                    <ul>
+                        <li nz-menu-item *ngIf="maintainShowList[0]" [routerLink]="['/', 'home', 'maintain', 'maintainPerson']" routerLinkActive="ant-menu-item-selected">{{ 'home.maintainPerson' | translate }}</li>
+                    </ul>
+                    <ul>
+                        <li nz-menu-item *ngIf="maintainShowList[1]" [routerLink]="['/', 'home', 'maintain', 'maintainRole']" routerLinkActive="ant-menu-item-selected">{{ 'home.maintainRole' | translate }}</li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-sider>
+        <ng-template #siderTrigger>
+            <i nz-icon *ngIf="siderCollapsed" nzType="menu-fold" nzTheme="outline"></i>
+            <i nz-icon *ngIf="!siderCollapsed" nzType="menu-unfold" nzTheme="outline"></i>
+        </ng-template>
+        <nz-layout class="content-layout">
+            <nz-content>
+                <router-outlet></router-outlet>
+            </nz-content>
+        </nz-layout>
+    </nz-layout>
+</nz-layout>

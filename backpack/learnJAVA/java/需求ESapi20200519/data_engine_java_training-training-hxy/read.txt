@@ -1,0 +1,3 @@
+为啥不用spring-boot-starter-data-elasticsearch
+share_rate的依赖包用wistron maven地址无法下载
+如何给es的entity设置别名

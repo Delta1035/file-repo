@@ -1,0 +1,304 @@
+{
+  "title": "IPM",
+
+  "----app----": "---------app---------",
+  "app": {
+      "loading": "載入中",
+      "noPermissionsNotice": "此帳號無權限，請問是否要申請存取權限？",
+      "permissionApplying": "權限申請中"
+  },
+
+  "----home----": "---------home---------",
+  "home": {
+      "logout": "退出登錄",
+      "index": "Home",
+      "basicData": "Base Data",
+      "basicDataOrganization": "BO/BG/BU",
+      "basicDataTssCal": "Calendar",
+      "basicDataResourceGroup": "Resource Group",
+      "basicDataDivDept": "DIV/DEPT",
+      "maintain": "System Maintain",
+      "maintainPerson": "User",
+      "maintainRole": "Role",
+      "budget": "Budget",
+      "budgetMaintain": "Budget Maintain",
+      "budgetPRF": "PRF",
+      "tss": "TSS",
+      "tssMaintain": "Maintain/Add MIS IB Code",
+      "tssReport": "Report",
+      "mep": "Month-end Process",
+      "mepExternalNameMaintain": "External Name Maintain",
+      "paj": "PAJ",
+      "pajUploadTSS": "Upload TSS",
+      "report": "Report",
+      "reportChecking": "Checking Report",
+      "pms": "PMS",
+      "pmsProcess": "PMS流程",
+      "pmsSOP": "PMS SOP",
+      "pmsUserManagement": "使用者管理",
+      "pmsProjectManagement": "專案管理",
+      "pmsTodo": "待簽核清單",
+      "pmsStatusReport": "使用者專案狀態報表"
+  },
+
+  "----maintainPerson----": "---------maintainPerson---------",
+  "maintainPerson": {
+      "batchDeletePerson": "批量刪除人員",
+      "deletePerson": "刪除人員",
+      "confirmDeletePerson": "是否确认删除{{personList}}？"
+  },
+
+  "----maintainRole----": "---------maintainRole---------",
+  "maintainRole": {
+      "newRole": "新增角色",
+      "editRole": "修改權限",
+      "deleteRole": "刪除角色",
+      "roleNameM": "角色名稱：",
+      "roleSettingM": "角色設定：",
+      "confirmDeleteRole": "确认删除{{roleName}}嘛？"
+  },
+
+  "----budgetMaintain----": "---------budgetMaintain---------",
+  "budgetMaintain": {
+      "batchDeleteBudget": "批量刪除Budget",
+      "batchCopyToPRF": "批量 Copy to PRF",
+      "copyToPRF": "Copy to PRF",
+      "prfDone": "PRF Done",
+      "uploadBudget": "上傳專案預算",
+      "addNewBudget": "新增專案預算",
+      "editBudget": "編輯專案預算",
+      "confirmDeleteBudget": "是否确认删除{{budgetList}}？",
+      "confirmCopyToPRF": "是否确认Copy to PRF{{budgetList}}？",
+      "uploadFile": "上傳文件",
+      "fileName": "文件檔名",
+      "downloadPublicFile": "下載文件模板",
+      "uploadExcelNotice1": "1.請依照提供的文件模板輸入資料",
+      "uploadExcelNotice2": "2.僅支援 .xlsx .xls 文件格式"
+  },
+
+  "----budgetPRF----": "---------budgetPRF---------",
+  "budgetPRF": {
+      "addNewPRF": "新增PRF",
+      "editPRF": "編輯PRF",
+      "editEP": "編輯EP",
+      "copyToIB": "Copy to IB",
+      "deletePRF": "批量删除",
+      "determineDelete": "確認刪除",
+      "cancleDelete": "取消刪除"
+  },
+
+  "----basicDataOrganization----": "---------basicDataOrganization---------",
+  "basicDataOrganization": {
+      "newInfo": "新增企業資料",
+      "tableHead": {
+          "bo": "BO",
+          "bu": "BU",
+          "bg": "BG"
+      },
+      "title": {
+          "bo": "搜索BO",
+          "bu": "搜索BU",
+          "bg": "搜索BG"
+      },
+      "placeholder": {
+          "bo": "選擇BO",
+          "bu": "輸入BU",
+          "bg": "選擇BG"
+      }
+  },
+  "----basicDataTssCal----": "---------basicDataTssCal---------",
+  "basicDataTssCal": {
+      "newInfo": "新增TSS-CAL資料",
+      "tableHead": {
+          "country": "國家/地區",
+          "year": "年",
+          "month": "月",
+          "day": "天數"
+      },
+      "placeholder": {
+          "selectCountry": "選擇國家/地區"
+      },
+      "tabs": {
+          "cal": "CAL",
+          "external": "外部人員名單"
+      }
+  },
+  "----basicDataResourceGroup----": "---------basicDataResourceGroup---------",
+  "basicDataResourceGroup": {
+      "newInfo": "新增資源",
+      "placeholder": {
+          "resource": "請輸入Resource"
+      }
+  },
+  "----basicDataDivDept----": "---------basicDataDivDept---------",
+  "basicDataDivDept": {
+      "newDiv": "新增Division",
+      "newDept": "新增Department"
+  },
+
+  "----tableHead----": "---------tableHead---------",
+  "tableHead": {
+      "index": "ID",
+      "role": "角色",
+      "roleM": "角色：",
+      "pageName": "頁面名稱",
+      "allowedRead": "允許查看",
+      "allowedCreate": "允許新增",
+      "allowedUpdate": "允許修改",
+      "allowedDelete": "允許刪除",
+      "chineseName": "中文姓名",
+      "englishName": "英文姓名",
+      "email": "電子郵箱",
+      "operation": "Operation",
+      "year": "Year",
+      "projectName": "Project Name",
+      "itPm": "IT PM",
+      "bizOwner": "Biz Owner",
+      "contactWindow": "Contact Window",
+      "bu": "BU",
+      "bg": "BG",
+      "bo": "BO",
+      "customer": "Customer",
+      "site": "Site",
+      "planStart": "Plan Start",
+      "planFinish": "Plan Finish",
+      "recvEpCode": "Recv Ep Code",
+      "recvChargeDept": "Recv Charge Dept",
+      "projectCategory": "Project Category",
+      "projectType": "Project Type",
+      "misHandleDiv": "MIS Handle Div",
+      "projectNameMerged": "Project Name(if Merged)",
+      "misEpCode": "MIS EP Code",
+      "pmcsEpProjectNameMerged": "PMCS EP Project Name",
+      "split": "Split(%)",
+      "comments": "Comments",
+      "commentsM": "Comments: ",
+      "cancelled": "Cancelled",
+      "resource": "Resource",
+      "empName": "EmpName",
+      "div": "Div",
+      "divCode": "Div code",
+      "function": "Functions",
+      "rate": "Rate",
+      "deptFrom": "Dept From",
+      "deptTo": "Dept To",
+      "country": "Country",
+      "month": "Month",
+      "day": "Days",
+      "date": "Date",
+      "division": "Division",
+      "department": "Department"
+  },
+
+    "----tableHead----": "---------tableHead---------",
+    "tableHead": {
+        "index": "ID",
+        "role": "Role",
+        "roleM": "Role:",
+        "pageName": "Page Name",
+        "allowedRead": "Allowed Read",
+        "allowedCreate": "Allowed Create",
+        "allowedUpdate": "Allowed Update",
+        "allowedDelete": "Allowed Delete",
+        "empno": "Empno",
+        "chineseName": "Chinese Name",
+        "englishName": "English Name",
+        "email": "Email",
+        "operation": "Operation",
+        "year": "Year",
+        "projectName": "Project Name",
+        "itPm": "IT PM",
+        "bizOwner": "Biz Owner",
+        "contactWindow": "Contact Window",
+        "bu": "BU",
+        "bg": "BG",
+        "bo": "BO",
+        "customer": "Customer",
+        "site": "Site",
+        "planStart": "Plan Start",
+        "planFinish": "Plan Finish",
+        "recvEpCode": "Recv Ep Code",
+        "recvChargeDept": "Recv Charge Dept",
+        "projectCategory": "Project Category",
+        "projectType": "Project Type",
+        "misHandleDiv": "MIS Handle Div",
+        "comments": "Comments",
+        "commentsM": "Comments：",
+        "cancelled": "Cancelled",
+        "resource": "Resource"
+    },
+
+  "----button----": "---------button---------",
+  "button": {
+      "download": "下載",
+      "selectFile": "選擇文件",
+      "selectFileAgain": "重新選擇",
+      "uploading": "上傳中",
+      "upload": "上傳",
+      "exit": "退出",
+      "cancel": "取消",
+      "confirm": "確認",
+      "add": "新增",
+      "edit": "編輯",
+      "delete": "刪除",
+      "batchDelete": "批量刪除",
+      "query": "查詢",
+      "cancelDelete": "取消刪除",
+      "confirmDelete": "確認刪除",
+      "addBo": "新增BO",
+      "addBu": "新增BU",
+      "addBg": "新增BG"
+  },
+
+  "----apiError----": "---------apiError---------",
+  "apiError": {
+      "loginExpired": "登入已過期！",
+      "notFound": "404 Not Found",
+      "timedOut": "連接超時！",
+      "pleaseRefreshAndTryAgain": "請刷新後再試一次！",
+      "unknownErrorType": "未知的錯誤類型！",
+      "dataAccessError": "數據訪問出錯！",
+      "checkErrorInfo": "請檢查錯誤信息！",
+      "serviceError": "後端服務錯誤！"
+  },
+
+  "----messages----": "---------messages---------",
+  "messages": {
+      "sureDel": "Are you sure to delete the following {{keyValue}} data?{{basicList}}",
+      "sureUpdate": "Are you sure you want to modify the following content?{{TssCalList}}",
+      "infoNull": "Data cannot be empty",
+      "notFound": "Query data is empty",
+      "cannotRepeat": "Data cannot be repeated",
+      "selected": "Please select{{selectName}}",
+      "inputValue": "Please input{{inputName}}"
+  },
+
+  "----language----": "---------language---------",
+  "language": {
+      "zh": "简体中文",
+      "tw": "繁體中文",
+      "en": "English"
+  },
+
+  "----time----": "---------time---------",
+  "time": {
+      "quarter": "季度",
+      "month": "月份",
+      "q1": "Q1",
+      "q2": "Q2",
+      "q3": "Q3",
+      "q4": "Q4",
+      "m1": "Jan",
+      "m2": "Feb",
+      "m3": "Mar",
+      "m4": "Apr",
+      "m5": "May",
+      "m6": "Jun",
+      "m7": "Jul",
+      "m8": "Aug",
+      "m9": "Sep",
+      "m10": "Oct",
+      "m11": "Nov",
+      "m12": "Dec"
+  }
+}

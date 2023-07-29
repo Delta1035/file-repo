@@ -1,0 +1,41 @@
+.basic_data_div_dept {
+    .ant-table-expanded-row-fixed {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .div_dept_expand_item {
+            &.supervisor,
+            &.dept {
+                width: calc(50% - 8px);
+            }
+        }
+    }
+}
+
+::ng-deep {
+    .model_main {
+        .modal_item {
+            &.ipmModalItem {
+                .item_content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    app-ipm-modal-item {
+                        width: 320px;
+                        margin: 0 12px 12px 0;
+                    }
+                }
+            }
+        }
+        .modal_item_box {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            .modal_item {
+                width: calc(50% - 8px);
+            }
+        }
+    }
+}

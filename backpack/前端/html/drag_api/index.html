@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag
+    </title>
+    <style>
+        #p1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid orange;
+            background-color: gray;
+        }
+
+        .placeArea {
+            width: 300px;
+            height: 300px;
+            border: 1px solid green;
+        }
+
+        .placeArea:-moz-drag-over {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- - dragstart：事件主体是被拖放元素，在开始拖放被拖放元素时触发。
+    - darg：事件主体是被拖放元素，在正在拖放被拖放元素时触发。
+    - dragenter：事件主体是目标元素，在被拖放元素进入某元素时触发。
+    - dragover：事件主体是目标元素，在被拖放在某元素内移动时触发。
+    - dragleave：事件主体是目标元素，在被拖放元素移出目标元素是触发。
+    - drop：事件主体是目标元素，在目标元素完全接受被拖放元素时触发。
+    - dragend：事件主体是被拖放元素，在整个拖放操作结束时触发。 -->
+
+    <div id="p1" class="rect" draggable="true">
+        这是一个可拖拽元素
+    </div>
+    <div class="placeArea" ondragover="return false">
+        这是可放置区域
+    </div>
+</body>
+<script>
+    function dragstart_handler(ev) {
+        // Create an image and then use it for the drag image.
+        // NOTE: change "example.gif" to a real image URL or the image
+        // will not be created and the default drag image will be used.
+        // 定义拖拽时鼠标样式
+        // ev.dataTransfer.setData("text/plain", ev.target.id);
+        // ev.dataTransfer.dropEffect = "copy";
+        ev.dataTransfer.effectAllowed = "move";
+
+        var img = new Image();
+        img.src = '../avater.jpg';
+        ev.dataTransfer.setDragImage(img, 1, 11);
+    }
+    function dragstart_handler2(ev) {
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+        console.log(ev.target.ownerDocument.location.href);
+    }
+    const ele = document.querySelector('#p1');
+    ele.addEventListener('dragstart', dragstart_handler)
+</script>
+
+</html>

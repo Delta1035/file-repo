@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        .text{
+            width: 300px;
+            height: 200px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            transition:all 1s linear 0.5s
+        }
+
+        .text:hover{
+            white-space: normal;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮</button>
+    <div class="text">
+我们回到我的这个朋友的问题场景中，上面的定义也只是说了white-space和空格的关系，即使white-space能影响换行，也应该是在有空格的情况下，这里跟换行符\n有什么关系呢？
+这就涉及到另一个重点了，在浏览器渲染页面时，会把所有的换行符都渲染成空格！
+浏览器渲染页面的根本是将HTML渲染成可见的内容，而在HTML中只有标签用于换行，其他的换行符如\n、\r\n等只有在支持解析的语法中才会显示，如JavaScript的console。
+在浏览器的渲染过程中，DOM解析完成后将与CSSOM进行合并，此时DOM树中文本里的换行符\n已经被转换成了空格，当发现CSSOM中对应属性有white-space时，该属性值发生作用，最终将渲染后的结果展示在页面中。
+这里可以用下面的图示来解释整体的过程：
+    </div>
+</body>
+</html>

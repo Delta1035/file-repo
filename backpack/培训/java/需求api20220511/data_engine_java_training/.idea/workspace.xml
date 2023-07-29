@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b3ec04b-946f-4829-9d0e-c9828c128cf3" name="Changes" comment="project build">
+      <change beforePath="$PROJECT_DIR$/../../001. Refactor.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../001. Refactor.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/demo_web_db.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_alibaba_druid_1_2_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_extension_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_alibaba_fastjson_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_11_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_11_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__net_minidev_json_smart_2_4_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_62.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_62.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_62.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_assertj_assertj_core_3_21_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_mockito_mockito_core_4_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_4_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_aop_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_beans_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_context_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_core_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_expression_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_test_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_tx_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_web_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/libraries/Maven__org_yaml_snakeyaml_1_29.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/src/main/java/com/wistron/AvatarApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/src/main/java/com/wistron/common/annotation/myAnnotation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/src/main/java/com/wistron/common/util/Compare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/avatar/src/test/java/com/wistron/AvatarApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/Mybatis01Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/common/R.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/common/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/common/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/common/util/StringToAsc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/controller/FirstController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/controller/HttpTestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/mapper/FirstMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/mapper/IFirstMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/service/IFirstService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/firstProject/service/impl/FirstServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/waimai/controller/EmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/waimai/entity/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/waimai/mapper/IEmployeeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/waimai/service/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/java/com/wistron/waimai/service/impl/EmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/test/java/com/wistron/Mybatis01ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/src/test/java/com/wistron/common/mapper/SampleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../demo_web_db/mybatis_01/unknown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/common/entity/First.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/common/util/DsPostgresEngineUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/firstProject/controller/FirstController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/firstProject/mapper/postgresengine/IFirstMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/firstProject/mapper/postgresengine/xml/FirstMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/firstProject/service/IFirstService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/java/com/wistron/avatar/firstProject/service/impl/FirstServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/common/entity/First.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/common/util/DsPostgresEngineUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/firstProject/controller/FirstController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/firstProject/mapper/postgresengine/IFirstMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/firstProject/mapper/postgresengine/xml/FirstMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/firstProject/service/IFirstService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/classes/com/wistron/avatar/firstProject/service/impl/FirstServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/firstProject-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/firstProject-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstProject/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java sprintboot.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../java sprintboot.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../kafka.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="290MxxhJQQFiphDDqsjAf0Ss7f0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="jasypt.encryptor.password" value="Avatar_key" />
+        <env name="jasypt.encryptor.algorithm" value="PBEWithMD5AndDES" />
+        <env name="jasypt.encryptor.iv-generator-classname" value="org.jasypt.iv.NoIvGenerator" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.wistron.avatar.App" />
+      <module name="data_engine_java_training" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wistron.avatar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b3ec04b-946f-4829-9d0e-c9828c128cf3" name="Changes" comment="" />
+      <created>1652245800033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652245800033</updated>
+    </task>
+    <task id="LOCAL-00001" summary="training">
+      <created>1652245871122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652245871122</updated>
+    </task>
+    <task id="LOCAL-00002" summary="project build">
+      <created>1652246050502</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652246050502</updated>
+    </task>
+    <task id="LOCAL-00003" summary="project build">
+      <created>1652246063695</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652246063696</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="training" />
+    <MESSAGE value="project build" />
+    <option name="LAST_COMMIT_MESSAGE" value="project build" />
+  </component>
+</project>

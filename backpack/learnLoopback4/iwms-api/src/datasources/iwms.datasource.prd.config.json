@@ -1,0 +1,10 @@
+{
+  "name": "iwms",
+  "connector": "postgresql",
+  "url": "",
+  "host": "10.66.28.85",
+  "port": 5432,
+  "user": "iwmsprd",
+  "password": "iwms@2022prd",
+  "database": "IWMSPRD"
+}

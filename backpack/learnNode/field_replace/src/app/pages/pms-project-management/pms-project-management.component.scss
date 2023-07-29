@@ -1,0 +1,19 @@
+[buttons] {
+  display: flex;
+  ::ng-deep .ant-btn.ant-btn-primary{
+    margin-left: 16px;
+  }
+}
+
+.tab-wrapper{
+  margin-bottom: 8px;
+}
+
+.operation button{
+  border: none;
+  background-color: transparent;
+}
+
+.operation ::ng-deep .ant-btn {
+  background-color: transparent;
+}

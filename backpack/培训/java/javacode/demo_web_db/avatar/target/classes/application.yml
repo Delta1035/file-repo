@@ -1,0 +1,14 @@
+server:
+  profiles: test
+---
+server:
+  port: 8081
+  profiles: dev
+---
+server:
+  port: 8082
+  profiles: test
+---
+server:
+  port: 8083
+  profiles: prod

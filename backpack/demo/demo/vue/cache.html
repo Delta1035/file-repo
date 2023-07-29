@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //缓存函数  使一个函数具有缓存功能
+    function cached(fn) {
+        var cache = Object.create(null);
+        return (function cachedFn(str) {
+            var hit = cache[str];
+            //hit如果存在 就返回 这个字符串
+            //如果hit不存在 , 就把经过fn处理过的hit缓存下来
+            return hit || (cache[str] = fn(str));
+        })
+    }
+    function strUpper(str) {
+        return str.toUpperCase()
+    }
+
+    // var cachedA = cached(strUpper('a'));
+    // var cachedB = cached(strUpper('b'));
+
+    var cachedStrUpper = cached(strUpper);
+    console.log(cachedStrUpper('abc'));
+    console.log(cachedStrUpper('abc'));
+    console.log(cachedStrUpper('abc'));
+    console.log(cachedStrUpper('abc'));
+    console.log(cachedStrUpper('abc'));
+
+    /**
+     * Create a cached version of a pure function.
+     */
+//   function cached (fn) {
+//     var cache = Object.create(null);
+//     return (function cachedFn (str) {
+//       var hit = cache[str];
+//       return hit || (cache[str] = fn(str))
+//     });
+//   }
+    console.log(Math.max.apply(null,[1,2,3]));
+    let arr1 = new Array(1,2,3);
+    console.log(arr1);
+</script>
+
+</html>

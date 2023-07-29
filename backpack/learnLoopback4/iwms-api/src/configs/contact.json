@@ -1,0 +1,13 @@
+{
+  "email": {
+    "host": "wksowa.wistron.com",
+    "port": 25,
+    "username": "k8si40",
+    "password": "R%z9vH#s3h",
+    "from": "POEM@wistron.com",
+    "subject": "<{timestamp}會議記錄>WSD Smart Mfg. BI-weekly meeting",
+    "header": "<b>Dear Sirs:</b><br>WSD  Smart Mfg. BI-weekly meeting(0730)會議記錄整理如下,請查收～",
+    "footer": "Best Regards！",
+    "qasGroup": ["Steve_CY_Lin@wistron.com"]
+  }
+}

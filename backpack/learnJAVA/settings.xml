@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ | This is the configuration file for Maven. It can be specified at two levels:
+ |
+ |  1. User Level. This settings.xml file provides configuration for a single user,
+ |                 and is normally provided in ${user.home}/.m2/settings.xml.
+ |
+ |                 NOTE: This location can be overridden with the CLI option:
+ |
+ |                 -s /path/to/user/settings.xml
+ |
+ |  2. Global Level. This settings.xml file provides configuration for all Maven
+ |                 users on a machine (assuming they're all using the same Maven
+ |                 installation). It's normally provided in
+ |                 ${maven.home}/conf/settings.xml.
+ |
+ |                 NOTE: This location can be overridden with the CLI option:
+ |
+ |                 -gs /path/to/global/settings.xml
+ |
+ | The sections in this sample file are intended to give you a running start at
+ | getting the most out of your Maven installation. Where appropriate, the default
+ | values (values used when the setting is not specified) are provided.
+ |
+ |-->
+
+<settings 
+xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" 
+xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ${user.home}/.m2/repository
+  <localRepository>/path/to/local/repo</localRepository>
+  -->
+  <localRepository>D:\mavenRepository\</localRepository>
+  
+	<profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <distName>maven-avatar-common</distName>
+			    <distUrl>https://nexusoss.wistron.com/repository/maven-avatar-common</distUrl>
+                <envName>DEV</envName>
+            </properties>
+        </profile>
+        <profile>
+            <id>qas</id>
+            <properties>
+                <distName>maven-avatar-common</distName>
+			    <distUrl>https://nexusoss.wistron.com/repository/maven-avatar-common</distUrl>
+                <envName>QAS</envName>
+            </properties>            
+        </profile>
+        <profile>
+            <id>prd</id>
+            <properties>
+                <distName>maven-avatar-common</distName>
+			    <distUrl>https://nexusoss.wistron.com/repository/maven-avatar-common</distUrl>
+                <envName>PRD</envName>
+            </properties>            
+        </profile>
+    </profiles>
+    <servers>
+        <server>
+            <id>central</id>
+            <username>avatar</username>
+            <password>ENRrJCJbqY0=</password>
+        </server>
+    </servers>
+    <mirrors>
+       <mirror>
+          <mirrorOf>*</mirrorOf>
+          <name>maven-group</name>
+          <url>https://nexusoss.wistron.com/repository/maven-group/</url>
+          <id>maven-group</id>
+        </mirror>
+    </mirrors>
+</settings>
+

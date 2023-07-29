@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var btn1 = document.getElementById('su');
+    setInterval(function(){document.getElementById("单击按钮的Id").click();},1000);
+    window.onload = function(that,ev){
+        var btn3 = document.querySelector('.bi-button-tree.bi-vertical-layout div:first-child')
+        console.log('插件测试',btn3,document);
+        while(btn3){
+            btn3.click();
+        }
+    }
+
+    (function(){
+        var btn3 = document.querySelector('.bi-button-tree.bi-vertical-layout div:first-child')
+        btn3.click();
+        var btn4 = document.querySelector('.bi-combo.bi-vertical-layout');
+        // var btn4 = document.querySelector('.bi-combo.bi-vertical-layout.bi-combo-hover');
+        btn4.click();
+        var btn5 = btn4.firstChild;
+        var i6 = btn5.firstChild;
+        btn4.dispatchEvent(new Event('click'));
+        var nav = document.querySelector('.bi-h-tape-layout.dec-frame-tab-pane-tabs-container.dec-frame-tab-pane-split-line')
+        var li = nav.lastChild;
+        li.style.border = '1px solid red';
+        
+    })()
+</script>
+</html>

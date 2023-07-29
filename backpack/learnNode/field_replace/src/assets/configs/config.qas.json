@@ -1,0 +1,6 @@
+{
+  "impBaseURL": "https://imp-api.k8sqas-whq.k8s.wistron.com",
+  "apiVersion": "api",
+  "apiFormat": "?format=json",
+  "impversion": "Qas:1.0.55"
+}

@@ -1,0 +1,42 @@
+# version 指定docker-compose.yaml文件的写法
+version: '2'
+# services 多个容器的集合
+services:
+  # 容器名?
+  mysql:
+    image: mysql:5.7.40
+    restart: always
+    ports:
+      - "3307:3306"
+    # environment 相当于 -e
+    environment:
+      # 配置root账户密码 
+      # mysql -u root -p
+      MYSQL_ROOT_PASSWORD: delta23456
+      MYSQL_DATABASE: keycloak
+      MYSQL_USER: keycloak
+      MYSQL_PASSWORD: keycloak123456
+    volumes:
+      - "mysql:/var/lib/mysql"
+    networks:
+      - keycloak-network
+  keycloak:
+    image: jboss/keycloak:16.1.1
+    environment:
+      KEYCLOAK_USER: delta
+      KEYCLOAK_PASSWORD: delta123456
+      DB_USER: keycloak
+      DB_PASSWORD: keycloak123456
+    volumes:
+      - "/usr/ca/keycloak:/etc/x509/https"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    networks:
+      - keycloak-network
+networks:
+  keycloak-network:
+    driver: bridge
+volumes:
+  mysql:
+    driver: local

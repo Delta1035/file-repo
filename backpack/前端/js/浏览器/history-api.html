@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<p>
+			<input type="text" id="state" />
+			<button onclick="pushState()">pushState</button>
+		</p>
+		<p>
+			<input type="text" id="replace" />
+			<button onclick="replaceState()">replaceState</button>
+		</p>
+        <p>
+			<input type="text" id="go" />
+            <button onclick="go()">go</button>
+		</p>
+        <p>
+            <button onclick="back()">back</button>
+            <button onclick="forward()">forward</button>
+        </p>
+	</body>
+	<script>
+		// window.onpopstate = event => {
+		// 	console.log('监听', event);
+		// };
+        // history state 出栈才会触发
+		window.onpopstate = function (event) {
+			console.log(
+				'location: ' +
+					document.location +
+					', state: ' +
+					JSON.stringify(event.state),
+			);
+		};
+
+		function pushState() {
+			const state = document.querySelector('#state');
+			history.pushState(state.value, '这是自定义标题', state.value);
+			console.log(state.value);
+		}
+
+		function replaceState() {
+			const replace = document.querySelector('#replace');
+			history.pushState(replace.value, '这是自定义标题', replace.value);
+			console.log(replace.value);
+		}
+        function back(){
+            history.back();
+        }
+        function forward(){
+            history.forward();
+        }
+        function go(){
+            const go = document.querySelector('#go');
+            history.go(go.value);
+        }
+	</script>
+</html>

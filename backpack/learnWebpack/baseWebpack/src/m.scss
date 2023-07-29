@@ -1,0 +1,12 @@
+body {
+  div {
+    border: 2px solid red;
+  }
+  display:flexbox;
+  body::scrollbar{
+    background-color: red;
+}
+}
+::placeholder {
+    color: gray;
+  }

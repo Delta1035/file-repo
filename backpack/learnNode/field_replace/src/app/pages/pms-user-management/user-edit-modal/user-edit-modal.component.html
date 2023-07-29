@@ -1,0 +1,26 @@
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="{{'common.EDIT' | translate}}"
+  nzCancelText="{{'common.CANCEL' | translate}}"
+  nzOkText="{{'common.CONFIRM' | translate}}"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  [nzOkLoading]="isOkLoading"
+>
+  <div *nzModalContent>
+    <form nz-form [formGroup]="validateForm">
+      <!-- 用户名称 -->
+      <app-custom-input label="{{ 'PMS.UserName' | translate }}" formControlName="user_name" ></app-custom-input>
+      <!-- 工号 -->
+      <app-custom-input label="{{ 'PMS.EmployeeId' | translate }}" formControlName="employee_id"></app-custom-input>
+      <!-- 电子邮箱 -->
+      <app-custom-input label="{{ 'PMS.Email' | translate }}" formControlName="email"></app-custom-input>
+        <!-- 处级 -->
+      <app-custom-select label="{{'PMS.Division' | translate}}" formControlName="division" [options]="DEVISION_LIST" ></app-custom-select>
+      <!-- 組織角色 -->
+      <app-custom-select label="{{'JIRAUSER.OrgRole' | translate}}" formControlName="orgRole" [options]="ORG_ROLE_LIST" ></app-custom-select>
+      <!-- 账户状态 -->
+      <app-custom-radio label="{{'JIRAUSER.Status'| translate}}" formControlName="status" [options]="ACCOUNT_STATUS"></app-custom-radio>
+    </form>
+  </div>
+</nz-modal>

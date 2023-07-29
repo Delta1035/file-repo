@@ -1,0 +1,205 @@
+<div
+  class="record-container"
+  style="
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+    height: 100%;
+    padding: 16px;
+    width: 100%;
+  "
+>
+  <div
+    class="inner-record border"
+    mode="row-4"
+    style="border: 1px solid #47565a; height: 100%; width: 100%"
+  >
+    <div
+      class="header border-bottom"
+      style="
+        border-bottom: 1px solid #47565a;
+        height: fit-content;
+        text-align: center;
+        width: 100%;
+      "
+    >
+      <h2
+        class="header-text"
+        style="font-size: 1.4rem; margin: 0; padding: 20px 0; width: 100%"
+      >
+        Wistron Information (Kuanshan) Co., Ltd.
+        <br />
+        Meeting Minutes
+      </h2>
+    </div>
+    <div
+      class="detail border-bottom"
+      style="
+        border-bottom: 1px solid #47565a;
+        font-size: 1rem;
+        height: 120px;
+        line-height: 40px;
+      "
+    >
+      <div class="subject" style="padding-left: 16px">
+        主題: WSD Smart Mfg. bi-weekly meeting
+      </div>
+      <div class="time" style="padding-left: 16px">
+        時間: ${timestamp} 13:30-15:30
+      </div>
+      <div class="location" style="padding-left: 16px">地點: 線上會議</div>
+    </div>
+    <div
+      class="custom-block custom-block1 border-bottom"
+      style="border-bottom: 1px solid #47565a; height: 120px; padding: 8px 16px"
+    >
+      <div class="attendee-panel-container" style="height: 100%; width: 100%">
+        <div class="panel-inner" style="height: 100%; width: 100%">
+          <div class="attendee-list">
+            <div class="edit-section" style="line-height: 40px">
+              <span>Attendee: </span>
+            </div>
+            <div class="attendee-section" style="padding-top: -2px">
+              <div
+                class="label"
+                style="
+                  display: inline-block;
+                  font-size: 14px;
+                  line-height: 17px;
+                "
+              >
+                ${empStatus}: ${empName}
+              </div>
+              <div
+                class="label"
+                style="
+                  display: inline-block;
+                  font-size: 14px;
+                  line-height: 17px;
+                "
+              >
+                ${empStatus}: ${empName}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom-block custom-block2">
+      <table
+        class="meeting-table"
+        style="
+          border-collapse: collapse;
+          font-family: 微軟正黑體;
+          line-height: 30px;
+          width: 100%;
+        "
+      >
+        <thead>
+          <tr>
+            <th width="80">NO.</th>
+            <th
+              class="table-border-left"
+              style="border-left: 1px solid #556a70"
+            >
+              Description
+            </th>
+            <th
+              class="table-border-left"
+              width="120"
+              style="border-left: 1px solid #556a70"
+            >
+              PIC
+            </th>
+            <th
+              class="table-border-left"
+              width="150"
+              style="border-left: 1px solid #556a70"
+            >
+              Due Day
+            </th>
+            <th
+              class="table-border-left"
+              width="140"
+              style="border-left: 1px solid #556a70"
+            >
+              Status
+            </th>
+            <th
+              class="table-border-left"
+              width="400"
+              style="border-left: 1px solid #556a70"
+            >
+              Remark
+            </th>
+          </tr>
+        </thead>
+        <tbody style="border-bottom: 1px solid #000">
+          <tr *ngFor="let row of form; let index = index">
+            <td
+              name="no"
+              class="content-row table-border-top"
+              width="80"
+              style="border-top: 1px solid #556a70"
+            >
+              ${index}
+            </td>
+            <td
+              name="descrition"
+              class="content-row table-border-left table-border-top"
+              style="
+                border-left: 1px solid #556a70;
+                border-top: 1px solid #556a70;
+              "
+            >
+              ${description}
+            </td>
+            <td
+              name="pic"
+              class="content-row table-border-left table-border-top"
+              width="120"
+              style="
+                border-left: 1px solid #556a70;
+                border-top: 1px solid #556a70;
+              "
+            >
+              ${pic}
+            </td>
+            <td
+              name="due-day"
+              class="content-row table-border-left table-border-top"
+              width="150"
+              style="
+                border-left: 1px solid #556a70;
+                border-top: 1px solid #556a70;
+              "
+            >
+              ${datetime}
+            </td>
+            <td
+              name="status"
+              class="content-row table-border-left table-border-top"
+              width="140"
+              style="
+                border-left: 1px solid #556a70;
+                border-top: 1px solid #556a70;
+              "
+            >
+              ${status}
+            </td>
+            <td
+              name="remark"
+              class="content-row table-border-left table-border-top"
+              width="400"
+              style="
+                border-left: 1px solid #556a70;
+                border-top: 1px solid #556a70;
+              "
+            >
+              ${remark}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

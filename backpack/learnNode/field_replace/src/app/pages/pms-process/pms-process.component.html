@@ -1,0 +1,37 @@
+<div class="page_main scroll_bar pms_process">
+  <div class="pms-process-content">
+    <div class="process-wrapper scroll_bar">
+      <div nz-row nzJustify="space-between">
+        <div nz-col nzSpan="3" *ngFor="let item of processList; index as i">
+          <tech-process [dataSource]="item.process" title="{{ item.processName | translate }}" bgColor="#005757"
+            [width]="10" unit="vw" [fontSize]="0.5"></tech-process>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-wrapper">
+      <div nz-row>
+        <div nz-col *ngFor="let item of processIconList; index as i">
+          <nz-card [nzBordered]="false" [ngStyle]="{
+              width: item.processIconWidth ? item.processIconWidth : '200px',
+              'background-color': item.processIconBgColor
+                ? item.processIconBgColor
+                : '#fff',
+              'font-size': item.processIconTextSize
+                ? item.processIconTextSize
+                : '16px',
+              'font-weight': item.processIconFontWeight
+                ? item.processIconFontWeight
+                : 'bold',
+              color: item.processIconTextColor ? item.processIconTextColor : '#000'
+              ,'margin':'5px'
+            }" style="width: 300px">
+            {{ item.processIconDesctiption }}
+          </nz-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

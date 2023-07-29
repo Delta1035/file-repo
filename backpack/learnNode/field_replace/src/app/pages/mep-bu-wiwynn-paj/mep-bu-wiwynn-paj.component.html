@@ -1,0 +1,75 @@
+<div class="page_main scroll_bar maintain_main mep_bu_wiwynn_paj">
+    <div class="header">
+        <div class="title">{{ "home.mepBUWiwynnPAJ" | translate }}</div>
+        <div class="opera_area">
+            <button *ngIf="tab==='bu'" nz-button nzType="primary" (click)="downloadBUWiwynn('bu')">{{ "mepBUWiwynnPAJ.downloadBU" | translate }}</button>
+            <button *ngIf="tab==='wiwynn'" nz-button nzType="primary" (click)="downloadBUWiwynn('wiwynn')">{{ "mepBUWiwynnPAJ.downloadWiwynn" | translate }}</button>
+        </div>
+    </div>
+    <div class="body">
+        <div class="tab_bar">
+            <app-ipm-tab [(tab)]="tab" [tabList]="tabList" (tabChange)="tabChange()"></app-ipm-tab>
+        </div>
+        <div class="opera_bar">
+            <div class="search_area">
+                <div class="search_item">
+                    <nz-form-label> {{ 'tableHead.year' | translate }}</nz-form-label>
+                    <nz-select [(ngModel)]="searchYear" [nzPlaceHolder]="utils.searchPlacehoder('tableHead.year')" (ngModelChange)="searchYearChange()">
+                        <nz-option nzValue="" nzLabel="All"></nz-option>
+                        <nz-option *ngFor="let item of searchYearList" [nzValue]="item" [nzLabel]="item"></nz-option>
+                    </nz-select>
+                </div>
+                <div class="search_item">
+                    <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px">
+                        <input type="text" nz-input [placeholder]="utils.searchPlacehoder('tableHead.applicant','tableHead.pmcsIBCode','tableHead.pmcsIBName')" [(ngModel)]="searchKeyWord" (keyup.enter)="dataSearch()" />
+                    </nz-input-group>
+                    <ng-template #searchInputIcon><i nz-icon nzType="search"></i></ng-template>
+                </div>
+                <div class="search_item">
+                    <button nz-button nzType="primary" (click)="dataSearch()">{{ "button.query" | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="data_table" #dataTable>
+            <nz-table #basicTable [nzData]="buWiwynnData" [nzScroll]="{ x: tableInfo.scrollX + 'px' }" [nzBordered]="true" [(nzPageIndex)]="tableInfo.pageIndex" [(nzPageSize)]="tableInfo.pageSize" [nzFrontPagination]="false" [nzLoading]="tableInfo.loading" [nzTotal]="tableInfo.pageTotal"
+                [nzHideOnSinglePage]="true" (nzPageIndexChange)="tablePageIndexChange()">
+                <thead>
+                    <tr>
+                        <th *ngFor="let item of buWiwynnTableHeaderInfo" [nzAlign]="item.align" [nzLeft]="item.left" [nzRight]="item.right" [width]="item.width + 'px'">
+                            {{ item.content | translate }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-template ngFor let-data let-i="index" [ngForOf]="basicTable.data">
+                        <tr>
+                            <td nzAlign="center" nzLeft>{{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}</td>
+                            <td nzAlign="center" nzLeft>{{ data.year }}</td>
+                            <td nzAlign="center" nzLeft>{{ data.issueDept }}</td>
+                            <td nzAlign="center">{{ data.issuePCode }}</td>
+                            <td nzAlign="center">{{ data.currency }}</td>
+                            <td nzAlign="center">{{ data.reviewer1 }}</td>
+                            <td nzAlign="center">{{ data.reviewer2 }}</td>
+                            <td nzAlign="center">{{ data.chargeType }}</td>
+                            <td nzAlign="center"><span [title]="data.shortRemark">{{ data.shortRemarkE }}</span></td>
+                            <td nzAlign="center"><span [title]="data.remark">{{ data.remarkE }}</span></td>
+                            <td nzAlign="center">{{ data.recvDept }}</td>
+                            <td nzAlign="center">{{ data.recvPCode }}</td>
+                            <td nzAlign="center">{{ data.amount }}</td>
+                            <td nzAlign="center">{{ data.itemText }}</td>
+                            <td nzAlign="center">{{ data.assignment }}</td>
+                            <td nzAlign="center">{{ data.businessType }}</td>
+                            <td nzAlign="center">{{ data.customerName }}</td>
+                            <td nzAlign="center">{{ data.reason }}</td>
+                            <td nzAlign="center">{{ data.sbgChargeType }}</td>
+                            <td nzAlign="center">{{ data.applicant }}</td>
+                            <td nzAlign="center">{{ data.pmcsIBCode }}</td>
+                            <td nzAlign="center" nzRight><span [title]="data.pmcsIBName">{{ data.pmcsIBNameE }}</span></td>
+                            <td nzAlign="center" nzRight>{{ data.pajMm }}</td>
+                        </tr>
+                    </ng-template>
+                </tbody>
+            </nz-table>
+        </div>
+    </div>
+</div>

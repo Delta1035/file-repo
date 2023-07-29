@@ -1,0 +1,2676 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "iwms-dashboard-api",
+    "version": "0.0.1",
+    "description": "iwms-dashboard-api",
+    "contact": {}
+  },
+  "paths": {
+    "/findByIdAndErrorCode": {
+      "get": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "findByIdAndErrorCode",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "find nearest MachineRecords",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineRecords"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "machine_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "error_code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "MachineRecordsController.findByIdAndErrorCode"
+      }
+    },
+    "/findByMachineTypeAndErrorCode": {
+      "get": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "findByMachineTypeAndErrorCode",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "findByMachineTypeAndErrorCode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineTypeWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "machine_type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "error_code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "MachineRecordsController.findByMachineTypeAndErrorCode"
+      }
+    },
+    "/findNearestRecord": {
+      "get": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "findNearest",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "find nearest MachineRecords",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineRecords"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "machine_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evt_dt",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "min",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "MachineRecordsController.findNearest"
+      }
+    },
+    "/info": {
+      "get": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "getUserInfo",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User Information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfoResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "UserController.getUserInfo"
+      }
+    },
+    "/insert-machine-records": {
+      "post": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "insert",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineRecords model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRecords"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMachineRecords"
+              }
+            }
+          }
+        },
+        "operationId": "MachineRecordsController.insert"
+      }
+    },
+    "/login": {
+      "post": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "login",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "UserController.login"
+      }
+    },
+    "/machine-error-levels/count": {
+      "get": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "count",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineErrorLevel model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineErrorLevel.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineErrorLevel>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineErrorLevelController.count"
+      }
+    },
+    "/machine-error-levels/{id}/machine-type": {
+      "get": {
+        "x-controller-name": "MachineErrorLevelMachineTypeController",
+        "x-operation-name": "getMachineType",
+        "tags": [
+          "MachineErrorLevelMachineTypeController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType belonging to MachineErrorLevel",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineType"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "MachineErrorLevelMachineTypeController.getMachineType"
+      }
+    },
+    "/machine-error-levels/{id}": {
+      "put": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineErrorLevel PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineErrorLevel"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineErrorLevelController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineErrorLevel PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineErrorLevelPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineErrorLevelController.updateById"
+      },
+      "get": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "findById",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineErrorLevel model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineErrorLevelWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineErrorLevel.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineErrorLevelController.findById"
+      },
+      "delete": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineErrorLevel DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "MachineErrorLevelController.deleteById"
+      }
+    },
+    "/machine-error-levels": {
+      "post": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "create",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineErrorLevel model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineErrorLevel"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMachineErrorLevel"
+              }
+            }
+          }
+        },
+        "operationId": "MachineErrorLevelController.create"
+      },
+      "patch": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineErrorLevel PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineErrorLevel.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineErrorLevel>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineErrorLevelPartial"
+              }
+            }
+          }
+        },
+        "operationId": "MachineErrorLevelController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "MachineErrorLevelController",
+        "x-operation-name": "find",
+        "tags": [
+          "MachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of MachineErrorLevel model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineErrorLevelWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineErrorLevel.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineErrorLevelController.find"
+      }
+    },
+    "/machine-records/count": {
+      "get": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "count",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineRecords model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineRecords.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineRecords>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineRecordsController.count"
+      }
+    },
+    "/machine-records/{id}": {
+      "put": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineRecords PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineRecords"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineRecordsController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineRecords PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineRecordsPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineRecordsController.updateById"
+      },
+      "get": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "findById",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineRecords model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRecordsWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRecords.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineRecordsController.findById"
+      },
+      "delete": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineRecords DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "MachineRecordsController.deleteById"
+      }
+    },
+    "/machine-records": {
+      "post": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "create",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineRecords model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRecords"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMachineRecords"
+              }
+            }
+          }
+        },
+        "operationId": "MachineRecordsController.create"
+      },
+      "patch": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineRecords PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineRecords.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineRecords>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineRecordsPartial"
+              }
+            }
+          }
+        },
+        "operationId": "MachineRecordsController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "MachineRecordsController",
+        "x-operation-name": "find",
+        "tags": [
+          "MachineRecordsController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of MachineRecords model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineRecordsWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRecords.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineRecordsController.find"
+      }
+    },
+    "/machine-types/count": {
+      "get": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "count",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineType.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineType>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineTypeController.count"
+      }
+    },
+    "/machine-types/{id}/machine-error-levels": {
+      "post": {
+        "x-controller-name": "MachineTypeMachineErrorLevelController",
+        "x-operation-name": "create",
+        "tags": [
+          "MachineTypeMachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineErrorLevel"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMachineErrorLevelInMachineType"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineTypeMachineErrorLevelController.create"
+      },
+      "patch": {
+        "x-controller-name": "MachineTypeMachineErrorLevelController",
+        "x-operation-name": "patch",
+        "tags": [
+          "MachineTypeMachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType.MachineErrorLevel PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineErrorLevel.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineErrorLevel>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineErrorLevelPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineTypeMachineErrorLevelController.patch"
+      },
+      "get": {
+        "x-controller-name": "MachineTypeMachineErrorLevelController",
+        "x-operation-name": "find",
+        "tags": [
+          "MachineTypeMachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of MachineType has many MachineErrorLevel",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineErrorLevel"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineTypeMachineErrorLevelController.find"
+      },
+      "delete": {
+        "x-controller-name": "MachineTypeMachineErrorLevelController",
+        "x-operation-name": "delete",
+        "tags": [
+          "MachineTypeMachineErrorLevelController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType.MachineErrorLevel DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineErrorLevel.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineErrorLevel>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineTypeMachineErrorLevelController.delete"
+      }
+    },
+    "/machine-types/{id}": {
+      "put": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineType PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineType"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineTypeController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineType PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineTypePartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "MachineTypeController.updateById"
+      },
+      "get": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "findById",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineTypeWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineType.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineTypeController.findById"
+      },
+      "delete": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "MachineType DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "MachineTypeController.deleteById"
+      }
+    },
+    "/machine-types": {
+      "post": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "create",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineType"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMachineType"
+              }
+            }
+          }
+        },
+        "operationId": "MachineTypeController.create"
+      },
+      "patch": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "200": {
+            "description": "MachineType PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "MachineType.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<MachineType>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineTypePartial"
+              }
+            }
+          }
+        },
+        "operationId": "MachineTypeController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "MachineTypeController",
+        "x-operation-name": "find",
+        "tags": [
+          "MachineTypeController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of MachineType model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MachineTypeWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineType.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "MachineTypeController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    },
+    "/role": {
+      "get": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "role",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "RoleMap model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "UserController.role"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://[::1]:3000"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "MachineType": {
+        "title": "MachineType",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "machine_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "machine_type"
+        ],
+        "additionalProperties": false
+      },
+      "MachineErrorLevel": {
+        "title": "MachineErrorLevel",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_duration": {
+            "type": "number"
+          },
+          "L4": {
+            "type": "number"
+          },
+          "L3": {
+            "type": "number"
+          },
+          "L2": {
+            "type": "number"
+          },
+          "L1": {
+            "type": "number"
+          },
+          "machineTypeId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "error_code",
+          "error_duration"
+        ],
+        "additionalProperties": false
+      },
+      "NewMachineErrorLevel": {
+        "title": "NewMachineErrorLevel",
+        "type": "object",
+        "description": "(tsType: Omit<MachineErrorLevel, 'id'>, schemaOptions: { title: 'NewMachineErrorLevel', exclude: [ 'id' ] })",
+        "properties": {
+          "error_code": {
+            "type": "string"
+          },
+          "error_duration": {
+            "type": "number"
+          },
+          "L4": {
+            "type": "number"
+          },
+          "L3": {
+            "type": "number"
+          },
+          "L2": {
+            "type": "number"
+          },
+          "L1": {
+            "type": "number"
+          },
+          "machineTypeId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "error_code",
+          "error_duration"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<MachineErrorLevel, 'id'>"
+      },
+      "MachineTypeWithRelations": {
+        "title": "MachineTypeWithRelations",
+        "type": "object",
+        "description": "(tsType: MachineTypeWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "machine_type": {
+            "type": "string"
+          },
+          "machineErrorLevels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MachineErrorLevelWithRelations"
+            }
+          }
+        },
+        "required": [
+          "machine_type"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "MachineTypeWithRelations"
+      },
+      "MachineErrorLevelWithRelations": {
+        "title": "MachineErrorLevelWithRelations",
+        "type": "object",
+        "description": "(tsType: MachineErrorLevelWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_duration": {
+            "type": "number"
+          },
+          "L4": {
+            "type": "number"
+          },
+          "L3": {
+            "type": "number"
+          },
+          "L2": {
+            "type": "number"
+          },
+          "L1": {
+            "type": "number"
+          },
+          "machineTypeId": {
+            "type": "number"
+          },
+          "machine_level_for_machine_type": {
+            "$ref": "#/components/schemas/MachineTypeWithRelations"
+          }
+        },
+        "required": [
+          "error_code",
+          "error_duration"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "MachineErrorLevelWithRelations"
+      },
+      "MachineErrorLevelPartial": {
+        "title": "MachineErrorLevelPartial",
+        "type": "object",
+        "description": "(tsType: Partial<MachineErrorLevel>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_duration": {
+            "type": "number"
+          },
+          "L4": {
+            "type": "number"
+          },
+          "L3": {
+            "type": "number"
+          },
+          "L2": {
+            "type": "number"
+          },
+          "L1": {
+            "type": "number"
+          },
+          "machineTypeId": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<MachineErrorLevel>"
+      },
+      "MachineRecords": {
+        "title": "MachineRecords",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "machine_type": {
+            "type": "string"
+          },
+          "machine_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "number"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string"
+          },
+          "task_info": {
+            "type": "string"
+          },
+          "electric": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_desc": {
+            "type": "string"
+          },
+          "evt_dt": {
+            "type": "number"
+          },
+          "exception_time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "machine_type",
+          "machine_id",
+          "status",
+          "evt_dt"
+        ],
+        "additionalProperties": false
+      },
+      "NewMachineRecords": {
+        "title": "NewMachineRecords",
+        "type": "object",
+        "description": "(tsType: Omit<MachineRecords, 'id'>, schemaOptions: { title: 'NewMachineRecords', exclude: [ 'id' ] })",
+        "properties": {
+          "machine_type": {
+            "type": "string"
+          },
+          "machine_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "number"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string"
+          },
+          "task_info": {
+            "type": "string"
+          },
+          "electric": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_desc": {
+            "type": "string"
+          },
+          "evt_dt": {
+            "type": "number"
+          },
+          "exception_time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "machine_type",
+          "machine_id",
+          "status",
+          "evt_dt"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<MachineRecords, 'id'>"
+      },
+      "MachineRecordsWithRelations": {
+        "title": "MachineRecordsWithRelations",
+        "type": "object",
+        "description": "(tsType: MachineRecordsWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "machine_type": {
+            "type": "string"
+          },
+          "machine_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "number"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string"
+          },
+          "task_info": {
+            "type": "string"
+          },
+          "electric": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_desc": {
+            "type": "string"
+          },
+          "evt_dt": {
+            "type": "number"
+          },
+          "exception_time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "machine_type",
+          "machine_id",
+          "status",
+          "evt_dt"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "MachineRecordsWithRelations"
+      },
+      "MachineRecordsPartial": {
+        "title": "MachineRecordsPartial",
+        "type": "object",
+        "description": "(tsType: Partial<MachineRecords>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "machine_type": {
+            "type": "string"
+          },
+          "machine_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "number"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string"
+          },
+          "task_info": {
+            "type": "string"
+          },
+          "electric": {
+            "type": "number"
+          },
+          "code": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "error_desc": {
+            "type": "string"
+          },
+          "evt_dt": {
+            "type": "number"
+          },
+          "exception_time": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<MachineRecords>"
+      },
+      "NewMachineErrorLevelInMachineType": {
+        "title": "NewMachineErrorLevelInMachineType",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<MachineErrorLevel, 'id'>, 'machine_type_id'>, schemaOptions: { title: 'NewMachineErrorLevelInMachineType', exclude: [ 'id' ], optional: [ 'machine_type_id' ] })",
+        "properties": {
+          "error_code": {
+            "type": "string"
+          },
+          "error_duration": {
+            "type": "number"
+          },
+          "L4": {
+            "type": "number"
+          },
+          "L3": {
+            "type": "number"
+          },
+          "L2": {
+            "type": "number"
+          },
+          "L1": {
+            "type": "number"
+          },
+          "machineTypeId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "error_code",
+          "error_duration"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<MachineErrorLevel, 'id'>, 'machine_type_id'>"
+      },
+      "NewMachineType": {
+        "title": "NewMachineType",
+        "type": "object",
+        "description": "(tsType: Omit<MachineType, 'id'>, schemaOptions: { title: 'NewMachineType', exclude: [ 'id' ] })",
+        "properties": {
+          "machine_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "machine_type"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<MachineType, 'id'>"
+      },
+      "MachineTypePartial": {
+        "title": "MachineTypePartial",
+        "type": "object",
+        "description": "(tsType: Partial<MachineType>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "machine_type": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<MachineType>"
+      },
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ],
+        "additionalProperties": true
+      },
+      "UserInfoResponse": {
+        "type": "object",
+        "title": "UserInfoResponse",
+        "properties": {
+          "enname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "MachineErrorLevel.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "MachineErrorLevel.ScopeFilter"
+      },
+      "MachineErrorLevel.IncludeFilter.Items": {
+        "title": "MachineErrorLevel.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/MachineErrorLevel.ScopeFilter"
+          }
+        }
+      },
+      "MachineErrorLevel.Filter": {
+        "type": "object",
+        "title": "MachineErrorLevel.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "error_code": {
+                    "type": "boolean"
+                  },
+                  "error_duration": {
+                    "type": "boolean"
+                  },
+                  "L4": {
+                    "type": "boolean"
+                  },
+                  "L3": {
+                    "type": "boolean"
+                  },
+                  "L2": {
+                    "type": "boolean"
+                  },
+                  "L1": {
+                    "type": "boolean"
+                  },
+                  "machineTypeId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "error_code",
+                    "error_duration",
+                    "L4",
+                    "L3",
+                    "L2",
+                    "L1",
+                    "machineTypeId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "MachineErrorLevel.Fields"
+          },
+          "include": {
+            "title": "MachineErrorLevel.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/MachineErrorLevel.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<MachineErrorLevel>"
+      },
+      "MachineErrorLevel.Filter1": {
+        "type": "object",
+        "title": "MachineErrorLevel.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "MachineErrorLevel.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "error_code": {
+                    "type": "boolean"
+                  },
+                  "error_duration": {
+                    "type": "boolean"
+                  },
+                  "L4": {
+                    "type": "boolean"
+                  },
+                  "L3": {
+                    "type": "boolean"
+                  },
+                  "L2": {
+                    "type": "boolean"
+                  },
+                  "L1": {
+                    "type": "boolean"
+                  },
+                  "machineTypeId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "error_code",
+                    "error_duration",
+                    "L4",
+                    "L3",
+                    "L2",
+                    "L1",
+                    "machineTypeId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "MachineErrorLevel.Fields"
+          },
+          "include": {
+            "title": "MachineErrorLevel.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/MachineErrorLevel.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<MachineErrorLevel>"
+      },
+      "MachineRecords.Filter": {
+        "type": "object",
+        "title": "MachineRecords.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "machine_type": {
+                    "type": "boolean"
+                  },
+                  "machine_id": {
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  },
+                  "mode": {
+                    "type": "boolean"
+                  },
+                  "task_type": {
+                    "type": "boolean"
+                  },
+                  "task_info": {
+                    "type": "boolean"
+                  },
+                  "electric": {
+                    "type": "boolean"
+                  },
+                  "code": {
+                    "type": "boolean"
+                  },
+                  "error_code": {
+                    "type": "boolean"
+                  },
+                  "error_desc": {
+                    "type": "boolean"
+                  },
+                  "evt_dt": {
+                    "type": "boolean"
+                  },
+                  "exception_time": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "machine_type",
+                    "machine_id",
+                    "status",
+                    "mode",
+                    "task_type",
+                    "task_info",
+                    "electric",
+                    "code",
+                    "error_code",
+                    "error_desc",
+                    "evt_dt",
+                    "exception_time"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "MachineRecords.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<MachineRecords>"
+      },
+      "MachineRecords.Filter1": {
+        "type": "object",
+        "title": "MachineRecords.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "MachineRecords.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "machine_type": {
+                    "type": "boolean"
+                  },
+                  "machine_id": {
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  },
+                  "mode": {
+                    "type": "boolean"
+                  },
+                  "task_type": {
+                    "type": "boolean"
+                  },
+                  "task_info": {
+                    "type": "boolean"
+                  },
+                  "electric": {
+                    "type": "boolean"
+                  },
+                  "code": {
+                    "type": "boolean"
+                  },
+                  "error_code": {
+                    "type": "boolean"
+                  },
+                  "error_desc": {
+                    "type": "boolean"
+                  },
+                  "evt_dt": {
+                    "type": "boolean"
+                  },
+                  "exception_time": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "machine_type",
+                    "machine_id",
+                    "status",
+                    "mode",
+                    "task_type",
+                    "task_info",
+                    "electric",
+                    "code",
+                    "error_code",
+                    "error_desc",
+                    "evt_dt",
+                    "exception_time"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "MachineRecords.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<MachineRecords>"
+      },
+      "MachineType.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "MachineType.ScopeFilter"
+      },
+      "MachineType.IncludeFilter.Items": {
+        "title": "MachineType.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/MachineType.ScopeFilter"
+          }
+        }
+      },
+      "MachineType.Filter": {
+        "type": "object",
+        "title": "MachineType.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "machine_type": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "machine_type"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "MachineType.Fields"
+          },
+          "include": {
+            "title": "MachineType.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/MachineType.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<MachineType>"
+      },
+      "MachineType.Filter1": {
+        "type": "object",
+        "title": "MachineType.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "MachineType.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "machine_type": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "machine_type"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "MachineType.Fields"
+          },
+          "include": {
+            "title": "MachineType.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/MachineType.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<MachineType>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "jwt": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "jwt": []
+    }
+  ]
+}

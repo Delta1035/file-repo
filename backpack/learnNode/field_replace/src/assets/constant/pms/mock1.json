@@ -1,0 +1,1478 @@
+[
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "user_name": "Scott Yang",
+    "employee_id": "10309100",
+    "email": "SCOTT_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/25 03:27:47",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "70121:a8170350-5141-425e-ba2f-feeab4335089",
+    "jira_user_group": [
+      { "id": 34537, "user_id": 14, "jira_group": "confluence-users" },
+      { "id": 34539, "user_id": 14, "jira_group": "IT-users group" },
+      { "id": 34538, "user_id": 14, "jira_group": "jira-software-users" },
+      { "id": 34540, "user_id": 14, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": "MLD000",
+    "project_list": [
+      {
+        "id": 967,
+        "project_id": 298,
+        "project_name": "IMP",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-02T02:04:42.053829Z"
+      },
+      {
+        "id": 974,
+        "project_id": 447,
+        "project_name": "Wiwynn I4.0 On Azure",
+        "project_role": "tl",
+        "jira_role": "developer",
+        "join_date": "2022-06-07T05:15:08.960921Z"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "user_name": "Bruce CH Chang",
+    "employee_id": null,
+    "email": "BRUCE_CH_CHANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/01/26 01:49:27",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5f7d7a0fe31b69006fcff2df",
+    "jira_user_group": [
+      { "id": 34544, "user_id": 18, "jira_group": "confluence-users" },
+      { "id": 34546, "user_id": 18, "jira_group": "IT-users group" },
+      { "id": 34545, "user_id": 18, "jira_group": "jira-software-users" },
+      { "id": 34547, "user_id": 18, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": "2022/01/26",
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 621,
+        "project_id": 415,
+        "project_name": "i4.0",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-04-20T02:29:16.873101Z"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "user_name": "Younger Yang",
+    "employee_id": "9812018",
+    "email": "YOUNGER_YANG@WISTRON.COM",
+    "status": 1,
+    "create_date": "2022/03/09 01:41:11",
+    "deleted_date": null,
+    "org_role": "site_admin",
+    "jira_user_id": "5ee9c7a6e571480ac29b3152",
+    "jira_user_group": [
+      { "id": 35573, "user_id": 322, "jira_group": "confluence-users" },
+      { "id": 35575, "user_id": 322, "jira_group": "IT-users group" },
+      { "id": 35572, "user_id": 322, "jira_group": "jira-administrators" },
+      { "id": 35574, "user_id": 322, "jira_group": "jira-software-users" },
+      { "id": 35576, "user_id": 322, "jira_group": "site-admins" }
+    ],
+    "add_to_org_date": null,
+    "last_seen_in_jira": null,
+    "division": null,
+    "project_list": [
+      {
+        "id": 156,
+        "project_id": 271,
+        "project_name": "PLM",
+        "project_role": "others",
+        "jira_role": "nonDeveloper",
+        "join_date": "2022-03-09T02:31:54.263719Z"
+      },
+      {
+        "id": 796,
+        "project_id": 411,
+        "project_name": "Investment Management System",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 785,
+        "project_id": 255,
+        "project_name": "DPA Build-up & e-Form Replacement",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      },
+      {
+        "id": 856,
+        "project_id": 323,
+        "project_name": "PCF",
+        "project_role": "be",
+        "jira_role": "developer",
+        "join_date": "2022-04-26T03:01:11.557050Z"
+      }
+    ]
+  }
+]

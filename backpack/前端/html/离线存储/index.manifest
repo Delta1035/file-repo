@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+CACHE: # 缓存的数据
+./index.js
+./common.css
+./logo.jgp
+
+NETWORK:
+signup.html # 不缓存的页面
+
+FALLBACK:
+www.baidu.com

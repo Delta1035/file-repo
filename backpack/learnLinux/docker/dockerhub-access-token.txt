@@ -1,0 +1,9 @@
+dckr_pat_nj2x6QQJlXM_I4fXbxMxMK3l0S8
+
+To use the access token from your Docker CLI client:
+
+1. Run docker login -u 528491526
+
+2. At the password prompt, enter the personal access token.
+
+dckr_pat_nj2x6QQJlXM_I4fXbxMxMK3l0S8

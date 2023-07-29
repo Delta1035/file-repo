@@ -1,0 +1,21 @@
+JDK
+1.解压安装文件至C://programfile/zulu
+2.配置环境变量  JAVA_HOME /  添加path目录
+3.cmd打开命令行 输入 java -version  输出java版本 表示jdk安装完成
+
+
+IDEA
+1.双击安装程序
+2.选择64位安装，并将环境变量添加到系统变量中
+
+
+MAVEN
+1.解压至目录  不要有中文路径
+2.配置环境变量 MAVAN_HOME / 添加path目录
+3.cmd打开命令行 输入 mvn -version  
+
+DBV 
+数据库工具
+
+avatar 服务器登录配置文档路径
+AVATAR_SVN\01_Management\98_MLD100 Management\000. Overall\AVATAR(MLD1)_System_Matrix.xlsx

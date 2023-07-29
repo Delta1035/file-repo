@@ -1,0 +1,31 @@
+.ipm_tab {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .tab_item {
+        // border: 1px solid red;
+        min-width: 80px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+        padding: 0 16px;
+        &.tab_item_disabled {
+            cursor: not-allowed;
+            opacity: 0.5 !important;
+        }
+    }
+}
+
+.ipm_tab.background {
+    .tab_item {
+        &:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+        &:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+    }
+}

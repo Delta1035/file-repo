@@ -1,0 +1,53 @@
+{
+  "tableColumnsTypes": [
+    {
+      "translateKey": "PMS.SignId",
+      "translateKey4UI": "",
+      "objectKey": "sign_id"
+    },
+    {
+      "translateKey": "PMS.SignResult",
+      "translateKey4UI": "",
+      "objectKey": "resultDescription"
+    },
+    {
+      "translateKey": "PMS.CreateDate",
+      "translateKey4UI": "",
+      "objectKey": "create_date"
+    },
+    {
+      "translateKey": "PMS.SignedDate",
+      "translateKey4UI": "",
+      "objectKey": "signed_date"
+    },
+    {
+      "translateKey": "PMS.ProjectName",
+      "translateKey4UI": "",
+      "objectKey": "project_name"
+    },
+    {
+      "translateKey": "PMS.PlanStart",
+      "translateKey4UI": "",
+      "objectKey": "plan_start"
+    },
+    {
+      "translateKey": "PMS.PlanEnd",
+      "translateKey4UI": "",
+      "objectKey": "plan_end"
+    },
+    {
+      "translateKey": "PMS.UserContact",
+      "translateKey4UI": "",
+      "objectKey": "user_contact_name"
+    },
+    {
+      "translateKey": "PMS.ITContact",
+      "translateKey4UI": "",
+      "objectKey": "it_contact_name"
+    }
+  ],
+  "tableColumnsWidth": {
+    "operation": "30px",
+    "sign_id": "100px"
+  }
+}

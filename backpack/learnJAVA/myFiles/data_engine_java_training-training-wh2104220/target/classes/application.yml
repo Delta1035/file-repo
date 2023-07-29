@@ -1,0 +1,82 @@
+spring:
+  application:
+    name: data_engine_java_training
+    debugmode: false
+  profiles:
+    active: dev
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+---
+spring:
+  profiles: dev
+  datasource:
+    oraclev360:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.115:1523:AVADBD1
+      username: AVATAR
+      password: wisavt!
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatarengine
+      username: avatarengine
+      password: 1q2w#E$R
+#      username: ENC(QCo1siLH/K7OCJg7jcKMMw==)
+#      password: ENC(omWllI30KXfTAZ1gseZKsg==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.81:1523:SCCRQAS
+      username: VC137
+      password: vc137qas
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    jpa:
+      show-sql: true
+      postgresql-database-platform: com.wistron.avatar.sharerate.jpaconfig.AvtPostgreSqlDialect
+      hibernate:
+        ddl-auto: none
+      properties:
+        hibernate:
+          jdbc:
+            batch_versioned_data: true
+          order_inserts: true
+          order_updates: true
+  elasticsearch7:
+    address:
+      - avaespocv01.wistron.com:9200
+      - avaespocv02.wistron.com:9200
+      - avaespocv03.wistron.com:9200
+    account: ENC(ViCJ+zbkEhNyazRCsq66lA==)
+    password: ENC(tSvdGogHlP8pjTluLIACel5O3GnRz7SD)
+    max-active-conn: 10
+    max-pool-size: 30
+    jdk:
+      password: ENC(jcKNMAai0SwF9ItiS+Y2Jlnwans3V30V)
+      path: /avatar
+      file: wistron-root.jks
+  api:
+    url: https://avanoded01.wistron.com/AvatarWebService/
+  logstash:
+    address: 10.37.36.3:5005
+  ap_host:
+    host: k8s-dev.k8s.wistron.com

@@ -1,0 +1,8 @@
+<nz-form-item>
+  <nz-form-label *ngIf="label" [nzSpan]="labelSpan" [nzFor]="label" [nzRequired]="required">
+    {{ label }}
+  </nz-form-label>
+  <nz-form-control [nzSpan]="controlSpan">
+    <input [disabled]="isDisabled" [placeholder]="placeholder" [(ngModel)]="value" nz-input type="text" [id]="label" />
+  </nz-form-control>
+</nz-form-item>

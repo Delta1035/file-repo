@@ -1,0 +1,38 @@
+<div class="form-wrapper">
+  <form nz-form [formGroup]="repoForm">
+    <!-- 程式碼控制 -->
+    <app-custom-select [options]="versionControlOption" [label]="'PMS.VersionControl' | translate"
+      formControlName="versionControl" [required]="true">
+    </app-custom-select>
+    <!-- 程式類別 -->
+    <app-custom-select [options]="typeOption" [label]="'PMS.VersionControlType' | translate" formControlName="type"
+      [required]="true">
+    </app-custom-select>
+    <!-- 代碼庫編號 -->
+    <nz-form-item>
+      <nz-form-label  [nzSpan]="6" [nzFor]="'RepoID'" [nzRequired]="false">
+        {{ 'PMS.RepoID' | translate }}
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input  [placeholder]="'PMS.RepoID' | translate" formControlName="repoId" nz-input type="number" [id]="'RepoID'" />
+      </nz-form-control>
+       <!-- 提示彈窗 -->
+       <app-tip-modal [title]="repoIdTitle" [guides]="repoIdGuides" nzTooltipTitle="{{ 'PMS.Guide.clickToDetail' | translate }}"></app-tip-modal>
+    </nz-form-item>
+    <app-custom-input [label]="'PMS.RepoID' | translate" formControlName="repoId" [required]="true"></app-custom-input>
+    <!-- 代碼庫URL -->
+    <app-custom-input [label]="'PMS.RepoUrl' | translate" placeholder="https://gitlab.wistron.com/XXX/XXX/XXXX" formControlName="repoUrl" [required]="true">
+    </app-custom-input>
+    <!-- UT名稱 -->
+    <nz-form-item>
+      <nz-form-label  [nzSpan]="6" [nzFor]="'utName'" [nzRequired]="false">
+        {{ 'PMS.UTJobName' | translate }}
+      </nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input  [placeholder]="'PMS.UTJobName' | translate" formControlName="utJobName" nz-input type="text" [id]="'utName'" />
+      </nz-form-control>
+      <!-- 提示彈窗 -->
+      <app-tip-modal [title]="utGuidesTitle" [guides]="utGuides" nzTooltipTitle="{{ 'PMS.Guide.clickToDetail' | translate }}"></app-tip-modal>
+    </nz-form-item>
+  </form>
+</div>

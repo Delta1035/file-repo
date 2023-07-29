@@ -1,0 +1,9 @@
+{
+    "include": ["src/assets/main/*"],
+    "exclude": [],
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "jsxImportSource":"react",
+        "isolatedModules": true
+    }
+}

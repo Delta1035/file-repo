@@ -1,0 +1,22 @@
+.tab-wrapper {
+  // width: 50%;
+  margin-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+div[buttons] {
+  display: flex;
+
+  &>* {
+    margin: 0 10px;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}

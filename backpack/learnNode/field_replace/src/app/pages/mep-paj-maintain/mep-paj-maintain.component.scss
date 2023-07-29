@@ -1,0 +1,18 @@
+::ng-deep {
+    .model_main {
+        .modal_item {
+            &.ipmModalItem {
+                .item_content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    app-ipm-modal-item {
+                        width: 320px;
+                        margin: 0 12px 12px 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,359 @@
+<div class="page_main scroll_bar maintain_main budget_maintain">
+    <div class="header">
+        <div class="title">{{ 'home.budgetMaintain' | translate }}</div>
+        <div class="opera_area" *ngIf="!deleteFlag&&!copyToPRFFlag">
+            <button nz-button *ngIf="pagePermission.allowedDelete" nzType="primary" nzDanger="true" (click)="deleteStart()">{{ 'budgetMaintain.batchDeleteBudget' | translate }}</button>
+            <button nz-button *ngIf="pagePermission.allowedUpdate" nzType="primary" (click)="copyToPRFStart()">{{ 'budgetMaintain.batchCopyToPRF' | translate }}</button>
+            <button nz-button *ngIf="pagePermission.allowedCreate" nzType="primary" (click)="downloadStart()">{{ 'budgetMaintain.downloadBudget' | translate }}</button>
+            <button nz-button *ngIf="pagePermission.allowedCreate" nzType="primary" (click)="uploadExcelStart()">{{ 'budgetMaintain.uploadBudget' | translate }}</button>
+            <button nz-button *ngIf="pagePermission.allowedCreate" nzType="primary" (click)="newBugdetStart('new')">{{ 'budgetMaintain.addNewBudget' | translate }}</button>
+        </div>
+        <div class="opera_area" *ngIf="deleteFlag">
+            <button nz-button nzType="default" (click)="cancelDelete()">{{ 'button.exit' | translate }}</button>
+            <button nz-button nzType="primary" nzDanger="true" (click)="confirmDelete()">{{ 'button.confirmDelete' | translate }}</button>
+        </div>
+        <div class="opera_area" *ngIf="copyToPRFFlag">
+            <button nz-button nzType="default" (click)="cancelCopyToPRF()">{{ 'button.exit' | translate }}</button>
+            <button nz-button nzType="primary" (click)="confirmCopyToPRF()">{{ 'budgetMaintain.confirmCopyToPRF' | translate }}</button>
+        </div>
+    </div>
+    <div class="body">
+        <div class="opera_bar">
+            <div class="search_area">
+                <div class="search_item">
+                    <nz-form-label> {{ 'tableHead.year' | translate }}</nz-form-label>
+                    <nz-select [(ngModel)]="searchYear" [nzPlaceHolder]="utils.searchPlacehoder('tableHead.year')" (ngModelChange)="searchYearChange()">
+                        <nz-option nzValue="" nzLabel="All"></nz-option>
+                        <nz-option *ngFor="let item of searchYearList" [nzValue]="item" [nzLabel]="item"></nz-option>
+                    </nz-select>
+                </div>
+                <div class="search_item">
+                    <nz-input-group [nzPrefix]="searchInputIcon" style="width: 320px;">
+                        <input type="text" nz-input [placeholder]="utils.searchPlacehoder('tableHead.projectName','tableHead.itPm','tableHead.misHandleDiv')" [(ngModel)]="searchKeyWord" (keyup.enter)="dataSearch()" />
+                    </nz-input-group>
+                    <ng-template #searchInputIcon><i nz-icon nzType="search"></i></ng-template>
+                </div>
+                <div class="search_item">
+                    <button nz-button nzType="primary" (click)="dataSearch()">{{ 'button.query' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="data_table" #dataTable>
+            <nz-table #basicTable [nzData]="budgetData" [nzScroll]="{ x: tableInfo.scrollX+'px' }" [nzBordered]="true" [(nzPageIndex)]="tableInfo.pageIndex" [(nzPageSize)]="tableInfo.pageSize" [nzTotal]="tableInfo.pageTotal" [nzFrontPagination]="false" [nzLoading]="tableInfo.loading"
+                [nzHideOnSinglePage]="true" (nzPageIndexChange)=tablePageIndexChange()>
+                <thead>
+                    <tr>
+                        <th *ngIf="!checkFlag" nzAlign="center" nzLeft width="50px"></th>
+                        <th *ngIf="checkFlag" nzAlign="center" nzLeft width="50px">
+                            <label nz-checkbox [(ngModel)]="tableInfo.checkedAll" (ngModelChange)="checkedAll()"></label>
+                        </th>
+                        <th *ngFor="let item of tableHeaderInfo" [nzAlign]="item.align" [nzLeft]="item.left" [nzRight]="item.right" [width]="item.width+'px'">{{ item.content | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-template ngFor let-data let-i='index' [ngForOf]="basicTable.data">
+                        <tr>
+                            <td *ngIf="!checkFlag" nzAlign="center" nzLeft [(nzExpand)]="data.expand"></td>
+                            <td *ngIf="checkFlag" nzAlign="center" nzLeft>
+                                <label nz-checkbox *ngIf="data.prfStatus===0" [(ngModel)]="data.checked" (ngModelChange)="checkedItem()"></label>
+                            </td>
+                            <td nzAlign="center" nzLeft>{{ (tableInfo.pageIndex - 1) * tableInfo.pageSize + i + 1 }}</td>
+                            <td nzAlign="center" nzLeft>{{ data.year }}</td>
+                            <td nzAlign="center" nzLeft>{{ data.projectName }}</td>
+                            <td nzAlign="center">{{ data.itPm }}</td>
+                            <td nzAlign="center">{{ data.bizOwner }}</td>
+                            <td nzAlign="center">{{ data.contactWindow }}</td>
+                            <td nzAlign="center">{{ data.bu }}</td>
+                            <td nzAlign="center">{{ data.bg }}</td>
+                            <td nzAlign="center">{{ data.bo }}</td>
+                            <td nzAlign="center">{{ data.customer }}</td>
+                            <td nzAlign="center">{{ data.site }}</td>
+                            <td nzAlign="center">{{ utils.getFormatDate(data.planStart,'yyyy/MM/dd') }}</td>
+                            <td nzAlign="center">{{ utils.getFormatDate(data.planFinish,'yyyy/MM/dd') }}</td>
+                            <td nzAlign="center">{{ data.recvEpCode }}</td>
+                            <td nzAlign="center">{{ data.recvChargeDept }}</td>
+                            <td nzAlign="center">{{ data.projectCategory }}</td>
+                            <td nzAlign="center">{{ data.projectType }}</td>
+                            <td nzAlign="center">{{ data.misHandleDiv }}</td>
+                            <td nzAlign="center" nzRight>
+                                <label nz-checkbox [(ngModel)]="data.cancelled" (ngModelChange)="cancelBudget(data)"></label>
+                            </td>
+                            <td nzAlign="center" nzRight>
+                                <i nz-icon *ngIf="pagePermission.allowedUpdate&&data.prfStatus===0" title="{{ 'budgetMaintain.copyToPRF' | translate }}" nzType="file-done" nzTheme="outline" (click)="copyToPRFItem(data)"></i>
+                                <i nz-icon *ngIf="data.prfStatus===1" title="{{ 'budgetMaintain.prfDone' | translate }}" class="success_color" nzType="file-done" nzTheme="outline"></i>
+                                <i nz-icon *ngIf="pagePermission.allowedUpdate&&data.prfStatus===0" title="{{ 'button.edit' | translate }}" nzType="edit" nzTheme="outline" (click)="newBugdetStart('edit',data)"></i>
+                                <i nz-icon *ngIf="pagePermission.allowedDelete&&data.prfStatus===0" title="{{ 'button.delete' | translate }}" nzType="delete" nzTheme="outline" (click)="deleteItem(data)"></i>
+                            </td>
+                        </tr>
+                        <tr [nzExpand]="data.expand">
+                            <nz-table #innerTable [nzData]="data.expandData" nzSize="middle" [nzBordered]="true" [nzShowPagination]="false" [nzFrontPagination]="false">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="13"><span style="font-weight: 600;">{{ 'tableHead.commentsM' | translate }}</span>{{ data.comments?data.comments:'--' }}</td>
+                                    </tr>
+                                    <tr class="inner_table_header">
+                                        <td nzAlign="center">{{ 'tableHead.resource' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m1' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m2' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m3' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m4' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m5' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m6' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m7' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m8' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m9' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m10' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m11' | translate }}</td>
+                                        <td nzAlign="center">{{ 'time.m12' | translate }}</td>
+                                    </tr>
+                                    <tr *ngFor="let data of innerTable.data">
+                                        <td nzAlign="center">{{ data.resource }}</td>
+                                        <td nzAlign="center">{{ data.janBudget }}</td>
+                                        <td nzAlign="center">{{ data.febBudget }}</td>
+                                        <td nzAlign="center">{{ data.marBudget }}</td>
+                                        <td nzAlign="center">{{ data.aprBudget }}</td>
+                                        <td nzAlign="center">{{ data.mayBudget }}</td>
+                                        <td nzAlign="center">{{ data.junBudget }}</td>
+                                        <td nzAlign="center">{{ data.julBudget }}</td>
+                                        <td nzAlign="center">{{ data.augBudget }}</td>
+                                        <td nzAlign="center">{{ data.sepBudget }}</td>
+                                        <td nzAlign="center">{{ data.octBudget }}</td>
+                                        <td nzAlign="center">{{ data.novBudget }}</td>
+                                        <td nzAlign="center">{{ data.decBudget }}</td>
+                                    </tr>
+                                </tbody>
+                            </nz-table>
+                        </tr>
+                    </ng-template>
+                </tbody>
+            </nz-table>
+        </div>
+    </div>
+</div>
+
+
+<nz-modal [(nzVisible)]="newBudgetModalData.show" [nzWrapClassName]="newBudgetModalData.className" nzTitle="{{ newBudgetModalData.title | translate }}" (nzOnCancel)="newBudgetModalData.onCancel()" nzCentered="true" [nzWidth]="newBudgetModalData.width">
+    <div *nzModalContent>
+        <div class="model_main scroll_bar">
+            <div class="modal_item ipmModalItem">
+                <div class="item_content">
+                    <app-ipm-modal-item *ngFor="let item of newBudgetModalData.newBudgetData.inputData" [itemData]="item" (onChange)="newBudgetInputDataChange(item)"></app-ipm-modal-item>
+                </div>
+            </div>
+            <div class="modal_item table">
+                <div class="item_content">
+                    <nz-table #basicTable [nzData]="newBudgetModalData.newBudgetData.tableData" [nzBordered]="true" [nzFrontPagination]="false" [nzShowPagination]="false">
+                        <thead>
+                            <tr>
+                                <th nzAlign="center">{{ 'tableHead.resource' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m1' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m2' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m3' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m4' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m5' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m6' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m7' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m8' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m9' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m10' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m11' | translate }}</th>
+                                <th nzAlign="center">{{ 'time.m12' | translate }}</th>
+                                <th nzAlign="center" width="65px">{{ 'tableHead.operation' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of basicTable.data let j=index">
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.resource" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.janBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.febBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.marBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.aprBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.mayBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.junBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.julBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.augBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.sepBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.octBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.novBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <app-ipm-modal-item [itemData]="data.decBudget" (onChange)="newBudgetTableDataChange()"></app-ipm-modal-item>
+                                </td>
+                                <td nzAlign="center">
+                                    <i nz-icon nzType="delete" *ngIf="newBudgetModalData.newBudgetData.tableData.length>1" nzTheme="outline" (click)="newBudgetTableDataRemove(j)"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </nz-table>
+                    <div class="add_btn">
+                        <button nz-button nzType="primary" (click)="newBudgetTableDataAdd()">
+                            <i nz-icon nzType="plus" nzTheme="outline"></i>
+                            <span>{{ "button.add" | translate }}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="newBudgetModalData.onCancel()">{{ 'button.cancel' | translate }}</button>
+        <button nz-button nzType="primary" [disabled]="!newBudgetModalData.canSubmit" [nzLoading]="newBudgetModalData.submitLoading" (click)="newBudgetSubmit()">{{ 'button.confirm' | translate }}</button>
+    </div>
+</nz-modal>
+
+<nz-modal [(nzVisible)]="uploadExcelModalData.show" [nzWrapClassName]="uploadExcelModalData.className" nzTitle="{{ uploadExcelModalData.title | translate }}" (nzOnCancel)="uploadExcelModalData.onCancel()" nzCentered="true" [nzWidth]="uploadExcelModalData.width">
+    <div *nzModalContent>
+        <div class="upload_excel_modal_main select_excel" *ngIf="uploadExcelModalData.type==='upload'">
+            <div class="upload_content">
+                <div class="upload_main upload_area">
+                    <div class="upload_main_title">{{ "budgetMaintain.uploadFile" | translate }}</div>
+                    <div class="upload_main_content">
+                        <div class="upload_area_up">
+                            <div class="upload_area_up_input" *ngIf="!uploadExcelModalData.fileName">{{ "budgetMaintain.fileName" | translate }}</div>
+                            <div class="upload_area_up_input text_overflow_1_line" *ngIf="uploadExcelModalData.fileName">{{ uploadExcelModalData.fileName }}</div>
+                            <div class="upload_area_up_button">
+                                <nz-upload *ngIf="!uploadExcelModalData.fileName" [nzBeforeUpload]="beforeUploadExcel" [nzAccept]="uploadExcelModalData.acceptFileType">
+                                    <button nz-button nzType="primary" (click)="uploadClick()">
+                                        <span>{{ 'button.selectFile' | translate }}</span>
+                                    </button>
+                                </nz-upload>
+                                <button nz-button *ngIf="uploadExcelModalData.fileName" nzType="primary" [nzLoading]="uploadExcelModalData.excelUploading" (click)="handleUpload()">
+                                    <span *ngIf="uploadExcelModalData.excelUploading">{{ 'button.uploading' | translate }}</span>
+                                    <span *ngIf="!uploadExcelModalData.excelUploading">{{ 'button.upload' | translate }}</span>
+                                </button>
+                                <nz-upload *ngIf="uploadExcelModalData.fileName" [nzBeforeUpload]="beforeUploadExcel" [nzAccept]="uploadExcelModalData.acceptFileType">
+                                    <button nz-button nzType="primary" (click)="uploadClick()">
+                                        <span>{{ 'button.selectFileAgain' | translate }}</span>
+                                    </button>
+                                </nz-upload>
+                            </div>
+                        </div>
+                        <div class="upload_area_down">
+                            <div class="upload_area_down_link" (click)="downloadBudgetExcelPublicFile()">{{ "budgetMaintain.downloadPublicFile" | translate }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload_main upload_notice">
+                    <div class="upload_main_title">{{ 'notice.instructionsM' | translate }}</div>
+                    <div class="upload_main_content">
+                        <div class="upload_notice_item">{{ "budgetMaintain.uploadExcelNotice1" | translate }}</div>
+                        <div class="upload_notice_item">{{ "budgetMaintain.uploadExcelNotice2" | translate }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="upload_excel_modal_main edit_excel" *ngIf="uploadExcelModalData.type==='edit'">
+            <div class="model_main scroll_bar">
+                <div class="modal_item table">
+                    <div class="item_content">
+                        <nz-table #basicTable1 [nzData]="uploadExcelModalData.uploadPreviewData" [nzScroll]="{ x: uploadPreviewTableInfo.x+'px', y: uploadPreviewTableInfo.y+'px' }" [nzBordered]="true" [nzFrontPagination]="false" [nzHideOnSinglePage]="true">
+                            <thead>
+                                <tr>
+                                    <th nzAlign="center" nzLeft nzWidth="50px"></th>
+                                    <th *ngFor="let item of tableHeaderInfo.slice(0,-2)" [nzAlign]="item.align" [nzLeft]="item.left" [nzRight]="item.right" [nzWidth]="item.width+'px'">{{ item.content | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container>
+                                    <ng-template ngFor let-data let-i='index' [ngForOf]="basicTable1.data">
+                                        <tr [ngClass]="{error_data_line: data.error.length>0}">
+                                            <td nzAlign="center" nzLeft [(nzExpand)]="data.expand"></td>
+                                            <td nzAlign="center" nzLeft>{{ i + 1 }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('projectYear',data.error)}" nzLeft>{{ data.projectYear }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('projectName',data.error)}" nzLeft>{{ data.projectName }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('itPm',data.error)}">{{ data.itPm }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('bizOwner',data.error)}">{{ data.bizOwner }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('contactWindow',data.error)}">{{ data.contactWindow }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('bu',data.error)}">{{ data.bu }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('bg',data.error)}">{{ data.bg }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('bo',data.error)}">{{ data.bo }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('customer',data.error)}">{{ data.customer }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('site',data.error)}">{{ data.site }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('planStartDate',data.error)}">{{ utils.getFormatDate(data.planStartDate,'yyyy/MM/dd') }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('planFinishDate',data.error)}">{{ utils.getFormatDate(data.planFinishDate,'yyyy/MM/dd') }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('recvEpCode',data.error)}">{{ data.recvEpCode }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('recvChargeDept',data.error)}">{{ data.recvChargeDept }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('projectCategory',data.error)}">{{ data.projectCategory }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('projectType',data.error)}">{{ data.projectType }}</td>
+                                            <td nzAlign="center" [ngClass]="{error_data: uploadExcelCheckError('misHandleDivCode',data.error)}">{{ data.misHandleDivCode }}</td>
+                                        </tr>
+                                        <tr [nzExpand]="data.expand">
+                                            <nz-table #innerTable [nzData]="data.budgetLns" nzSize="middle" [nzBordered]="true" [nzShowPagination]="false" [nzFrontPagination]="false">
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="13"><span style="font-weight: 600;">{{ 'tableHead.commentsM' | translate }}</span>{{ data.comments?data.comments:'--' }}</td>
+                                                    </tr>
+                                                    <tr class="inner_table_header">
+                                                        <td nzAlign="center">{{ 'tableHead.resource' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m1' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m2' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m3' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m4' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m5' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m6' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m7' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m8' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m9' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m10' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m11' | translate }}</td>
+                                                        <td nzAlign="center">{{ 'time.m12' | translate }}</td>
+                                                    </tr>
+                                                    <tr *ngFor="let data of innerTable.data">
+                                                        <td nzAlign="center">{{ data.resource }}</td>
+                                                        <td nzAlign="center">{{ data.janBudget }}</td>
+                                                        <td nzAlign="center">{{ data.febBudget }}</td>
+                                                        <td nzAlign="center">{{ data.marBudget }}</td>
+                                                        <td nzAlign="center">{{ data.aprBudget }}</td>
+                                                        <td nzAlign="center">{{ data.mayBudget }}</td>
+                                                        <td nzAlign="center">{{ data.junBudget }}</td>
+                                                        <td nzAlign="center">{{ data.julBudget }}</td>
+                                                        <td nzAlign="center">{{ data.augBudget }}</td>
+                                                        <td nzAlign="center">{{ data.sepBudget }}</td>
+                                                        <td nzAlign="center">{{ data.octBudget }}</td>
+                                                        <td nzAlign="center">{{ data.novBudget }}</td>
+                                                        <td nzAlign="center">{{ data.decBudget }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </nz-table>
+                                        </tr>
+                                    </ng-template>
+                                </ng-container>
+                            </tbody>
+                        </nz-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *nzModalFooter>
+        <div *ngIf="uploadExcelModalData.type==='upload'">
+        </div>
+        <div *ngIf="uploadExcelModalData.type==='edit'">
+            <button nz-button nzType="default" (click)="uploadSelectFileAgain()">{{ 'button.selectFileAgain' | translate }}</button>
+            <button nz-button nzType="primary" [disabled]="!uploadExcelModalData.canSubmit" [nzLoading]="uploadExcelModalData.submitLoading" (click)="uploadExcelSubmit()">{{ 'button.confirm' | translate }}</button>
+        </div>
+    </div>
+</nz-modal>

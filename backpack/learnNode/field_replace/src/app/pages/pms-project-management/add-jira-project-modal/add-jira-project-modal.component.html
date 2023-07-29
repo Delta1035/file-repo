@@ -1,0 +1,26 @@
+<form nz-form [formGroup]="projectForm">
+  <!-- 专案名称 -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.ProjectName" | translate }}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input placeholder="{{ 'PMS.ProjectName' | translate }}" nz-input formControlName="projectName" maxlength="50" />
+    </nz-form-control>
+  </nz-form-item>
+  <!-- jira key -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.JiraKey" | translate }}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input placeholder="{{ 'PMS.JiraKey' | translate }}" nz-input formControlName="jiraKey" maxlength="10" />
+    </nz-form-control>
+  </nz-form-item>
+  <!-- 备注 -->
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" [nzRequired]="true" [nzNoColon]="false">{{ "PMS.Remark" | translate }}
+    </nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input placeholder="{{ 'PMS.Remark' | translate }}" nz-input formControlName="remark" />
+    </nz-form-control>
+  </nz-form-item>
+</form>

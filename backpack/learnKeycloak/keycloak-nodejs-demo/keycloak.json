@@ -1,0 +1,10 @@
+{
+  "realm": "myrealm",
+  "auth-server-url": "http://127.0.0.1:8080/auth/",
+  "ssl-required": "external",
+  "resource": "loopback",
+  "credentials": {
+    "secret": "ZJYzlF2AtXkbBshFmOj5XZl72bXSyiKa"
+  },
+  "confidential-port": 0
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        margin-left: 200px;
+        margin-top: 100px;
+      }
+      .flash {
+        width: 100px;
+        height: 100%;
+        left: -100px;
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0)0%, rgba(255,255,255,0.5)50%, rgba(255,255,255,0)100%);
+        position: absolute;
+        transform: skewX(-30deg);
+        visibility: hidden;
+      }
+      .container:hover .flash {
+        left:700px;
+        visibility: visible;
+        transition: all 0.5s ease-in-out;
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flash"></div>
+      <img src="/images/boy.png" alt="boy" />
+    </div>
+  </body>
+</html>

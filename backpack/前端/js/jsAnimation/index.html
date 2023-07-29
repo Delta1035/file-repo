@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sj {
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            position: absolute;
+            left: 0
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sj" id="sj"></div>
+
+
+</body>
+<script>
+    //ele为要移动的盒子，target为目标位置（像素），spd为计数器的频率
+    var ele = document.getElementById('sj');
+    console.log(ele);
+    function animate(ele, spd) {
+        var start = Date.now(); // remember start time
+        var timer = setInterval(function () {
+            var timePassed = Date.now() - start;
+            var step = Math.ceil(Math.abs(timePassed - 5000) / 10)
+            console.log(step)
+            if (timePassed >= 5000) {
+                clearInterval(timer); // finish the animation after 2 seconds
+                return;
+            }
+            ele.style.left = ele.offsetLeft + step + 'px'
+        }, spd);
+    }
+    function animate1(ele,target,spd){
+    var timer = setInterval(function() {
+        var step = (target-ele.offsetLeft)/10;
+        //对步长进行二次加工(大于0向上取整,小于0向下取整)
+        step = step>0?Math.ceil(step):Math.floor(step);
+        //动画原理： 目标位置 = 当前位置 + 步长
+        ele.style.left = ele.offsetLeft + step + "px";
+        //检测缓动动画有没有停止
+        if(Math.abs(target-ele.offsetLeft)<=Math.abs(step)){
+            //处理小数赋值
+            ele.style.left = target + "px";
+            clearInterval(timer);
+        }
+    }, spd);
+
+    animate1(ele,10,30)
+
+}
+
+</script>
+
+</html>

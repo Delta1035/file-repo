@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浏览器调用视频与音频</title>
+    <style>
+        #c1 {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>我要在这里获取浏览器的摄像头 <video id="v1" width="800px" height="600px"></video> <button type="button" id="btn1"
+        onclick="takePhoto()">拍照</button> <canvas width="800px" height="600px" id="c1" style="display:none"></canvas>
+    <img src="" id="img1" width="800px" height="600px">
+</body>
+<script> var v1 = document.querySelector("#v1");
+    var c1 = document.querySelector("#c1");
+    var img1 = document.querySelector("#img1");
+    //我们在这里要根据不同的浏览器去调用不同的方法 
+    navigator.getMedia = navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia;
+
+    navigator.getMedia({
+        video: true, //使用摄像头对象 
+        audio: false //不使用音频 
+    }, function (stream) {
+        //去年11月的时候 
+        // v1.src=URL.createObjectURL(stream); 去年11月都还是这么写 
+        //获取成功以后 
+        v1.srcObject = stream; //新的方法 
+        v1.play();
+    }, function (err) { //获取失败以后 
+        console.log(err);
+    });
+     function takePhoto() {
+        //console.log(c1); 
+        var ctx = c1.getContext("2d");
+        //画一个图片，在这里，我们是直接从视频里面进行了截图 
+        ctx.drawImage(v1, 0, 0, 800, 600);
+        //把canvas里面的图片转换成base64格式 
+        img1.src = c1.toDataURL("image/jpeg");
+    } </script>
+
+</html>

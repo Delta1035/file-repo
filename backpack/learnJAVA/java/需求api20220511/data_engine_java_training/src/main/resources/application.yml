@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: data_engine_java_training
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    oraclekpi:
+      jdbc-url: jdbc:oracle:thin:@10.37.36.81:1523:SCCRQAS
+      username: ENC(mVWaTLJSQtofBISCGVj26A==)
+      password: ENC(iJJHWKU5QZMPl5z9d1GC1GgPqgaNG14s)
+      driver-class-name: oracle.jdbc.OracleDriver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1 FROM DUAL
+    postgresengine:
+      jdbc-url: jdbc:postgresql://10.37.35.96:5435/avatarengine
+      username: ENC(QCo1siLH/K7OCJg7jcKMMw==)
+      password: ENC(omWllI30KXfTAZ1gseZKsg==)
+      driver-class-name: org.postgresql.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      auto-commit: true
+      maximum-pool-size: 30
+      minimum-idle: 10
+      connection-timeout: 60000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>h1</th>
+            <th>h2</th>
+            <th>h3</th>
+            <th>h4</th>
+            <th>h5</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<ng-container *ngFor="let warehouse of basicTable.data;let i=index">
+    <!-- warehouse === [Good,Defect] -->
+    <ng-container *ngFor="let data of warehouse;let typeIndex=index;">
+        <!-- data === wh -->
+        <ng-container *ngIf="item.length>0">
+            <tr>
+                <td nzAlign="center" *ngIf="deleteFlag&& (typeIndex === 0)" [attr.rowspan]='warehouse[0].length+warehouse[1].length'>
+                    <label nz-checkbox [(ngModel)]="data.checked"
+                        (ngModelChange)="check(((pageIndex-1)*pageSize+i+1),data.checked)"> </label>
+                </td>
+                <td *ngIf="!deleteFlag && (typeIndex === 0)" nzAlign="center"
+                    [attr.rowspan]='warehouse[0].length+warehouse[1].length'>
+                    {{ pageSize*(pageIndex-1)+i+1 }}</td>
+                <td *ngIf="(typeIndex === 0)" nzAlign="center" [attr.rowspan]='warehouse[0].length+warehouse[1].length'>
+                    {{ data.site }}</td>
+                <td *ngIf="(typeIndex === 0)" nzAlign="center" [attr.rowspan]='warehouse[0].length+warehouse[1].length'>
+                    {{ data.plant }}</td>
+
+                <td nzAlign="center">{{ data.type }}</td>
+
+                <td nzAlign="center">{{ data.warehouse }}</td>
+                <td>{{ data.description }}</td>
+                <td nzAlign="center">
+                    <app-dams-table-button nzType="edit" padding="0px 10px" (clickAction)="openEditModal(data)">
+                    </app-dams-table-button>
+                    <app-dams-table-button nzType="delete" padding="0px 10px"
+                        (clickAction)="openDeleteConfirmNotification(data)"></app-dams-table-button>
+                </td>
+            </tr>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+</html>

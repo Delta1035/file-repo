@@ -1,0 +1,211 @@
+{
+  "topic": "Wistron Information (Kuanshan) Co., Ltd. Meeting Minutes",
+  "style": {
+    "header": {
+      "font": {
+        "color": {
+          "rgb": "000000"
+        },
+        "sz": 14,
+        "bold": true
+      },
+      "alignment": {
+        "vertical": "center",
+        "horizontal": "center"
+      },
+      "border": {
+        "top": {
+          "style": "thin",
+          "color": "000000"
+        },
+        "left": {
+          "style": "thin",
+          "color": "000000"
+        },
+        "right": {
+          "style": "thin",
+          "color": "000000"
+        },
+        "bottom": {
+          "style": "thin",
+          "color": "000000"
+        }
+      }
+    },
+    "cell": {
+      "font": {
+        "color": {
+          "rgb": "000000"
+        },
+        "sz": 14,
+        "bold": false
+      },
+      "border": {
+        "top": {
+          "style": "thin",
+          "color": "000000"
+        },
+        "left": {
+          "style": "thin",
+          "color": "000000"
+        },
+        "right": {
+          "style": "thin",
+          "color": "000000"
+        },
+        "bottom": {
+          "style": "thin",
+          "color": "000000"
+        }
+      }
+    }
+  },
+  "heading": [
+    [
+      {
+        "value": "${topic}",
+        "style": "${header}"
+      },
+      {
+        "value": "",
+        "style": "${header}"
+      },
+      {
+        "value": "",
+        "style": "${header}"
+      },
+      {
+        "value": "",
+        "style": "${header}"
+      },
+      {
+        "value": "",
+        "style": "${header}"
+      },
+      {
+        "value": "",
+        "style": "${header}"
+      },
+      {
+        "value": "",
+        "style": "${header}"
+      }
+    ],
+    [
+      {
+        "value": "主題: ${subject}",
+        "style": "${cell}"
+      },
+      {
+        "value": "",
+        "style": "${cell}"
+      },
+      {
+        "value": "",
+        "style": "${cell}"
+      },
+      {
+        "value": "時間: ${timestamp}",
+        "style": "${cell}"
+      },
+      {
+        "value": "",
+        "style": "${cell}"
+      },
+      {
+        "value": "地點: ${location}",
+        "style": "${cell}"
+      },
+      {
+        "value": "",
+        "style": "${cell}"
+      }
+    ]
+  ],
+  "merges": [
+    {
+      "start": {
+        "row": 1,
+        "column": 1
+      },
+      "end": {
+        "row": 1,
+        "column": 7
+      }
+    },
+    {
+      "start": {
+        "row": 2,
+        "column": 1
+      },
+      "end": {
+        "row": 2,
+        "column": 3
+      }
+    },
+    {
+      "start": {
+        "row": 2,
+        "column": 4
+      },
+      "end": {
+        "row": 2,
+        "column": 5
+      }
+    },
+    {
+      "start": {
+        "row": 2,
+        "column": 6
+      },
+      "end": {
+        "row": 2,
+        "column": 7
+      }
+    }
+  ],
+  "specification": {
+    "date": {
+      "displayName": "Date",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 120
+    },
+    "no": {
+      "displayName": "NO.",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 40
+    },
+    "description": {
+      "displayName": "Description",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 200
+    },
+    "pic": {
+      "displayName": "PIC",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 120
+    },
+    "dueDay": {
+      "displayName": "Due Day",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 120
+    },
+    "status": {
+      "displayName": "Status",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 120
+    },
+    "remark": {
+      "displayName": "Remark",
+      "headerStyle": "${header}",
+      "cellStyle": "${cell}",
+      "width": 120
+    }
+  }
+}

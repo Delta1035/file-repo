@@ -1,0 +1,29 @@
+.content-card{
+  &:hover{
+      transform: scale(1.05);
+      transition: all 0.3s;
+  }
+}
+
+.w-4px{
+  width: 4px;
+}
+.h-4px{
+  height: 4px;
+}
+
+.h-12px{
+  height: 25px;
+}
+
+.mb-12px{
+  margin-bottom: 12px;
+}
+
+.mt-12px{
+  margin-top: 12px;
+}
+::ng-deep nz-card .ant-card-body{
+  padding: 16px;
+  text-align: center;
+}

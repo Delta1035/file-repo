@@ -1,0 +1,11 @@
+
+J
+java:S37405"/Provide the parametrized type for this generic.(¯âÚøûÿÿÿÿ
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(ò¢í¹øÿÿÿÿ
+P	java:S125<"<This block of commented-out lines of code should be removed.(›Ş
+†
+java:S3252G"qUse static access with "org.springframework.beans.factory.support.AbstractBeanDefinition" for "AUTOWIRE_BY_TYPE".(øşƒG
+N	java:S106k"9Replace this use of System.out or System.err by a logger.(ü¢Â
+S	java:S106p"9Replace this use of System.out or System.err by a logger.(ªÑ¦îÿÿÿÿÿ
+S	java:S106w"9Replace this use of System.out or System.err by a logger.(ëÓıŞùÿÿÿÿ
+S	java:S106}"9Replace this use of System.out or System.err by a logger.(¾°ùÿÿÿÿ

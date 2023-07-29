@@ -1,0 +1,270 @@
+# -------------------------------- GLOBAL SETTING ---------------------------------- #
+
+stages:
+  # - all:format
+  - all:test
+  - dev:package-docker
+  - qas:package-docker
+  - prd:package-docker
+  - dev:depoly
+  - qas:depoly
+  - prd:depoly
+  - sca-build
+  - sca
+
+# Cache modules in between jobs. 必須和npm ci搭配使用。不要改成npm i
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - .npm/
+# -------------------------------- GLOBAL SETTING END ---------------------------------- #
+test_ut_coverage:
+  image: node:18.12.0
+  stage: all:test
+  needs: []
+  before_script:
+    - npm ci --cache .npm --legacy-peer-deps
+  script:
+    # - npm run test:jest-coverage
+    - npm run coverage
+    - cat coverage/lcov-report/index.html
+  only:
+    - develop
+    - main
+    - release
+  tags:
+    - aws
+    - m4-large
+  coverage: '/<span class="strong">\d*.\d+\s*% </span>/'
+  artifacts:
+    paths:
+      - coverage/lcov-report/
+    expire_in: 1 days
+  only:
+    - develop
+
+dev-docker-build:
+  dependencies:
+    - test_ut_coverage
+  #variables:
+  #APP_HOST: "10.32.48.77"
+  image: docker
+  before_script:
+    - cp -rf $DEV_DOCKERFILE Dockerfile
+    - chmod 700 Dockerfile
+  only:
+    - develop
+  stage: dev:package-docker
+  services:
+    - docker:dind
+  script:
+    - docker version
+    - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_PASSWORD $WISTRON_DOCKER_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA} .
+    - docker push $CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA}
+    - echo "CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA}"
+    - echo "CI_COMMIT_SHA:${CI_COMMIT_SHORT_SHA}"
+  tags:
+    - aws
+    - m4-large
+
+qas-docker-build:
+  dependencies:
+    - test_ut_coverage
+  #variables:
+  #APP_HOST: "10.32.48.77"
+  image: docker
+  before_script:
+    - cp -rf $QAS_DOCKERFILE Dockerfile
+    - chmod 700 Dockerfile
+  only:
+    - main
+  stage: qas:package-docker
+  services:
+    - docker:dind
+  script:
+    - docker version
+    - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_PASSWORD $WISTRON_DOCKER_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA} .
+    - docker push $CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA}
+    - echo "CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA}"
+    - echo "CI_COMMIT_SHA:${CI_COMMIT_SHORT_SHA}"
+  tags:
+    - aws
+    - m4-large
+
+prd-docker-build:
+  dependencies:
+    - test_ut_coverage
+  #variables:
+  #APP_HOST: "10.32.48.77"
+  image: docker
+  before_script:
+    - cp -rf $PRD_DOCKERFILE Dockerfile
+    - chmod 700 Dockerfile
+  only:
+    - release
+  stage: prd:package-docker
+  services:
+    - docker:dind
+  script:
+    - docker version
+    - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_PASSWORD $WISTRON_DOCKER_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA} .
+    - docker push $CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA}
+    - echo "CI_REGISTRY_IMAGE:${CI_COMMIT_SHORT_SHA}"
+    - echo "CI_COMMIT_SHA:${CI_COMMIT_SHORT_SHA}"
+  tags:
+    - aws
+    - m4-large
+
+dev_deploy:
+  dependencies:
+    - dev-docker-build
+  stage: dev:depoly
+  image:
+    name: chnbohwr/docker
+    entrypoint: ['']
+  before_script:
+    - cp $DEV_KUBECONFIG /.kube/config
+    - chmod 700 /.kube/config
+  variables:
+    IMAGE_VERSION: ${CI_COMMIT_SHORT_SHA}
+  script:
+    # for Helm Variable
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE:$IMAGE_VERSION
+    - export RESOURCE_GROUP=WSD-COST-MASTER-DEV-Linux
+    - export KUBE_CONFIG_CONTEXT=wsddnadev-aks
+    #- export AKS_LOADBALANCER_IP="10.30.88.8"
+    - export SITE=dev
+    - export INSIGHTS_CONNECTION=$DEV_INSIGHTS_CONNECTION
+    #- export SITE_FQDN=$DEV_SITE_FQDN
+    - apk add --update coreutils
+    #- PROJECT_PROPERTIES=`echo $DEV_PROJECT_PROPERTIES | base64`
+    #- echo $KUBE_CONFIG | base64 -d > /.kube/config
+    - kubectl config view
+    - kubectl config use-context $KUBE_CONFIG_CONTEXT
+    - kubectl get svc -n ee
+    - cd deploy/helm/
+    - envsubst < values_template.yaml > values.yaml
+    - cat values.yaml
+    #- helm uninstall datacenter-api-server --namespace=datacenter || true
+    #- helm upgrade --install datacenter-api-server . --namespace=datacenter
+    - >
+      helm upgrade --install wipcb-frontend . --namespace=ee
+      --set-string parameters.insights_connection="${INSIGHTS_CONNECTION}"
+    #- helm upgrade --install datacenter-api-server . --namespace=datacenter
+    #- helm install datacenter-api-server . --namespace=datacenter
+    - helm list --namespace=ee
+    - kubectl get svc -n ee
+  only:
+    - develop
+  tags:
+    - aws
+    - m4-large
+
+qas_deploy:
+  dependencies:
+    - qas-docker-build
+  stage: qas:depoly
+  image:
+    name: chnbohwr/docker
+    entrypoint: ['']
+  before_script:
+    - cp $QAS_KUBECONFIG /.kube/config
+    - chmod 700 /.kube/config
+  variables:
+    IMAGE_VERSION: ${CI_COMMIT_SHORT_SHA}
+  script:
+    # for Helm Variable
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE:$IMAGE_VERSION
+    - export RESOURCE_GROUP=WSD-COST-MASTER-QAS-Linux
+    - export KUBE_CONFIG_CONTEXT=wsddnaqas-aks
+    #- export AKS_LOADBALANCER_IP="10.30.88.8"
+    - export SITE=qas
+    - export INSIGHTS_CONNECTION=$QAS_INSIGHTS_CONNECTION
+    #- export SITE_FQDN=$DEV_SITE_FQDN
+    - apk add --update coreutils
+    #- PROJECT_PROPERTIES=`echo $QAS_PROJECT_PROPERTIES | base64`
+    #- echo $KUBE_CONFIG | base64 -d > /.kube/config
+    - kubectl config view
+    - kubectl config use-context $KUBE_CONFIG_CONTEXT
+    - kubectl get svc -n ee
+    - cd deploy/helm/
+    - envsubst < values_template.yaml > values.yaml
+    - cat values.yaml
+    #- helm uninstall datacenter-api-server --namespace=datacenter || true
+    #- helm upgrade --install datacenter-api-server . --namespace=datacenter
+    - >
+      helm upgrade --install wipcb-frontend . --namespace=ee
+      --set-string parameters.insights_connection="${INSIGHTS_CONNECTION}"
+    #- helm upgrade --install datacenter-api-server . --namespace=datacenter
+    #- helm install datacenter-api-server . --namespace=datacenter
+    - helm list --namespace=ee
+    - kubectl get svc -n ee
+  only:
+    refs:
+      - tags
+  tags:
+    - aws
+    - m4-large
+
+sca-build:
+  image: node:18.12.0
+  stage: sca-build
+  only:
+    - sca_scan
+  script:
+    - npm install --legacy-peer-deps
+  artifacts:
+    paths:
+      - package-lock.json
+    expire_in: 2 hours
+  tags:
+    - aws
+    - m4-large
+
+prd_deploy:
+  dependencies:
+    - prd-docker-build
+  stage: prd:depoly
+  image:
+    name: chnbohwr/docker
+    entrypoint: ['']
+  before_script:
+    - cp $PRD_KUBECONFIG /.kube/config
+    - chmod 700 /.kube/config
+  variables:
+    IMAGE_VERSION: ${CI_COMMIT_SHORT_SHA}
+  script:
+    # for Helm Variable
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE:$IMAGE_VERSION
+    - export RESOURCE_GROUP=WSD-COST-MASTER-PRD-Linux
+    - export KUBE_CONFIG_CONTEXT=wsddnaprd-aks
+    #- export AKS_LOADBALANCER_IP="10.30.88.8"
+    - export SITE=prd
+    - export INSIGHTS_CONNECTION=$PRD_INSIGHTS_CONNECTION
+    #- export SITE_FQDN=$DEV_SITE_FQDN
+    - apk add --update coreutils
+    #- PROJECT_PROPERTIES=`echo $QAS_PROJECT_PROPERTIES | base64`
+    #- echo $KUBE_CONFIG | base64 -d > /.kube/config
+    - kubectl config view
+    - kubectl config use-context $KUBE_CONFIG_CONTEXT
+    - kubectl get svc -n ee
+    - cd deploy/helm/
+    - envsubst < values_template.yaml > values.yaml
+    - cat values.yaml
+    #- helm uninstall datacenter-api-server --namespace=datacenter || true
+    #- helm upgrade --install datacenter-api-server . --namespace=datacenter
+    - >
+      helm upgrade --install wipcb-frontend . --namespace=ee
+      --set-string parameters.insights_connection="${INSIGHTS_CONNECTION}"
+    #- helm upgrade --install datacenter-api-server . --namespace=datacenter
+    #- helm install datacenter-api-server . --namespace=datacenter
+    - helm list --namespace=ee
+    - kubectl get svc -n ee
+  only:
+    - release
+  tags:
+    - aws
+    - m4-large

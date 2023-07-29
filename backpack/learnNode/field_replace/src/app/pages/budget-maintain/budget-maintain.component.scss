@@ -1,0 +1,63 @@
+::ng-deep {
+    .model_main {
+        .modal_item {
+            &.ipmModalItem {
+                .item_content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    app-ipm-modal-item {
+                        width: 320px;
+                        margin: 0 12px 12px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep .upload_excel_modal {
+    .upload_excel_modal_main {
+        &.select_excel {
+            .upload_content {
+                width: 100%;
+                .upload_main {
+                    padding: 22px 0;
+                    .upload_main_content {
+                        .upload_notice_item {
+                            margin: 10px 0 0 0;
+                        }
+                        .upload_area_up {
+                            margin: 8px 0 0 0;
+                            padding: 0 0 0 8px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            .upload_area_up_button {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                button {
+                                    margin: 0 0 0 8px;
+                                }
+                            }
+                        }
+                        .upload_area_down {
+                            margin: 8px 0 0 0;
+                            .upload_area_down_link {
+                                text-decoration: underline;
+                                user-select: none;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .upload_area {
+                    border-bottom: 1px solid;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

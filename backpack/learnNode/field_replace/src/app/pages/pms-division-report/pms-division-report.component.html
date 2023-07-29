@@ -1,0 +1,43 @@
+<div class="page_main scroll_bar pms_status_report">
+  <app-header title="{{ subTitle | translate }}" [isShowButtons]="true">
+    <div buttons>
+    </div>
+  </app-header>
+  <ng-template #titleFormRef>
+
+    <div class="tab-wrapper">
+      <form nz-form [nzLayout]="'inline'">
+        <app-custom-select label="{{ 'PMS.Division' | translate }}" [labelSpan]="null" [controlSpan]="null" placeholder="{{ 'PMS.Division' | translate }}"
+          [ngModelOptions]="{ standalone: true }" [(ngModel)]="division" [options]="DEVISION_LIST"></app-custom-select>
+
+        <!-- 日期段 -->
+        <nz-form-item>
+          <nz-form-label [nzSpan]="null">{{ 'PMS.StartDate' | translate }}</nz-form-label>
+          <nz-form-control [nzSpan]="null">
+            <nz-date-picker nzPlaceHolder="{{ 'PMS.StartDate' | translate }}" [(ngModel)]="fromDate"
+              [ngModelOptions]="{ standalone: true }"></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="null">{{ 'PMS.EndDate' | translate }}</nz-form-label>
+          <nz-form-control [nzSpan]="null">
+            <nz-date-picker nzPlaceHolder="{{ 'PMS.EndDate' | translate }}" [(ngModel)]="toDate"
+              [ngModelOptions]="{ standalone: true }"></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+        <!-- 搜索 -->
+        <!-- search button [disabled]="isUserNameEmpty" -->
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" (click)="getUserProject()">
+              {{ "common.SEARCH" | translate }}
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </ng-template>
+  <!-- 查詢結果 -->
+  <app-common-table [titleFormRef]="titleFormRef" [dataSource]="userProjectDivisionDataSource"
+    [tableHeaders]="tableHeaders" [isLoading]="isLoading"></app-common-table>
+</div>

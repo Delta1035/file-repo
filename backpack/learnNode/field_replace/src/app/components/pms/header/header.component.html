@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="title">{{ title }}</div>
+  <div class="opera_area">
+    <ng-container *ngIf="isShowButtons">
+      <ng-content select="[buttons]"></ng-content>
+    </ng-container>
+  </div>
+</div>
+
+<!-- 例子 -->
+<!-- <app-header>
+  <div buttons>
+    <button nz-button nzType="primary">
+      {{ "basicDataOrganization.newInfo" | translate }}
+    </button>
+      <button nz-button nzType="primary">
+        {{ "basicDataOrganization.newInfo" | translate }}
+      </button>
+  </div>
+</app-header> -->
