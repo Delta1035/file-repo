@@ -4,12 +4,12 @@
   <ng-content select="[one]"></ng-content>
 </div>
 其他投影结束
-<ng-container
-  *ngTemplateOutlet="
+<ng-container *ngTemplateOutlet="
     menu;
-    context: {
-      $implicit: '这是来自组件内部的值$implicit',
-      value: '这是来自组件内部的值value'
-    }
-  "
-></ng-container>
+
+  "></ng-container>
+
+<!-- context: {
+    $implicit: '这是来自组件内部的值',
+    value: '这是来自组件内部的值value'
+  } -->

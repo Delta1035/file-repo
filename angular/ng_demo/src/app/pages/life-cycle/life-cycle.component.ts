@@ -35,8 +35,8 @@ export function mustBeforToday(): ValidatorFn {
     const targetDay = `${new Date(
       control.value
     ).toLocaleDateString()} 24:00:00`;
-    // @ts-ignore
-    const isBeforToday = new Date() - new Date(targetDay) < 0;
+    const isBeforToday =
+      new Date().getTime() - new Date(targetDay).getTime() < 0;
     return isBeforToday ? { isBeforToday: { value: control.value } } : null;
   };
 }

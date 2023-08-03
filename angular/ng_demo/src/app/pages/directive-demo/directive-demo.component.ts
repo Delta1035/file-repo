@@ -44,11 +44,6 @@ export class DirectiveDemoComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
     console.log('push', this.push);
-    // @ts-ignore
-    // console.log(this.push.decorators[0].args[0].template);
-    const r = Reflect.getPrototypeOf(this.push).constructor.decorators[0]
-      .args[0].template;
-    console.log(r);
   }
   ngOnInit(): void {
     setInterval(() => {
@@ -70,13 +65,3 @@ export class DirectiveDemoComponent implements OnInit, AfterViewInit {
     // 可以加载不同的组件
   }
 }
-
-// console.log(
-//   '=====================',
-//   // @ts-ignore
-//   DirectiveDemoComponent.decorators[0].args[0].template
-// );
-
-setTimeout((handler) => {
-  console.log('+++++++++++++++', DirectiveDemoComponent);
-}, 2000);
