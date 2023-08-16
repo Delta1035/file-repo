@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="header">header</div>
+  <div class="main">
+    <div class="side-menu">
+      <ul>
+        <li *ngFor="let route of routes">
+          <a [routerLink]="['/'+route.path]" routerLinkActive="router-link-active">{{route.path}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="content"><router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="footer">
+    footer
+  </div>
+</div>
