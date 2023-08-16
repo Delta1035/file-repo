@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Todos</h2>
+  <div class="form-group">
+    <input
+      (keyup.enter)="addItem(input)"
+      #input
+      type="text"
+      class="form- control"
+      placeholder="add todos"
+    />
+  </div>
+  <ul class="list-group">
+    <li
+      (@slideKeyframe.start)="onSlideStart(item)"
+      (@slideKeyframe.done)="onSlideDone(item)"
+      @slideKeyframe
+      (click)="removeItem(i)"
+      *ngFor="let item of todos; let i = index"
+      class="list-group-item"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>

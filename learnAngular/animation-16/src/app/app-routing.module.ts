@@ -6,9 +6,30 @@ export const routes: Routes = [
     path: 'dashbord',
     loadChildren: () =>
       import('./dashbord/dashbord.module').then((m) => m.DashbordModule),
+
+    data: {
+      animation: 'dashbordPage'
+    }
   },
-  { path: 'login',loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-  { path: 'register',loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
+  {
+    path: 'login',loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+
+    data: {
+      animation: 'loginPage'
+    }
+  },
+  {
+    path: 'register',loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
+    data: {
+      animation: 'registerPage'
+    }
+  },
+  {
+    path: 'todo',loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule),
+    data: {
+      animation: 'todoPage'
+    }
+  },
 ];
 
 @NgModule({
