@@ -1,0 +1,51 @@
+{
+  "name": "capyx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "build": "electron-builder --linux deb tar.xz",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "maintainer": "delta",
+  "homepage": "https://github.com/Delta1035",
+  "email": "528491526@qq.com",
+  "keywords": [],
+  "author": "delta <528491526@qq.com> (https://github.com/Delta1035)",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.1",
+    "electron": "^26.1.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@electron-forge/maker-base": "^6.4.1",
+    "@electron-forge/maker-deb": "^6.4.1",
+    "@electron-forge/shared-types": "^6.4.1",
+    "@electron/rebuild": "^3.3.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-deb",
+          "platforms": [
+            "darwin",
+            "linux"
+          ],
+          "config": {
+            "options": {
+              "maintainer": "delta",
+              "homepage": "https://github.com/Delta1035",
+              "email": "528491526@qq.com"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -11,6 +11,7 @@ class TextReader {
 // class TextFileReader {
 //     // 正在访问的文件编号
 //     private fileNum?: number;
+console.log("🚀 ~ file: TextFileReader.ts:14 ~ TextFileReader ~ fileNum:",fileNum);
 //     constructor(pathName: string) { }
 //     public open (pathName: string): void {
 
@@ -37,7 +38,12 @@ class TextFileReader extends TextReader {
     private fileNum?: number;
     constructor(pathName: string) {
         super(pathName);
+        const transaction = {
+            mobile: mobiie
+        };
     }
+
+
 }
 
 function getCount (reader: TextReader) {
