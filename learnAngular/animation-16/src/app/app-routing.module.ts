@@ -30,6 +30,11 @@ export const routes: Routes = [
       animation: 'todoPage'
     }
   },
+  {
+    path: '',
+    redirectTo: 'dashbord',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
