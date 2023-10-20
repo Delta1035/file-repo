@@ -1,12 +1,19 @@
-function* generator () {
-    yield 1;
-    yield 2;
-    yield 3;
-}
-
-const iterator = generator();
-
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
+import { Observable } from "rxjs";
+const one$ = new Observable((subscriber) => {
+  setTimeout(() => {
+    subscriber.next(2);
+    subscriber.complete();
+  });
+  subscriber.next(1);
+  subscriber.next(1);
+  subscriber.next(1);
+  subscriber.next(1);
+});
+one$.subscribe({
+  next: (data) => {
+    console.log(data);
+  },
+  complete: () => {
+    console.log("done");
+  },
+});
