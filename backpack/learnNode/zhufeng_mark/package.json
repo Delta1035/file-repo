@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.2.2",
     "cheerio": "1.0.0-rc.12",
+    "clean-mark": "^0.8.1",
     "markdown-pdf": "^11.0.0"
   }
 }
