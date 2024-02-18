@@ -25,7 +25,8 @@ async function main() {
   $ = cheerio.load(response.data);
   const children = $("body .nav ul li a");
   const markPath = path.join(__dirname, "/zhufeng_mark");
-  Reflect.ownKeys(children).forEach((key, index) => {
+
+  const queue = Reflect.ownKeys(children).map((key, index) => {
     try {
       if (!fs.existsSync(markPath)) {
         fs.mkdirSync(markPath);
@@ -36,21 +37,34 @@ async function main() {
       }
       if (children[key].attribs?.href) {
         console.log(children[key].attribs?.href);
-        setTimeout(function () {
+        // setTimeout(function () {
+
+        // }, index);
+
+        return new Promise((resolve, reject) => {
           exec(
-            `clean-mark http://zhufengpeixun.com/strong/${encodeURI(
+            `npx clean-mark http://zhufengpeixun.com/strong/${encodeURI(
               children[key].attribs["href"]
             )}`,
             function (error, stdout, stderr) {
-              if (stderr)
+              if (stderr) {
                 console.log(`${children[key].attribs["href"]}下载失败`, stderr);
+                reject();
+              } else {
+                console.log(`${children[key].attribs["href"]}成功`, stdout);
+                resolve();
+              }
             }
           );
-        }, index);
+        });
       }
     } catch (error) {
       console.log(children[key], error);
     }
   });
+
+  for await (p of queue) {
+    console.log(" ;>>>>>>>>>", p);
+  }
 }
 main();
